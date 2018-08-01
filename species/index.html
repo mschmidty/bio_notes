@@ -1,0 +1,72 @@
+---
+layout: page
+title: Species
+permalink: /species/
+---
+
+<h2>T and E Species</h2>
+<p>Species listed under the Endangered Species Act</p>
+
+<ul>
+{% for species in site.pages %}
+  {% if species.type=='tande'%}
+    <li><a href="{{ species.url }}">{{ species.title }}</a></li>
+  {% endif %}
+{% endfor%}
+</ul>
+
+<h2>BLM Sensitive Species</h2>
+
+<h4>Birds</h4>
+<ul>
+{% for birds in site.pages %}
+  {% if birds.type=='birds'%}
+    <li><a href="{{birds.url }}">{{ birds.title }}</a></li>
+  {% endif %}
+{% endfor %}
+</ul>
+
+<h4>Mammals</h4>
+<ul>
+{% for mammals in site.pages %}
+  {% if mammals.type=='mammals'%}
+    <li><a href="{{mammals.url }}">{{ mammals.title }}</a></li>
+  {% endif %}
+{% endfor %}
+</ul>
+
+<h4>Fish</h4>
+<ul>
+{% for fish in site.pages %}
+  {% if fish.type=='fish'%}
+    <li><a href="{{fish.url }}">{{ fish.title }}</a></li>
+  {% endif %}
+{% endfor %}
+</ul>
+
+<h4>Herps</h4>
+<ul>
+{% for herps in site.pages %}
+  {% if herps.type=='herps'%}
+    <li><a href="{{herps.url }}">{{ herps.title }}</a></li>
+  {% endif %}
+{% endfor %}
+</ul>
+
+<h4>Insects</h4>
+<ul>
+{% for insects in site.pages %}
+  {% if insects.type=='insects'%}
+    <li><a href="{{insects.url }}">{{ insects.title }}</a></li>
+  {% endif %}
+{% endfor %}
+</ul>
+
+<h2>Big Game</h2>
+<ul>
+{% for biggame in site.pages %}
+  {% if biggame.type=='biggame'%}
+    <li><a href="{{biggame.url }}">{{ biggame.title }}</a></li>
+  {% endif %}
+{% endfor %}
+</ul>
