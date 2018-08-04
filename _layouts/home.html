@@ -6,23 +6,30 @@
   <body>
 
     {%- include header.html -%}
+    <div class="home-banner">
+      <div>
+        <h1>Mike's Wildlife Hub</h1>
+        <p>Notes, projects and such!</p>
+      </div>
+    </div>
 
-    <main class="page-content" aria-label="Content">
-      <div class="home">
-        <img src="{{ "/assets/images/sleeping_ute_banner.jpg" | relative_url }}" alt="">
-        <div class="alternating-section">
+    <main class="home page-content" aria-label="Content">
+      <div class="entry-content">
+
+        <section class="primary-section">
           <h1>Projects</h1>
           {% for post in site.categories.projects %}
           <sub>{{ post.date | date: '%B %d, %Y' }}</sub>
           <a href="{{ post.url }}"><h3>{{ post.title }}</h3></a>
           {{ post.excerpt }}
           {% endfor %}
-        </div>
+        </section>
 
-        <div class="alternating-section">
+
+        <section class="primary-section">
           <h1>Weather</h1>
-          <script type='text/javascript' src='https://darksky.net/widget/default/37.4738818,-108.5045356/us12/en.js?width=100%&height=175&title=Dolores, CO&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=333333&fontFamily=Sans-Serif&customFont=&units=us&htColor=ff9781&ltColor=C7C7C7&displaySum=yes&displayHeader=yes'></script>
-          <script type='text/javascript' src='https://darksky.net/widget/default/35.33,-94.39999999999999/us12/en.js?width=100%&height=175&title=Basin, CO&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=333333&fontFamily=Sans-Serif&customFont=&units=us&htColor=ff9781&ltColor=C7C7C7&displaySum=yes&displayHeader=yes'></script>
+          <script type='text/javascript' src='https://darksky.net/widget/default/37.4738818,-108.5045356/us12/en.js?width=100%&height=175&title=Dolores, Co&textColor=333333&bgColor=transparent&transparency=true&skyColor=333333&fontFamily=Default&customFont=&units=us&htColor=ff9781&ltColor=C7C7C7&displaySum=yes&displayHeader=yes'></script>
+          <script type='text/javascript' src='https://darksky.net/widget/default/35.33,-94.39999999999999/us12/en.js?width=100%&height=175&title=Basin, CO&textColor=333333&bgColor=transparent&transparency=true&skyColor=333333&fontFamily=Sans-Serif&customFont=&units=us&htColor=ff9781&ltColor=C7C7C7&displaySum=yes&displayHeader=yes'></script>
 
           <h3>Other Weather Resources</h3>
           <ul>
@@ -30,9 +37,10 @@
             <li> <a href="https://forecast.weather.gov/MapClick.php?lon=-108.53736877441405&lat=38.0686358867043#.W2ISZ9JKiUk">NOAA Basin</a> </li>
             <li> <a href="http://avalanche.state.co.us/index.php">Caic Southern San Juan</a></li>
           </ul>
-        </div>
+        </section>
 
-        <div class="alternating-section">
+
+        <section class="primary-section">
           <h1>Recent Notes</h1>
           {% for post in site.categories.notes %}
             <sub>{{ post.date | date: '%B %d, %Y' }}</sub>
@@ -40,7 +48,8 @@
 
               {{ post.excerpt }}
           {% endfor %}
-        </div>
+        </section>
+
 
       </div>
     </main>

@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,400,800');
+$b-font:"Fira Sans", sans-serif;
+$font-size:1.1rem;
+body{
+  font-family:$b-font;
+  font-size:1.1rem;
+}
+.post-content{
+
+}
+h1, .post-content h1 {
+  font-size:2.5rem;
+  font-weight:800;
+}
+h2, .post-content h2{
+  font-size:$font-size;
+  font-weight:800;
+  margin:1rem auto 0.1rem auto;
+}
+h3, .post-content h3 {
+  font-size:$font-size;
+  font-weight:400;
+  color:$secondary-color;
+  font-style:italic;
+  margin:1rem auto 0.1rem auto;
+  text-decoration:underline;
+}
+p, .post-content p {
+  font-size:$font-size;
+}
+pre{
+  background:#fdfdfd;
+  border-radius:0;
+  border:none;
+  border-left:5px solid $secondary-color;
+  code{
+    background-color:inherit;
+  }
+
+}

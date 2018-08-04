@@ -7,20 +7,20 @@ categories: jekyll update
 
 The following are scripts that I used to make a cultural prediction model.  It uses topographic and biological information to predict areas where arc sites likely occur on the landscape.
 
-### Load Libraries
+## Load Libraries
 
 ```{r}
 library(tidyverse)
 library(randomForest)
 ```
-### Read Data
+## Read Data
 I made the dataset loaded here in another R file. The file loaded here was created using a 30m Digital Elevation Model.  The elevation model was used to calculate slope, aspect, flow direction, TPI, TRI, and roughness.  
 ```{r}
 data<-readRDS("rData/master_datasets/master_07172018.rds")
 data
 ```
 
-## remove NAs
+## Remove NAs
 It may be more appropriate to impute NAs vs remove them completely, but there are very few NAs only at the spacial edge of the model.
 ```{r}
 data_cl<- data%>% filter(!is.na(Slope)| !is.na(Aspect))%>%
@@ -28,7 +28,7 @@ data_cl<- data%>% filter(!is.na(Slope)| !is.na(Aspect))%>%
 ```
 
 
-## convert characater to factors
+## Convert characater to factors
 Random Forests can't handle characters so here we convert the characters to factors.
 ```{r}
 data_cl$BPS_NAME<-as.factor(data_cl$BPS_NAME)
@@ -139,13 +139,9 @@ data_cl_prediction<- transform(data_cl_prediction, prob2=prob2)
 head(data_cl_prediction)
 ```
 
-
+## Save points
+Save variables x, y and probability.  The x and y coordinates will be converted into a raster in Arc Map.
 ```{r}
 export_data_cl<- dplyr::select(data_cl_prediction, x, y, predict:prob2 )
 write_csv(export_data_cl,"rData/predicted_pointsV2.csv")
-```
-
-## Create Raster
-```{r}
-rasterize(export_data_cl)
 ```

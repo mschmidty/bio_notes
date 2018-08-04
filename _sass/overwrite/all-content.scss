@@ -1,0 +1,61 @@
+
+$writing-width:700px;
+.site-header{
+  padding:0 2.25%;
+}
+.entry-content {
+  p, h1, h2, h3, h4, sub, ul {
+    width:$writing-width;
+    display:block;
+    max-width:95%;
+    margin:0 auto;
+  }
+  ul{
+    padding-left:60px;
+  }
+}
+
+section.primary-section{
+  width:100%;
+  padding:100px 0;
+  &:nth-of-type(2n){
+    background:$light-grey;
+  }
+  >h1 {
+    padding-bottom:2rem;
+  }
+}
+.home{
+  margin-top:0;
+  padding-top:0;
+}
+.site-header{
+  border-top:7px solid $primary-color;
+}
+.site-title{
+  font-weight:800;
+}
+
+.home-banner{
+  background:url("/assets/images/sleeping_ute_banner.jpg") no-repeat center center fixed;
+  background-size:cover;
+  height:100vh;
+  width:100%;
+  display:flex;
+  align-items:center;
+  >div{
+    width:60%;
+    padding-left:1rem;
+  }
+  h1{
+    font-size:7em;
+    color:$light-grey;
+    font-weight:800;
+    text-shadow:2px 2px 4px rgba(0,0,0,0.5);
+    line-height:7rem;
+  }
+  p{
+    color:$light-grey;
+    font-size:1.5rem;
+  }
+}
