@@ -13,7 +13,7 @@ permalink: /species/
 <ul>
 {% for species in site.pages %}
   {% if species.type=='tande'%}
-    <li><a href="{{ species.url }}">{{ species.title }}</a></li>
+    <li><a href="{{ species.url | relative_url  }}">{{ species.title }}</a></li>
   {% endif %}
 {% endfor%}
 </ul>
@@ -24,7 +24,7 @@ permalink: /species/
 <ul>
 {% for birds in site.pages %}
   {% if birds.type=='birds'%}
-    <li><a href="{{birds.url }}">{{ birds.title }}</a></li>
+    <li><a href="{{birds.url | relative_url }}">{{ birds.title }}</a></li>
   {% endif %}
 {% endfor %}
 </ul>
@@ -33,7 +33,7 @@ permalink: /species/
 <ul>
 {% for mammals in site.pages %}
   {% if mammals.type=='mammals'%}
-    <li><a href="{{mammals.url }}">{{ mammals.title }}</a></li>
+    <li><a href="{{mammals.url | relative_url }}">{{ mammals.title }}</a></li>
   {% endif %}
 {% endfor %}
 </ul>
