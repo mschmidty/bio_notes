@@ -13,7 +13,7 @@ permalink: /species/
 <ul>
 {% for species in site.pages %}
   {% if species.type=='tande'%}
-    <li><a href="{{ species.url | relative_url  }}">{{ species.title }}</a></li>
+    <li><a href="{{ species.url | relative_url}}">{{ species.title }}</a></li>
   {% endif %}
 {% endfor%}
 </ul>
@@ -24,7 +24,7 @@ permalink: /species/
 <ul>
 {% for birds in site.pages %}
   {% if birds.type=='birds'%}
-    <li><a href="{{birds.url | relative_url }}">{{ birds.title }}</a></li>
+    <li><a href="{{birds.url | relative_url}}">{{ birds.title }}</a></li>
   {% endif %}
 {% endfor %}
 </ul>
@@ -33,7 +33,7 @@ permalink: /species/
 <ul>
 {% for mammals in site.pages %}
   {% if mammals.type=='mammals'%}
-    <li><a href="{{mammals.url | relative_url }}">{{ mammals.title }}</a></li>
+    <li><a href="{{mammals.url | relative_url}}">{{ mammals.title }}</a></li>
   {% endif %}
 {% endfor %}
 </ul>
@@ -42,7 +42,7 @@ permalink: /species/
 <ul>
 {% for fish in site.pages %}
   {% if fish.type=='fish'%}
-    <li><a href="{{fish.url }}">{{ fish.title }}</a></li>
+    <li><a href="{{fish.url | relative_url}}">{{ fish.title }}</a></li>
   {% endif %}
 {% endfor %}
 </ul>
@@ -51,7 +51,7 @@ permalink: /species/
 <ul>
 {% for herps in site.pages %}
   {% if herps.type=='herps'%}
-    <li><a href="{{herps.url }}">{{ herps.title }}</a></li>
+    <li><a href="{{herps.url | relative_url}}">{{ herps.title }}</a></li>
   {% endif %}
 {% endfor %}
 </ul>
@@ -60,7 +60,7 @@ permalink: /species/
 <ul>
 {% for insects in site.pages %}
   {% if insects.type=='insects'%}
-    <li><a href="{{insects.url }}">{{ insects.title }}</a></li>
+    <li><a href="{{insects.url | relative_url}}">{{ insects.title }}</a></li>
   {% endif %}
 {% endfor %}
 </ul>
@@ -69,7 +69,7 @@ permalink: /species/
 <ul>
 {% for biggame in site.pages %}
   {% if biggame.type=='biggame'%}
-    <li><a href="{{biggame.url }}">{{ biggame.title }}</a></li>
+    <li><a href="{{biggame.url | relative_url}}">{{ biggame.title }}</a></li>
   {% endif %}
 {% endfor %}
 </ul>
