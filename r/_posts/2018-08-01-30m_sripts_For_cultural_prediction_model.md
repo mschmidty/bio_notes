@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Project Test Post 2"
+title:  "Cultural Model R Scripts"
 date:   2018-08-01 10:07:03 -0600
 categories: jekyll update
 ---

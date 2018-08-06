@@ -1,1 +1,1 @@
-A site for me to keep my work notes and files
+A site for me to keep my work notes and files. 

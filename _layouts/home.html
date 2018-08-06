@@ -16,15 +16,24 @@
     <main class="home page-content" aria-label="Content">
       <div class="entry-content">
 
-        <section class="primary-section">
+        <!-- <section class="primary-section">
           <h1>Projects</h1>
           {% for post in site.categories.projects %}
           <sub>{{ post.date | date: '%B %d, %Y' }}</sub>
           <a href="{{ post.url | relative_url}}"><h3>{{ post.title }}</h3></a>
           {{ post.excerpt }}
           {% endfor %}
-        </section>
+        </section> -->
 
+        <section class="primary-section">
+          <h1>Recent Notes</h1>
+          {% for post in site.categories.notes %}
+            <sub>{{ post.date | date: '%B %d, %Y' }}</sub>
+            <a href="{{ post.url | relative_url}}"><h3>{{ post.title }}</h3></a>
+
+              {{ post.excerpt }}
+          {% endfor %}
+        </section>
 
         <section class="primary-section">
           <h1>Weather</h1>
@@ -40,15 +49,7 @@
         </section>
 
 
-        <section class="primary-section">
-          <h1>Recent Notes</h1>
-          {% for post in site.categories.notes %}
-            <sub>{{ post.date | date: '%B %d, %Y' }}</sub>
-            <a href="{{ post.url | relative_url}}"><h3>{{ post.title }}</h3></a>
 
-              {{ post.excerpt }}
-          {% endfor %}
-        </section>
 
 
       </div>
