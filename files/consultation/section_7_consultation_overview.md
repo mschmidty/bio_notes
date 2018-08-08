@@ -126,7 +126,7 @@ Obtain a species list from [IPAC][ipac] to determine which species and critical 
 *"The following table indicates whether the species from the FWS official species list (dated **DATE**) are known or expected to occur within the analysis/action area, suitable habitat is present, or if not why they are excluded from further analysis (with rationale)."*
 
 <div>
-  <img src="{{"/assets/images/files/consultation/table_species_list.jpg" | absolute_url}}" alt="Section 7 Table Example of a Species list and Rationale">
+  <img src="{{"/assets/images/files/consultation/table_species_list.jpg" | relative_url}}" alt="Section 7 Table Example of a Species list and Rationale">
 </div>
 
 An example list of species to be considered for consultation and the rationale for inclusion and rejection from analysis. (Credit: National Park BA Guide)
@@ -136,7 +136,7 @@ An example list of species to be considered for consultation and the rationale f
 It is also useful to include a list of critical habitat as well.
 
 <div>
-  <img src="{{"/assets/images/files/consultation/table-critical-habitat.jpg" | absolute_url}}" alt="Section 7 Example Critical Habitat table and evalution of present habitats">
+  <img src="{{"/assets/images/files/consultation/table-critical-habitat.jpg" | relative_url}}" alt="Section 7 Example Critical Habitat table and evalution of present habitats">
 </div>
 
 ## 7.0 Evaluated Species
