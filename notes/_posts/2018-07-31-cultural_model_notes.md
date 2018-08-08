@@ -17,7 +17,7 @@ The short version:
   1. **Biological data** - Distance to elk, Deer and Pronghorn severe winter range, winter concentration areas, migratory corridors and production areas; and turkey concentration areas [Source: Colorado Parks and Wildlife](https://data.colorado.gov/Environment/All-Colorado-Parks-and-Wildlife-Species-Activity-M/7ijd-4q29/data).
   2. **Topographic data** - Elevation, slope, flow direction, terrain ruggedness index (TRI), topographic position index (TPI), and roughness were all calculated using a 30m digital elevation model (DEM) and the [terrain function](https://www.rdocumentation.org/packages/raster/versions/2.6-7/topics/terrain) from the r [raster](https://www.rdocumentation.org/packages/raster/versions/2.6-7) package.
   3. **Hydrologic Data** - Distance to perennial and intermittent streams using Colorado Division of Wildlife 24K streams data (no longer available)** .
-  4. **Other Datasets** - I attempted to use a few other datasets like landfire biophysical setting and soils data, but the variables in both datasets that had few enough categories (Random Forest can't handle factors with more than 32 levels/categories) were too generalized to help the model. I would assume that soil type would have helped the model, but who knows.
+  4. **Other Datasets** - I attempted to use a few other datasets like landfire biophysical setting and soils data, but the variables in both datasets that had few enough categories (Random Forest can't handle factors with more than 32 levels/categories) were too generalized to help the model. I would assume that soil type would have helped the model, but there were too many categories (n>100) for me to use them.
 
 
 
