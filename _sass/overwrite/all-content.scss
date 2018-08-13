@@ -58,3 +58,16 @@ section.primary-section{
     font-size:1.5rem;
   }
 }
+
+
+.article-list {
+  list-style-type: none;
+  padding-left:0;
+  li{
+    padding:1.5rem 0;
+    border-bottom:1px solid $black;
+    &:last-of-type{
+      border-bottom:none;
+    }
+  }
+}

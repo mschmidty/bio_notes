@@ -40,7 +40,7 @@ I was interested in an area is southwest Colorado.  The Tile ID was ppp=036, rrr
 | Sensor                 |   C   |
 | Mission                |   8   |
 | Position - ppp         |  036  |
-| Postion - rrr          |  033  |
+| Position - rrr         |  033  |
 | Year                   |  2016 |
 | Aquisition Day of Year |  008  |
 | Ground Station         |  LGN  |
@@ -64,4 +64,4 @@ lsat_cache_list()
 ## Resources
 * [Landsat Band Breakdown and Useful Combinations](http://gif.berkeley.edu/documents/Landsat%20Band%20Information.pdf)
 * [Working With Landsat Imagery in R](http://rspatial.org/analysis/rst/9-remotesensing.html)
-* (AWS Docs on Accessing Landsat)[https://docs.opendata.aws/landsat-pds/readme.html]
+* [AWS Docs on Accessing Landsat](https://docs.opendata.aws/landsat-pds/readme.html)

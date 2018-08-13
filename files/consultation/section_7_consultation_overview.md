@@ -8,7 +8,7 @@ type: esa
 
 This post will go over a general template of what you need in section 7 consultation.  It includes Standardized language (much of which was taken and changed from the National Park Service Section 7 Consultation Guide).  To get background on the Endangered Species Act, and what Section 7 Consultation is all about, check out my older post: [here][ESA].
 
-## A Primer
+# A Primer
 Before we go over a template it consider the following. (Note: All of this is copied verbatum from a presentation Doug Laye gave to Forest Service employees in 2016)
 
 ### What is the purpose of a biological assessment?:
@@ -33,7 +33,7 @@ We use soft data, deduction, observation, extrapolation AND we have to explain w
 
 The standard for our documents is whether our analysis is reasonable, rational , nonarbitrary; the standard does not require complete absolute knowledge.
 
-**Arbitrary and Capricious**:
+### Arbitrary and Capricious:
 
 1. relied on factors which Congress did not intend the Service to consider,
 2. entirely failed to consider an important aspect of the problem,
@@ -48,20 +48,20 @@ Standard Language will be in *italics*, have fill in the blanks in **ALL CAPS** 
 
 ## 1.0 Introduction
 
-**Standard Language**
+### Standard Language
 
 *"The Endangered Species Act of 1973 (16 U.S.C. 153 et seq.), as amended (ESA or Act) requires lands under federal jurisdiction to conserve and recover listed species and use their authorities in furnace of the purposes of the Act by carrying out programs for the conservation of endangered and threatened species (50 CFR §402). ESA directs all federal agencies to consult (referred to as section 7 consultation) with the FWS when their activities “may affect” a listed species or designated critical habitat. The Act also mandates that federal agencies contribute to the conservation of federally listed species by utilizing their authorities to conserve (recover) federally listed species so that listing is no longer necessary."*
 
 
 ## 1.1 Purpose
 
-**Sandard Language**
+### Sandard Language**
 
 *"This biological assessment (BA) analyzes the potential effects of the proposed **INPUT NAME OF PROJECT** on the **INPUT FIELD OFFICE** on federally listed threatened species, and critical habitat, pursuant to section 7 of the Endangered Species Act of 1973 (16 U.S.C. 1531-1544), as amended (ESA).  The following federally listed threatened and endangered animal and/or plant species and critical habitat are addressed in this assessment:**ADD A LIST OF SPECIES TO BE IMPACTED**"*
 
 ## 1.2 Current Management Direction
 
-**Sandard Language**
+### Sandard Language
 
 *Current management direction for federally listed and proposed threatened and endangered species can be found in the following documents, filed at our office:*
 
@@ -107,7 +107,7 @@ Short description of the project setting. Make sure to clearly define the analys
 
 Obtain a species list from [IPAC][ipac] to determine which species and critical habitat must be included for evaluation within the document.
 
-**Standard Language**
+### Standard Language
 
 *"A species list from the FWS on **DATE**with all federally listed and candidate species within the project location in **LOCATION** in Colorado was reviewed for this analysis. Using this list, we determined which of those species had a potential to occur within the analysis area (shown in Table **XX** below). Species not known or with no potential of occurring in the analysis area are documented with rationale in Table **XX** and will not be discussed further in this document. Excluded species have been dropped from further analysis by meeting one or more of the following conditions:"*
 
@@ -121,7 +121,7 @@ Obtain a species list from [IPAC][ipac] to determine which species and critical 
 
 ## Species Considered and Evaluated
 
-**Standard Language**
+### Standard Language
 
 *"The following table indicates whether the species from the FWS official species list (dated **DATE**) are known or expected to occur within the analysis/action area, suitable habitat is present, or if not why they are excluded from further analysis (with rationale)."*
 
@@ -151,7 +151,7 @@ Include a brief overview of the species and their biology.  Reference the listin
 
 ## 8.0Environmental Baseline
 
-**Standard Language**
+### Standard Language
 
 *"As defined under the ESA, the environmental baseline includes past and present impacts of all federal, state, and private actions in the action area; the anticipated impacts of all proposed federal actions in the action area that have undergone formal or early section 7 consultation; and the impact of state and private actions which are contemporaneous with the section 7 consultation process. Future actions and their potential effects are not included in the environmental baseline. This section in combination with the previous section defines the current status of the species and its habitat in the action area and provides a platform to assess the effects of the proposed action under consultation with the FWS."*
 
