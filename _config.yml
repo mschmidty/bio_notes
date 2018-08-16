@@ -33,7 +33,7 @@ plugins:
 header_pages:
 - species/index.html
 - notes/index.html
-- files/index.md
+- files/index.html
 - r/index.html
 
 
