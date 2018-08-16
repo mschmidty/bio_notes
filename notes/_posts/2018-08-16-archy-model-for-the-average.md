@@ -3,6 +3,7 @@ layout: post
 title:  "How to explain a complicated Machine Learning Process to a Non-technical Person"
 date:   2018-08-16 10:07:03 -0600
 categories: [R, GIS, explained]
+published: false
 ---
 
 This year I made a model that attempts to predict where cultural resources are likely to occur on the landscape that I work on. It worked quite well.   Validation showed that the model captures about 94% of all archaelogical sites on the landscape, while only predicting an arch site 12% of the time where there is not one.  I used a varieity of data sources - animal migratory and concentration areas, hydrologic features, and a variety of elevation based metrics - to feed into a random forest machine learning algorythm to classify a raster dataset.
@@ -70,4 +71,4 @@ Now that those attributes are saved in our model we can apply them to the testin
 To be clear there was some tweeking in the middle of this process.  We used vegetation variables and soils variables and precipitation variables that didn't seem to be very predictive.  We built models at different resolutions, and 30m was the most accurate by a lot. But in a nut shell all we did was above.
 
 ### 4 - Apply to the rest of field office.
-A model isn't very helpful if it only predicts areas that we have already surveyed.  The last step in the process is to apply the prediction to all areas of the field office that we have not surveyed. 
+A model isn't very helpful if it only predicts areas that we have already surveyed.  The last step in the process is to apply the prediction to all areas of the field office that we have not surveyed.
