@@ -12,7 +12,7 @@ Now I need to explain to my managers what the model is and then I need to prove 
 
 This note is an attempt at collecting my thoughts for both of these conversations.  My goal is to come up with a relatively non-complex explainer on how the model works, why I believe it works and why we should have confidence in it.
 
-![Example of the predictive model output]({{ "/notes/assets/arch_predict/model_example.jpg" | absolute_url }})
+![Example of the predictive model output]({{ "/notes/assets/arch_predict/model_example.jpg" | relative_url }})
 
 ## What **is** the cultural predictive model and how does it work?
 The cultural predictive model is a raster dataset that predicts where cultural resources are.  What is a raster? In it's simplest form, a raster dataset is a grid of squares that covers a geographic area where each square is assigned a value.  In our case the squares are 30m x 30m and each value is a prediction from 0 to 1 of if there is an arch site there.  Any value greater than 0.50 the model predicts has a arch site and any value with a less than 0.50 the model predicts does not have an arch site.
