@@ -6,11 +6,11 @@ categories: [R, GIS, explained]
 published: true
 ---
 
-This year I made a model that attempts to predict where cultural resources are likely to occur on the landscape that I work on. It worked quite well.   Validation showed that the model captures about 94% of all archaeological sites on the landscape, while only predicting an arch site 12% of the time where there is not one.  I used a variety of data sources - animal migratory and concentration areas, hydrologic features, and a variety of elevation based metrics - to feed into a random forest machine learning algorithm to classify a raster (grid GIS layer) pixels.
+This year I made a model that attempts to predict where cultural resources are likely to occur on the landscape that I work on. It worked quite well.   Validation showed that the model captures about 94% of all archaeological sites on the landscape, while only predicting an arch site 12% of the time where there is not one.  I used a variety of data sources - animal migratory and concentration areas, hydrologic features, and a variety of elevation based metrics - to feed into a random forest machine learning algorithm to classify raster (grid GIS layer) pixels.
 
-Now I need to explain to my managers what the model is and then I need to prove to the state agency that oversees cultural resources, SHIPO, in Colorado, that the model works and is trustworthy enough to use.
+Now, I need to explain to my managers what the model is and then I need to prove to the state agency that oversees cultural resources, SHIPO, in Colorado, that the model works and is trustworthy enough to use.
 
-This note is an attempt at collecting my thoughts for both of these conversations.  My goal is to come up with a relatively non-complex explainer on how the model works, why I believe it works and why we should have confidence in it.
+This note is an attempt at collecting my thoughts for both of these conversations.  My goal is to come up with a relatively non-complex explainer on how the model works and why we should have confidence that it is accurate enough to use.
 
 ![Example of the predictive model output]({{ "/notes/assets/arch_predict/model_example.jpg" | relative_url }})
 
@@ -46,7 +46,7 @@ Our final dataset compiled with a ton of help from our GIS, Archaeology and Wild
 |  |  | Distance to Turkey Winter Concentration |
 
 ### Predicting the Arch Sites.
-So how do we take 3 million squares and make a prediction? The key to the whole process is having 20 plus years of archaeology survey. Because we know where so many arch sites are on our field office, we can look at how far they are from a stream, how far they are from a migratory corridor, what elevation they occur at, etc.  To build a simple model, we could pick three or four attributes that most predicted arch sites, then determine what values of those attributes have at arch sites and then make a model out of the results, essentially having a map with two colors, one color representing where arch sites are and one representing where arch sites are not.  But that model, would undoubtedly (we tried at the beginning) have a large error.  After all, predicting human habitation is complex. But back to the model we actually built.
+So how do we take 3 million squares and make a prediction? The key to the whole process is having 20 plus years of archaeology survey. Because we know where so many arch sites are on our field office, we can look at how far they are from a stream, how far they are from a migratory corridor, what elevation they occur at, etc.  To build a simple model, we could pick three or four attributes that most predicted arch sites, then determine what values those attributes have at arch sites and then make a model out of the results, essentially having a map with two colors, one color representing where arch sites are and one representing where arch sites are not.  But that model, would undoubtedly (we tried at the beginning) have a large error.  After all, predicting human habitation is complex. But back to the model we actually built.
 
 To train the model, we took all of the data that occurred within previously surveyed areas.  This area is used for training the model because in these areas we know which areas have arch sites and which areas don't.  Most models rely on a dataset where you know the answers.  In this case, the answers are where arch sites occur and where they don't occur. Using machine learning, we can figure out what values of each variable (attribute) are most likely to have an arch site associated with them.  We can also use relationships between the variables to help us predict where arch sites are.
 

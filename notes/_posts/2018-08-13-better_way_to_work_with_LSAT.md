@@ -31,6 +31,11 @@ wget -r -p https://s3-us-west-2.amazonaws.com/landsat-pds/c1/L8/036/033/LC08_L1T
 ```
 This will download all the tiles to the folder. For more on wget, check out the [man pages](http://manpages.ubuntu.com/manpages/bionic/en/man1/wget.1.html). Each tile download is about 1Gb, so the download may take a while.
 
+### downloading a list of URL files with wget
+```bash
+wget -r -p -i text_file_name.txt
+```
+
 ## Creating a raster brick and using the data
 
 The best way to get the data and use it once it is downloaded is to create a list of all of the file locations for the tiles.  Because the file names and locations will all be the same, we can us `paste0` in r to make a list and then turn that list into a raster brick.
