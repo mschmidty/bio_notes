@@ -4,8 +4,12 @@ title: Notes
 permalink: /notes/
 ---
 
-{% for post in site.categories.notes %}
-  <sub>{{ post.date | date: '%B %d, %Y' }}</sub>
-  <a href="{{ post.url | relative_url}}"><h3>{{ post.title }}</h3></a>
+<ul class="article-list">
+  {% for post in site.categories.notes %}
+  <li>
+    <sub>{{ post.date | date: '%B %d, %Y' }}</sub>
+    <h3><a href="{{ post.url | relative_url}}">{{ post.title }}</a></h3>
     {{ post.excerpt }}
-{% endfor %}
+  </li>
+  {% endfor %}
+</ul>
