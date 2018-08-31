@@ -5,7 +5,7 @@ date:   2018-08-01 10:07:03 -0600
 categories: jekyll update
 ---
 
-The following are scripts that I used to make a cultural prediction model.  It uses topographic and biological information to predict areas where arc sites likely occur on the landscape.
+The following are scripts that I used to make a cultural prediction model.  It uses topographic, hydrologic and biological GIS information to predict areas where arc sites likely occur on the landscape.
 
 ## Load Libraries
 
@@ -28,8 +28,9 @@ data_cl<- data%>% filter(!is.na(Slope)| !is.na(Aspect))%>%
 ```
 
 
-## Convert characater to factors
+## Convert character to factors
 Random Forests can't handle characters so here we convert the characters to factors.
+
 ```{r}
 data_cl$BPS_NAME<-as.factor(data_cl$BPS_NAME)
 data_cl$GROUPVEG<-as.factor(data_cl$GROUPVEG)

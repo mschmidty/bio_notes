@@ -3,6 +3,7 @@ layout: post
 title:  "Working With Landsat8 Data from the USGS"
 date:   2018-08-06 10:07:03 -0600
 categories: [R, Landsat, GIS]
+published: false
 ---
 
 We are trying to monitor drought in sage-grouse habitat. Because we don't have historic on the ground data collection, I thought that it would be good to try and do this with landsat data. Landsat data is collected by the USGS and NASA about once ever 16 days.
