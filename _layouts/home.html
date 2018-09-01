@@ -8,15 +8,15 @@
     {%- include header.html -%}
     <div class="home-banner" style="background:url({{"/assets/images/sleeping_ute_banner.jpg"| relative_url }}) no-repeat center center fixed; background-size:cover;">
       <div>
-        <h1>Mike's Wildlife Hub</h1>
-        <p>Notes, projects and such!</p>
+        <h1>Mike's Hub</h1>
+        <p>Notes, projects and such...On everything!</p>
       </div>
     </div>
 
     <main class="home page-content" aria-label="Content">
       <div class="entry-content">
 
-        <section class="primary-section">
+        <section class="primary-section wrapper">
           <h1>Recent Notes</h1>
           <ul class="article-list">
           {% for post in site.categories.notes %}
