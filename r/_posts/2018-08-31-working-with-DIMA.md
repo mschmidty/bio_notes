@@ -41,7 +41,7 @@ species_rich_details
 
 
 ## Subset the species list
-We have a lot of blank rows, to iliminate those I added the `filter()` function to eliminate all of the rows with no plants.
+We have a lot of blank rows, to eliminate those I added the `filter()` function to eliminate all of the rows with no plants. Separate rows is used to parse through all of the plant codes.
 
 ```{r}
 all_species<-species_rich_details %>%
@@ -50,12 +50,33 @@ all_species<-species_rich_details %>%
   separate_rows(SpeciesList, convert=T)
 
 View(all_species)
-
-
 ```
 
+The above code subsets that data and turns this:
+
+| ID | Richness | SpeciesList |
+|----|----------|---------------------------|
+| 1 | 3 | ACHY; POFE; BOGR2; |
+| 2 | 2 | PLJA; HECO26; |
+| 3 | 4 | PIED; ARTR2; DEPI; HECO26 |
+
+Into this:
+
+| ID | SpeciesList |
+|----|-------------|
+| 1 | ACHY |
+| 2 | POFE |
+| 3 | BOGR |
+| 4 | PLJA |
+| 5 | HECO26 |
+| 6 | PIED |
+| 7 | ARTR2 |
+| 8 | DEPI |
+| 9 | HECO26 |
+
+
 ## Count each occurrent with `table()`
-This counts each occurrence of each plant and displays it in a table that looks like this:
+This counts each occurrence of each plant and displays it in a table;
 ```{r}
 count<-as.data.frame(table(all_species$SpeciesList))
 final_list<-count%>%
@@ -67,22 +88,23 @@ final_list
 
 ## Load and Merge with the plant list for Colorado
 
-Read the Plant List. I got this plant list at the [USDA Plants Database](https://plants.sc.egov.usda.gov/dl_state.html).
+### Read the Plant List.
+I got this plant list at the [USDA Plants Database](https://plants.sc.egov.usda.gov/dl_state.html).
 ```{r}
 plant_list<-read_csv("COplants5312018.txt")
 plant_list
 ```
 
-Clean and Merge
+### Clean and Merge
+The plant list sometimes has more than one entry for each plant.  For example ACHY has 3 entries.  When you merge it will match all three of those entries, but we only want one of the entries, so we select just the first of each plant instance with `match(unique())`.
 ```{r}
 plant_list_cl<- plant_list%>%
   rename(symbol=1, sci_name=3)
-
 plant_list_cl<-plant_list_cl[match(unique(plant_list_cl$symbol), plant_list_cl$symbol),]
 plant_list_cl
 ```
 
-Join the tables
+### Join the tables
 ```{r}
 final_merged_list<-final_list %>%
   left_join(plant_list_cl)%>%
@@ -90,7 +112,9 @@ final_merged_list<-final_list %>%
   select(-3)
 final_merged_list
 ```
-The output should look something like this:
+
+### Output
+The final output should look something like this:
 
 | symbol | count | sci_name | common_name | Family |
 |--------|-------|----------------------------------------------------|------------------|------------|
@@ -109,7 +133,6 @@ write_csv(final_merged_list, "output/species_richness_plant_list_8312018.csv")
 
 
 ## Plot
-
 ### get rid of unknowns
 ```{r}
 for_plot_cl<-final_merged_list%>%

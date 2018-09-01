@@ -1,8 +1,25 @@
-
+/*-----------------------------------------------------
+----Variables and Mixins
+-----------------------------------------------------*/
 $writing-width:700px;
+/*-----------------------------------------------------
+----Header
+-----------------------------------------------------*/
 .site-header{
+  background: $light-grey;
   padding:0 2.25%;
+  //border-bottom:3px solid $primary-color;
 }
+.site-title{
+  font-weight:700;
+}
+.site-nav .page-link{
+  color:$primary-color;
+  font-weight:300;
+}
+/*-----------------------------------------------------
+----All
+-----------------------------------------------------*/
 .entry-content {
   p, h1, h2, h3, h4, sub, ul {
     width:$writing-width;
@@ -14,16 +31,9 @@ $writing-width:700px;
     padding-left:60px;
   }
 }
-.post {
-  padding-top:3.5rem;
-}
-.post-title {
-  font-size:4rem;
-}
-.dt-published {
-  color:$red;
-}
-
+/*-----------------------------------------------------
+----Page
+-----------------------------------------------------*/
 section.primary-section{
   width:100%;
   padding:100px 0;
@@ -34,61 +44,18 @@ section.primary-section{
     padding-bottom:2rem;
   }
 }
-ul.article-list{
-  margin:0;
-}
-.home{
-  margin-top:0;
-  padding-top:0;
-}
-.site-header{
-  background: rgba(255,255,255,0.8);
-}
-.site-title{
-  font-weight:800;
-}
-
-.home-banner{
-  background-size:cover;
-  height:100vh;
-  width:100%;
-  display:flex;
-  align-items:center;
-  >div{
-    width:60%;
-    padding-left:1rem;
-  }
-  h1{
-    font-size:7em;
-    color:$light-grey;
-    font-weight:800;
-    text-shadow:2px 2px 4px rgba(0,0,0,0.5);
-    line-height:7rem;
-  }
-  p{
-    color:$light-grey;
-    font-size:1.5rem;
-  }
-}
-
-
 ul.article-list {
   list-style-type: none;
   padding-left:0;
+  margin:0;
   >li{
-    padding:1.5rem 0;
-    border-bottom:1px solid $black;
+    padding:3rem 0;
+    border-bottom:1px solid $light-grey;
     &:last-of-type{
       border-bottom:none;
     }
   }
 }
-
-.post-content p.caption {
-  font-size:0.8rem;
-  margin-top:0;
-}
-
 .page-header {
   width:100%;
   margin:0;
@@ -115,4 +82,60 @@ ul.article-list {
 .page-content {
   padding:0;
 
+}
+sub{
+  color:$grey;
+  font-weight:300;
+}
+/*Home Page*/
+.home{
+  margin-top:0;
+  padding-top:0;
+}
+
+
+.home-banner{
+  background-size:cover;
+  height:100vh;
+  width:100%;
+  display:flex;
+  align-items:center;
+  >div{
+    width:60%;
+    padding-left:1rem;
+  }
+  h1{
+    font-size:7em;
+    color:$primary-color;
+    font-weight:700;
+    text-shadow:2px 2px 4px rgba(0,0,0,0.5);
+    line-height:7rem;
+  }
+  p{
+    color:$light-grey;
+    font-size:1.5rem;
+    text-shadow:2px 2px 4px rgba(0,0,0,0.5);
+  }
+}
+
+
+/*-----------------------------------------------------
+----Post
+-----------------------------------------------------*/
+
+.post {
+  padding-top:3.5rem;
+}
+.post-title {
+  font-size:4rem;
+}
+.dt-published {
+  color:$red;
+}
+.post-content p.caption {
+  font-size:0.8rem;
+  margin-top:0;
+}
+.post-content h2 {
+  margin-top:3rem;
 }

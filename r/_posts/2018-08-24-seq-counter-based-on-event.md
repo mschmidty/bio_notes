@@ -5,7 +5,9 @@ date:   2018-08-24 10:07:03 -0600
 categories: dplyr
 ---
 
-## A method for counting reset by an event
+A method for creating a variable that sequential counts until an binary event occurs in another vairiable.
+
+## Load Libraries
 ```{r}
 library(dplyr)
 ```
