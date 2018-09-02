@@ -1,0 +1,18 @@
+---
+layout: page
+title: Web Development Notes
+tagline: Notes on things I'm learning about Web Dev or things I'd like to remember.
+permalink: /web_dev/
+image: /assets/images/banners/web_dev_banner.jpg
+color: DAF7A6
+---
+
+<ul class="article-list">
+  {% for post in site.categories.web_dev_notes %}
+  <li>
+    <sub>{{ post.date | date: '%B %d, %Y' }}</sub>
+    <h3><a href="{{ post.url | relative_url}}">{{ post.title }}</a></h3>
+    {{ post.excerpt }}
+  </li>
+  {% endfor %}
+</ul>
