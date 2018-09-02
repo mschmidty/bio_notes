@@ -6,7 +6,7 @@ $writing-width:700px;
 ----Header
 -----------------------------------------------------*/
 .site-header{
-  background: $light-grey;
+  background: white;
   padding:0 2.25%;
   //border-bottom:3px solid $primary-color;
 }
@@ -20,6 +20,9 @@ $writing-width:700px;
 /*-----------------------------------------------------
 ----All
 -----------------------------------------------------*/
+body {
+  background:$background-color;
+}
 .entry-content {
   p, h1, h2, h3, h4, sub, ul {
     width:$writing-width;
@@ -30,6 +33,9 @@ $writing-width:700px;
   ul{
     padding-left:60px;
   }
+}
+.highlighter-rouge .highlight {
+  background:$light-grey;
 }
 /*-----------------------------------------------------
 ----Page
@@ -50,7 +56,7 @@ ul.article-list {
   margin:0;
   >li{
     padding:3rem 0;
-    border-bottom:1px solid $light-grey;
+    border-bottom:2px solid $dark-light-grey;
     &:last-of-type{
       border-bottom:none;
     }
