@@ -8,6 +8,7 @@ body{
   font-size:18px;
   font-weight:400;
   text-rendering: optimizeLegibility;
+
 }
 .post-content{
 
@@ -19,7 +20,7 @@ h1, .post-content h1 {
 h2, .post-content h2{
   font-size:2.3rem;
   font-weight:300;
-  margin:1.4rem auto 0.1rem auto;
+  margin:1.3rem auto 0.1rem auto;
 }
 h3, .post-content h3 {
   font-size:2.0rem;
@@ -29,8 +30,9 @@ h3, .post-content h3 {
   line-height:1.2;
   margin-bottom:0.5rem;
 }
-p, .post-content p {
+p {
   font-size:$font-size;
+  //color:$black;
 }
 pre{
   background:#fdfdfd;

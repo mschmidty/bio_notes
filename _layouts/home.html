@@ -6,7 +6,7 @@
   <body>
 
     {%- include header.html -%}
-    <div class="home-banner" style="background:url({{"/assets/images/sleeping_ute_banner.jpg"| relative_url }}) no-repeat center center fixed; background-size:cover;">
+    <div class="home-banner" style="background:url({{"/assets/images/sleeping_ute_banner.jpg"| relative_url }}) no-repeat center center scroll; background-size:cover;">
       <div>
         <h1>Mike's Hub</h1>
         <p>Notes, projects and such...On everything!</p>
@@ -23,7 +23,7 @@
 
               <li>
                 <sub>{{ post.date | date: '%B %d, %Y' }}</sub>
-                <a href="{{ post.url | relative_url}}"><h3>{{ post.title }}</h3></a>
+                <h3><a href="{{ post.url | relative_url}}">{{ post.title }}</a></h3>
 
                 {{ post.excerpt }}
               </li>
