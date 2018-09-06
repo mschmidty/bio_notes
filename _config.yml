@@ -17,9 +17,9 @@ title: Mike's Docs
 email: mschmidty@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   A website to store everything wildlife.
-baseurl: "/bio_notes" # the subpath of your site, e.g. /blog
+baseurl: "/bio_notes/" # the subpath of your site, e.g. /blog
 url: "https://mschmidty.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: mschmidty
+twitter_username: mikejschmidty
 github_username:  mschmidty
 
 # Build settings
