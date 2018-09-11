@@ -1,7 +1,7 @@
 ---
 layout: species-post
 title:  "Bald Eagle"
-date:   2018-07-31 10:07:03 -0600
+scientific_name: Haliaeetus leucocephalus
 categories: Birds
 type: birds
 image: /species/assets/blmsensitive/bald_eagle.jpg
