@@ -59,6 +59,37 @@ Selecting and Chaining are not the heart of the D3 library by a long shot, but t
 
 ## Coding a Chart
 
+<style>
+
+.chart div {
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
+}
+.chart {
+  margin:20px 0;
+}
+
+</style>
+
+<div class="chart"></div>
+
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script>
+
+var data = [4, 8, 15, 16, 23, 42];
+
+d3.select(".chart")
+  .selectAll("div")
+    .data(data)
+  .enter().append("div")
+    .style("width", function(d) { return d * 10 + "px"; })
+    .text(function(d) { return d; });
+</script>
+
 The [first chart](https://bost.ocks.org/mike/bar/#manual) in the tutorial is built with vanilla html and css.  The chart is a series of `<div>` elements all with in-line css styles that signify their length or value.  The first d3 chart is a recreation of this, and it looks like this:
 
 ```html
@@ -83,7 +114,7 @@ d3.select(".chart")
 So what is going on here.
 
 ### Set up
-First we put a `<div>` element somewhere in the body so that we are going to attach the chart to later:
+First we put a `<div>` element somewhere in the body so that we are goingg to attach the chart to later:
 
 ```html
 <div class="chart"></div>
@@ -149,5 +180,10 @@ d3.select(".chart")
   .selectAll("div")
     .data(data)
   .enter().append("div")
-    .style("width", height)
+    .style("width", function(d){return d * 10 + "px"})
+    .text(function(d){ return d })
 ```
+
+## svg
+
+In the above example, we used html and inline css to render a chart.  For a bar chart that worked great.  However, html and css are extremely limited. If we want to make anything but a bar chart, we will need to find an html element that is much more flexible.  Enter [svg or Scalable Vector Graphics](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics).  
