@@ -150,6 +150,10 @@ sub{
 }
 .post-title {
   font-size:4rem;
+  text-align:center;
+}
+.post-meta{
+  text-align:center;
 }
 .dt-published {
   color:$red;

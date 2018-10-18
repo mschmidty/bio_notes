@@ -17,16 +17,20 @@
       <div class="entry-content">
 
         <section class="primary-section wrapper">
-          <h1>Recent Notes</h1>
+          <h1>Recent</h1>
           <ul class="article-list">
-          {% for post in site.categories.notes %}
-
+          {% assign count = 0 %}
+          {% for post in site.posts %}
+              {% assign count = count | plus:1 %}
               <li>
+
                 <sub>{{ post.date | date: '%B %d, %Y' }}</sub>
                 <h3><a href="{{ post.url | relative_url}}">{{ post.title }}</a></h3>
 
                 {{ post.excerpt }}
               </li>
+              {% if count == 6 %}{% break %}
+              {% endif %}
 
 
           {% endfor %}
