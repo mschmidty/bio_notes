@@ -18,3 +18,27 @@ So what does it mean to reject the null hypothesis?  When a p-value is presented
 In laymen's terms we can say that a low p-value means that it is unlikely that the two populations that we are comparing are the same.
 
 ## Regression
+To understand regression two terms must be understood:
+1. **dependent variable** - a variable (often denoted by y) whose value depends on that of another.  In other words, this variable changes based on the value of another variable.
+2. **independent variable** - a variable (often denoted by x) whose variation does not depend on that of another. In other words, in your model, this variable will not change predictably based on the values of other variables in your model.
+
+Typically, regression is used to understand the relationship between a dependent variable and one or more independent variables.  Most frequently, relationships are understood in a linear context (linear regression).  But relationships can also be understood using non-linear contexts.
+
+**Linear Regression example**
+![Example of a Linear regression ]({{ "/notes/assets/statistics/linear_regression.svg" | relative_url }})
+
+
+## Analysis of Variance: ANOVA
+ANOVA is a collection of statistical models that help you understand if two means are similar or different.  For example both a sample of (2, 2, 2, 2, 2) and (1, 1, 1, 2, 0, 7) are different obviously.  But if we get the mean of those two datasets we will get 2 for both sets.  ANOVA helps us determine if these two datasets are significantly different in their variance or if they are similar and we just happened to just sample different numbers in each set. 
+
+Understanding this can be important for other tests, such as t-tests, because some comparative analysis only work when the compared groups have the same variance.
+
+
+## References
+**Wikipedia**
+* [Wikipedia Statistics Page](https://en.wikipedia.org/wiki/Statistics)
+* [Wikipedia Statistics Glossary](https://en.wikipedia.org/wiki/Glossary_of_probability_and_statistics)
+
+**YouTube**
+* [Brandon Foltz Tutorials](https://www.youtube.com/user/BCFoltz)
+* [Three Blue One Brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw)
