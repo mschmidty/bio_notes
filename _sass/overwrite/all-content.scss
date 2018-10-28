@@ -56,7 +56,14 @@ section.primary-section{
     background:$light-grey;
   }
   >h1 {
-    padding-bottom:2rem;
+    font-size:6rem;
+    line-height:6rem;
+    font-family:$h2-font;
+    text-align:center;
+  }
+  >p{
+    color:$grey;
+    text-align:center;
   }
 }
 ul.article-list {
@@ -117,7 +124,8 @@ sub{
   align-items:center;
   >div{
     width:60%;
-    padding-left:1rem;
+    padding:1rem;
+
   }
   h1{
     font-size:7em;
@@ -149,14 +157,19 @@ sub{
   padding-top:3.5rem;
 }
 .post-title {
-  font-size:4rem;
+  font-size:7rem;
   text-align:center;
 }
 .post-meta{
   text-align:center;
+  font-family:$h2-font;
 }
 .dt-published {
-  color:$red;
+  color:$background-color;
+  font-size:1rem;
+  background:$primary-color;
+  padding:.35rem;
+  border-radius:3px;
 }
 .post-content p.caption {
   font-size:0.8rem;
@@ -164,4 +177,12 @@ sub{
 }
 .post-content h2 {
   margin-top:3rem;
+}
+.post-content a{
+  border-bottom:2px solid $black;
+  &:hover{
+    text-decoration:none;
+    background:$light-grey;
+    color:$primary-color;
+  }
 }

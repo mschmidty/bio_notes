@@ -191,13 +191,12 @@ d3.select(".chart")
 
 ## Domain and Range
 
-The last thing to get started with charting with D3.js is scaling the chart so that you don't have to do any math. We can use D3 so that the pixels of each bar add up to equal the width of the chart. You do this with `d3.scale.linear` (in more recent versions of d3, the function is `d3.scaleLinear`). This takes a few steps, because we not only have to set the scale with `domain()` and `range()` but we also have to change our `.style()` function. So our final code will look like this: 
+The last thing to get started with charting with D3.js is scaling the chart so that you don't have to do any math. We can use D3 so that the pixels of each bar add up to equal the width of the chart. You do this with `d3.scale.linear` (in more recent versions of d3, the function is `d3.scaleLinear`). This takes a few steps, because we not only have to set the scale with `domain()` and `range()` but we also have to change our `.style()` function. So our final code will look like this:
 
 ```js
 var x = d3.scale.linear()
 .domain([0, d3.max(data)]) ##Sets the max value at the range max
 .range([0,420]) ##Sets the start and end of the range
-
 
 d3.select(".chart")
 .selectAll("div")
@@ -205,7 +204,4 @@ d3.select(".chart")
 .enter().append("div")
 .style("width", function(d){return x(d) + "px" })
 .text(function(d){return d })
-
-
-
 ```

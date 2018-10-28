@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Serif:400,700');
 
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700');
-$h-font:"PT Serif", sans-serif;
-$b-font: "PT serif", sans-serif;
+$h-font:"PT Serif", serif;
+$h2-font:"Source Sans Pro", sans-serif;
+$b-font: "PT serif", serif;
 $font-size:1.1rem;
 body{
   font-family:$h-font;
@@ -17,8 +18,8 @@ body{
   text-rendering: optimizeLegibility;
 
 }
-.post-content{
-
+.site-header, .home-banner h1, .post-title{
+  font-family:"Source Sans Pro", sans-serif;
 }
 h1, .post-content h1 {
   font-size:2.5rem;
@@ -58,4 +59,12 @@ pre{
 }
 ul {
   font-size:$font-size;
+}
+
+blockquote {
+    color: $black;
+    background: $light-grey;
+    border-left: 4px solid $pink;
+    padding-top: 2em;
+    padding-bottom:2em;
 }
