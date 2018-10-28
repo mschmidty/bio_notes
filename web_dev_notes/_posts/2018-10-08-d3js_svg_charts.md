@@ -204,15 +204,15 @@ So how do we do this automatically without having to manually put in all of thos
 ```
 And automagically we have the same chart with a few changes.
 <style media="screen">
-    .chart2 rect {
-        fill: steelblue;
-      }
-      .chart2 text {
-        fill: white;
-        font: 10px sans-serif;
-        text-anchor: end;
-      }
-    </style>
+.chart2 rect {
+    fill: steelblue;
+  }
+.chart2 text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+</style>
 
 
 <svg class="chart2"> </svg>
@@ -267,8 +267,12 @@ var data;
   }
 </script>
 
-
+## A Breakdown
 So what is going on here? First you must know that when you load data, there is an order to what is completed and when. In the tutorial, it explains it like this:
+
+> "Loading data introduces a new complexity: downloads are asynchronous. When you call d3.tsv, it returns immediately while the file downloads in the background. At some point in the future when the download finishes, your callback function is invoked with the new data, or an error if the download failed. In effect your code is evaluated out of order:"
+
+In code this looks something like this:
 ```js
 // 1. Code here runs first, before the download starts.
 
@@ -278,12 +282,32 @@ d3.tsv("data.tsv", function(error, data) {
 
 // 2. Code here runs second, while the file is downloading.
 ```
-And here is tidbit from the tutorial about what is going on when you load the data:
-> "Loading data introduces a new complexity: downloads are asynchronous. When you call d3.tsv, it returns immediately while the file downloads in the background. At some point in the future when the download finishes, your callback function is invoked with the new data, or an error if the download failed. In effect your code is evaluated out of order:"
+This is an important concept to understand. But we are getting a little ahead of ourselves, lets go through this step by step.
 
-In the HTML, we have an `<svg>` element with a class of `.chart2` (if you have two charts on the same page with `class="chart"` it only renders the first one), we have loaded D3 and we have a script tag with our D3.js.  The D3 has gotten much more complex than our first example and things are happening in a different order because we are loading data form an external source.
+### The HTML
+In the HTML, we have an `<svg>` element with a class of `.chart2` (if you have two charts on the same page with `class="chart"` it only renders the first one), we have loaded D3 and we have a script tag with our D3.js.  We also have a little bit os css to style our chart once it is rendered.
+
+```html
+<style media="screen">
+.chart2 rect {
+    fill: steelblue;
+  }
+.chart2 text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+</style>
+<svg class="chart2"> </svg>
+<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script type="text/javascript">
+//Your D3 code goes here
+</script>
+```
 
 ### Width and Bar Height
+Now we go inside of our `<script>` tag to start making our chart.
+
 ```js
 var width = 680,
     barHeight = 20
@@ -295,7 +319,7 @@ First we set the `width` and `barHeight` attributes.  The actual height will be 
 var x = d3.scale.linear()
   .range([0, width]);
 ```
-This one is easy, we make a variable `var x`.  `x` is assigned a linear scale (heads up in V4 and V4 of D3 this is `scaleLinear()` not `scale.linear` like we have here) where the range of that scale is 0 to the width set in our last variable.
+This one is easy, we make a variable `var x`.  `x` is assigned a linear scale (heads up in V4 and V4 of D3 this is `scaleLinear()` not `scale.linear` like we have here) where the range of that scale starts at coordinate 0 and goes to the `width` set in our last variable.
 
 ### Select the Chart
 ```js
@@ -303,7 +327,8 @@ var chart = d3.select(".chart2")
     .attr("width", width);
 ```
 ### Load the Data and Use the Data to Construct the Chart
-We have a couple of steps here, so we will break this up.
+We have a couple of steps here, so we will break this up. Remember, what is happening in these steps happens last because we are making an asynchronous call to load the data.  Meaning, this data loads while everything else is running. Once the data is loaded, the code inside this chunk will run.  Here we go step by step:
+
 **Load the data and set the domain (height)**<br>
 First we load the data using the function [d3.tsv](https://github.com/d3/d3-fetch/blob/master/README.md#tsv).  The data is in tab separated format (.tsv).
 
@@ -315,10 +340,10 @@ d3.tsv('data/chart2data.tsv', type, function(error, data) {
     //Much more below
   })
 ```
-So there is a lot going on here.  First we laod the data. The we apply two functions, `type` and then write our own function. I had no idea what was going on with `type` attribute. Then I remembered there was a `function type(d)` at the bottom.  The type function forces the values in the data.tsv file to be numbers.  If you don't do this, you then get characters by default (I believe).  Next we continue setting our scale which as previously been assigned to `x`. This gets a bit complex because we use another d3 function: `d3.max`. `d3.max` basically returns the max d.value, which in our case is 42.  So we have loaded the data, coerced our numeric values to numbers, and set the `x.domain` to go from 0 to 42.
+So there is a lot going on here.  First we load the data. Then we apply two functions, `type` and then write our own function. I had no idea what was going on with `type` attribute. Then I remembered there was a `function type(d)` at the bottom.  The type function forces the values in the data.tsv file to be numbers.  If you don't do this, the data will be returned as characters by default (I believe).  Next we continue setting our scale which as previously been assigned to `x`. This gets a bit complex because we use another d3 function: `d3.max`. `d3.max` basically returns the max d.value, which in our case is 42.  So we have loaded the data, coerced our numeric values to numbers, and set the `x.domain` to go from 0 to 42. Got all that?
 
 **Set the Height** <br>
-We apply a `.attr` to the `chart` object.
+We apply a `.attr` to the `chart` object that sets the height. This is done by multiplying the `barHeight` by the length of the `data` array.  
 ```js
 chart.attr("height", barHeight * data.length);
 ```
@@ -332,8 +357,8 @@ var bar = chart.selectAll("g")
         return "translate(0," + i * barHeight + ")";
 });
 ```
-
-To the `chart`, we selectAll `<g>` elements and then chain `.data` to that enter the data (for a better explanation see my last post on this), then `.append` the data to the `g` element by entering it into a `.attr` by giving it a `transform` attribute that returns a function.  The function concatenates a `translate(x,y)` (read above) that keeps its x attribute at 0 because we only want to mover the bars vertically not horizontally. For the y attribute, you get `i`, the iterator, advancing by one as we loop over the values, multiplied by barHeight.  For the first bar you get the first `i` which is 0 multiplied to barHeight, 20, equalling 0.  So the first `<g>` element gets has a `transform="translate(0,0)`.  The next `<g>` has an `i` of 1, so the transform is `transform="translate(0,20)`, the next `i` is 2 so you get `transform="translate(0,40)` and so on until there are no more `i`s.
+To the `chart`, we selectAll `<g>` elements (which don't exist, but we are about to make them with our `data`) and then chain our `data` to the selection.  We then enter the data (for a better explanation see [my last post on this]({{ site.baseurl }}{% post_url web_dev_notes/2018-10-08-d3js_first_charts %})
+), then `.append` the data to the `g` element by entering it into a `.attr` by giving it a `transform` attribute that returns a function.  The function concatenates a `translate(x,y)` (read above) that keeps its x attribute at 0 because we only want to move the bars vertically not horizontally. For the y attribute, you get `i`, the iterator, advancing by one as we loop over the values, multiplied by barHeight.  For the first bar you get the first `i` which is 0 multiplied to barHeight, 20, equalling 0.  So the first `<g>` element gets has a `transform="translate(0,0)`.  The next `<g>` has an `i` of 1, so the transform is `transform="translate(0,20)`, the next `i` is 2 so you get `transform="translate(0,40)` and so on until there are no more `i`s.
 
 
 **Append a `<rect>` to each `<g>`** <br>
@@ -363,7 +388,7 @@ bar.append("text")
 
 I am not going to explain this one becuase by now, we have gone over almost everything. Just know, we use the scales `x`, the `barHeight` variable, and the `d` (data) object to make a few calculations so that everything lines up just right.
 
-**The last thing**
+### The last thing
 ```js
 function type(d) {
     d.value = +d.value; // coerce to number
@@ -373,4 +398,4 @@ function type(d) {
 Remember this last code, which if you remember runs before our data is returned, coerces our value to a number.
 
 ## So many Steps
-There is a ton going on here.  I'm starting to see why D3 has such a steap learning curve.  If you are struggling, which I am, know that it has helped me to go over what I have learned slowly and deliberately. 
+There is a ton going on here.  I'm starting to see why D3 has such a steap learning curve.  If you are struggling, which I am, know that it has helped me to go over what I have learned slowly and deliberately.

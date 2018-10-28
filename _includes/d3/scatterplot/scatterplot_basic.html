@@ -11,23 +11,34 @@
     stroke: black;
     fill: none;
 }
-.domain{
 
-}
-
-circle {
-    fill: steelblue;
-}
 
 </style>
-<svg class="scatterplot"></svg>
+<div class="chart">
+  <svg class="scatterplot"></svg>
+</div>
+
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script>
   var data = [
     [5, 3],
     [10, 17],
     [15, 4],
-    [2, 8]
+    [2, 8],
+    [5,20],
+    [15, 29],
+    [12,42],
+    [1,19],
+    [6,4],
+    [3,5],
+    [30, 12],
+    [34, 21],
+    [8,26],
+    [17, 20],
+    [14,34],
+    [1,16],
+    [6,4],
+    [21,5]
   ];
   var margin = { top: 20, right: 15, bottom: 60, left: 60  },
     width = 680 - margin.left - margin.right,
@@ -51,7 +62,7 @@ circle {
 
   var main = chart.append('g')
     .attr('transform', 'translate(' + margin.left + ',' + margin.right +')')
-    .attr('width', width)
+    .attr('max-width', width)
     .attr('height', height)
     .attr('class', 'main')
 
@@ -82,8 +93,9 @@ circle {
       .enter().append("svg:circle")
         .attr("cx", function(d){ return x(d[0]);})
         .attr("cy", function(d){return y(d[1]);})
-        .attr('r', 15)
-        .attr('fill', 'steelblue')
-        .attr('stroke', 'black');
+        .attr('r', 3)
+        .attr('fill', 'none')
+        .attr('stroke', 'red')
+        .attr('stroke-width',2)
 
 </script>
