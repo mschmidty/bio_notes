@@ -18,6 +18,12 @@ For whatever reason, I don't seem to remember so many important jekyll code snip
 
 ## Images
 
+### Internal Images
+Markdown:
 ```liquid
 ![Alt Text]({{ "/notes/assets/arch_predict/model_example.jpg" | relative_url }})
+```
+HTML:
+```liquid
+<img src="{{"/assets/images/svg/recyclebin.svg"| relative_url }}" alt=""  >
 ```
