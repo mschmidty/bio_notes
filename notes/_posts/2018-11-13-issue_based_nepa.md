@@ -5,6 +5,9 @@ date:   2018-11-13 10:07:03 -0600
 categories: NEPA
 published: true
 ---
+
+NEPA, the good parts!
+
 ## Issues
 > "...an issue is a point of disagreement, debate, or dispute with a proposed action based on some anticipate environmental effect...An issue: 1) has a cause and effect relationship with the proposed action or alternatives. 2) is within the scope of the analysis 3) has not been decided by law, regulation, or previous decision. 4) is amenable to scientific analysis rather than conjecture." **(BLM NEPA Handbook - Pg 40)**
 
@@ -16,15 +19,32 @@ Not everything brought up during scoping is an issue. Issues should be limited t
 **Example 2:** "How will critical deer winter range be affected by the Proposed Action and Alternatives?"
 
 ### Identification of Issues
-**Preliminary**
-Start broad: what are all of the issues from internal and external sources.
-Then go through your issues and:
-* are some issues non-substantive?
-* do additional substantive issues come out?
-* Which are issues we need to analyze?
-* Which issues can we address with design criteria?
+Schema for identifying true issues:
+1. Write out a project description
+2. List all Actions
+3. Identify the potential impacts from the actions.  Any impacts previously address through:
+  1. Prior routine analysis
+  2. Design features or applicant committed measures
+  3. Planned conditions of approval or mitigation
+4. Preliminary issues = remaining unaddressed potentially significant impacts.
 
+### Issue Identification and Analysis Method
+For each issue with a potential impact positive or negative, complete a worksheet. If the issue/resource is not present or present but would not be impacted, a worksheet does not need to be completed.
 
+For this worksheet, start at the beginning of the page and work your way down in order. Once the worksheet is completed, create an outline for your impact analysis and conduct the analysis based on the methodology you just outlined.
+
+1. Proposed Action
+2. Impact-Causing Element (ICE)
+3. Resource Characteristic
+4. Issue Statement
+5. Design Features/SOP/BMPs
+6. Methods:
+  * Impact indictor
+  * Analysis Area Geographic and Temporal
+  * Assumptions
+  * Data
+
+Might be good to make a spreadsheet with all issues including categories for each one of the above stuff. 
 
 
 ## Tiering and Incorporate by Reference
@@ -35,3 +55,18 @@ Then go through your issues and:
 Both processes take two steps:
 1. **Cite** the source of the incorporated material.
 2. **Summarize** the incorporated material.
+
+## Scoping
+1. Group and lump issues.
+2. Look at impact causing elements (ICE) that are relevant to each group.
+3. Impact characteristic.
+
+## Resources
+### Good Examples
+* [Pollyanna 8 Coal Lease Modification Application]({{"notes/assets/nepa/20171218_EA_Pollyanna8_FINAL_508CB.pdf"| relative_url}}). This document demonstrates:
+  - Good Purpose and Need
+  - Good Issue Identification
+    - In the issues, they have an impact indicator tells you how they are going to measure the impacts.
+  - Ok rationale for dismissing Issues
+  - Only 25 pages
+  - Good use of tables
