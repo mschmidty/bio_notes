@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How to explain a complicated Machine Learning Process to a Non-technical Person"
+title:  "Explaining a Technical Model"
 date:   2018-08-16 10:07:03 -0600
 categories: [R, GIS, explained]
 published: true
@@ -106,4 +106,4 @@ A model isn't very helpful if it only predicts areas that we have already survey
 
 
 ## To wrap up
-So that is essentially how machine learning and a good dataset can predict where archaeological sites are on the landscape. 
+So that is essentially how machine learning and a good dataset can predict where archaeological sites are on the landscape.
