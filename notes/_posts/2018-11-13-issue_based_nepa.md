@@ -44,8 +44,28 @@ For this worksheet, start at the beginning of the page and work your way down in
   * Assumptions
   * Data
 
-Might be good to make a spreadsheet with all issues including categories for each one of the above stuff. 
+Might be good to make a spreadsheet with all issues including categories for each one of the above stuff.
 
+### Issue/Impact Analysis
+1. Identify Potential impact-causing elements of project alternatives.
+2. Remember impacts to both structure and function.
+3. Use impact analysis planning to determine the impact indicator that will be used to describe the affected environment and environmental consequences for each issue.
+  * Impact indicators are an element or quality that can be used as currency to describe the affected environment in preparation for assessing project impacts. Preferably quantitative, but can be qualitative.
+
+**Some pointers for analysis:**
+* Affected Environment and Environmental Consequences (and cumulative to some degree) sections should match each other in scope and detail.
+* Impact analysis indicators should be used to quantify both the affected environmental and environmental consequences.
+* Assumptions can be made, but provide rationale for those assumptions.
+
+**The Steps:**
+1. Summarize the impact-causing element ("*extending the runway would require dredge and fill of wetlands*")
+2. Provide a qualitative description of the impact. ("*this impact would include surface disturbance, dredging, and re-routing of surface hydrological connections; all of which would affect wetland function, etc.*")
+3. Give a measurement of the level of impact using the appropriate indicator ("*this would cause the loss of 40 acres of functioning wetlands habitat*")
+4. Establish the context of that impact. ("*this 40 acres represents 30 percent of the available wetlands habitat if the project area in 2 percent of the wetlands habitat in the region.*")
+  * Provide analytical conclusion interpreting the results. ("*the dredge and full of the 40 acres of wetlands habitat represents a complete loss of these resources in terms of structure and function. However, because these wetlands and hydrologicaly isolated, their loss would not impact other wetlands in the project area or the region.*")
+5. Copmare the action alternative impacts to the No Action Alternative ("*This would impact 40 more acres of wetlands habitat than the No Action Alternative*")
+
+Making a spreadsheet with all of these steps can be helpful for more complex projects.
 
 ## Tiering and Incorporate by Reference
 
@@ -70,3 +90,6 @@ Both processes take two steps:
   - Ok rationale for dismissing Issues
   - Only 25 pages
   - Good use of tables
+
+### Tools
+* [Impact Analysis Spreadsheet (.xls)]({{"notes/assets/nepa/Impact_Analysis_Plan_Worksheet.xlsm" | relative_url}})
