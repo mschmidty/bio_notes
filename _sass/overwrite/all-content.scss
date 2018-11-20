@@ -177,8 +177,10 @@ sub{
   border-radius:3px;
 }
 .post-content p.caption {
-  font-size:0.8rem;
-  margin-top:0;
+  font-size:0.9rem;
+  margin-top:-16px;
+  color:$black;
+  line-height:1.2;
 }
 .post-content h2 {
   margin-top:3rem;
