@@ -5,20 +5,21 @@ date:   2018-11-20 10:07:03 -0600
 categories: [ GIS, R, Remote Sensing ]
 ---
 
-The following note documents a proof of concept for classifying vegetation with 4 band 0.1m aerial imagery. We used sagebrush, bare ground, grass, and PJ for classes.  approximately 300 training polygons were haphazardly drawn by me in about an hour and were relatively balanced, with sagebrush being the exception (which ultimately lead to the highest error for any class).  
+The following note documents a proof of concept for classifying vegetation with 4 band 0.1m aerial imagery. We used sagebrush, bare ground, grass, and PJ for classes.  approximately 300 training polygons were used as a training data.  
 
 ## What I Learned
 ### Success
-Random forests was quite successful in classification. The largest error occurred in sagebrush, with an out of bag error of about 3%.  However, because this was a first attempt, I did not use a train and validation set.  Future iterations of this process should definitely use a more rigorous validation methodology.
+Random forests was quite successful in classification. The largest error occurred in sagebrush, with an out of bag error of about 3%.  However, because this was a first attempt, I did not use a train and validation set.  Future iterations of this process should definitely use a more rigorous validation methodology to inform model decisions.
 
 ### Failures
 Shadows presented the biggest challenge to classification.  There  are two ways to handle this:
 * **Segmentation** - We could try to segment out the shadows prior to classification, and use the shadows as a separate class.  We would need to thing about if this would through off any cover estimates.  At first thought I would say no, because it would be standardized across a tile.
 * **Adding in predictors** - I think if we used our vegetation polygons as a predictive layer random forests may be able to split the shadows.  This would also require us however to draw the shadows as part of a plant so that random forests associates the shadow with the plant/tree.[Segementation Resource](https://fickse.wordpress.com/2015/06/18/quick-and-dirty-object-based-segmentation-in-r/)
-* **Compute power** was a huge problem for this process.  One tile of imagery is about 12 GB in memory. That's about 1/3 of my 32 GB of memory.  I've heard that tensorflow, which uses the GPU, can perform random forests, but that may need to be done in python.  
+## Compute power
+Compute power was a huge limitation.  One tile of imagery is about 12 GB in memory. That's about 1/3 of my 32 GB of memory.  I've heard that tensorflow, which uses the GPU, can perform random forests, but I haven't figured out a way to do that in r.  
 
 ### Future Loops
-I do not think we have the compute power to perform this accross the entire basin. However, I do think that we could loop through each tile with something like lapply.  The next step would be to clean everything up and put the process into a function that you could then loop through.
+I do not think we have the compute power to perform this process across the entire basin. However, I do think that we could loop through each tile with something like `lapply`.  The next step would be to clean everything up and put the process into a function that you could then predict each tile individually.  I think we may need to normalize the statistics on the rasters first however.  
 
 ## Some Results
 
@@ -50,7 +51,7 @@ library(randomForest)
 library(rgdal)
 ```
 
-### Load the data
+### Load the needed datasets
 ```r
 raster<-brick("data/raster/Basin0301.tif") ## Tile to be classified.
 ## supervisor<-raster("data/raster/supervisor12N") ## didn't end up using this layer because rasters on a 0.1m scale in ArcMap can't be merged in r because of the decimal error. This applies to test raster as well.
@@ -81,21 +82,21 @@ shape@data$code<-as.numeric(shape@data$Class)
 shape@data
 ```
 
-##rasterize the shapefile
+### Rasterize the training shapefile
 ```r
 classes<-rasterize(shape, ndvi, field="code")
 plot(classes)
 ```
 
 ### Clip and mask
-First clip that aerial image to the extent of the classes layer. Then mask (use classes geometry).  
+First clip that aerial image to the extent of the classes layer (not the same as ArcMap Clip). Then mask (use classes geometry).  
 ```r
 covmask<-crop(cov, extent(classes))
 covmask2<-mask(covmask, classes)
 plot(covmask2)
 ```
 
-### Merge Classes to clipped aerial imagery.
+### Merge Training Dataset to Clipped Dataset.
 ```r
 names(classes)<-"class"
 train_brick<-addLayer(covmask2, classes)
@@ -103,7 +104,7 @@ train_brick<-addLayer(covmask2, classes)
 
 
 ### Get Values From Raster
-I will need to run this step through again to make sure it is correct.  For some reason when the aerial raster is clipped to the geometry of the training polygons, all of the clipped out cells remain as NAs (as far as I konw there is no way around this). To run random forests you need to remove the NAs. Removing the NAs took up almost all of my computers memory. I eventually got it to work, by removing everything in memory and then running the `filter(train_table2, !is.na(class))` I believe, but I can't quite remember.  To do this, I may have needed to save the `train_table` as a RDS and then re-load it after restarting R so that the machines memory was clean.
+I will need to run this step through again to make sure it is correct.  For some reason when the aerial raster is clipped to the geometry of the training polygons, all of the clipped out cells remain as NAs (as far as I konw there is no way around this). To run random forests you need to remove the NAs. Removing the NAs took up almost all of my computers memory. I eventually got it to work, by removing everything in memory and then running the `filter(train_table2, !is.na(class))` I believe, but I can't quite remember.  To do this, I may have needed to save the `train_table` as a RDS and then re-load it after restarting R so that the machines memory was clean. I'll update once I run this part again, it just takes so long (45min to an hour) I didn't have time to run it twice.
 ```r
 train_table<-getValues(train_brick) ## Takes a lot of time
 saveRDS(train_table, "data/train_table2.rds")
@@ -125,13 +126,12 @@ fit<-randomForest(as.factor(class)~.,
                   importance=TRUE,
                   ntree=200
                   )
-fit
-varImpPlot(fit)
+fit ## See the results.
+varImpPlot(fit) ## View the most important perdictors.
 saveRDS(fit, "data/forests/fit1.rds") ## Save the prediction
 ```
 
-### Prepare the datasets to Run the Prediction
-
+### Prepare raster datasets to Run the Prediction
 Format the datasets into so that the training dataset and the predicted dataset have the same layers (4 light bands and ndvi).
 
 ```r
@@ -159,7 +159,6 @@ When you write the rasters with `writeRaster` the rasters still need to be proje
 saveRDS(predicted_plot, "data/forests/predicted_raster.rds")
 saveRDS(predicted_whole, "data/forests/predicted_whole_raster.rds")
 predicted_plot2<-predicted_plot
-
 
 writeRaster(predicted_plot2, "data/raster/prediction.asc")
 writeRaster(predicted_whole, "data/raster/prediction_whole.asc")
