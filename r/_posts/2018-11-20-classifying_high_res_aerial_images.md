@@ -7,7 +7,7 @@ categories: [ GIS, R, Remote Sensing ]
 
 The following note documents a proof of concept for classifying vegetation with 4 band 0.1m aerial imagery. We used sagebrush, bare ground, grass, and PJ for classes.  approximately 300 training polygons were haphazardly drawn by me in about an hour and were relatively balanced, with sagebrush being the exception (which ultimately lead to the highest error for any class).  
 
-## Preliminary Findings
+## What I Learned
 ### Success
 Random forests was quite successful in classification. The largest error occurred in sagebrush, with an out of bag error of about 3%.  However, because this was a first attempt, I did not use a train and validation set.  Future iterations of this process should definitely use a more rigorous validation methodology.
 
@@ -41,7 +41,7 @@ An example of my training polygons.
 {: .caption}
 
 
-## R Explination
+## R Scripts
 ### Load Libraries
 ```r
 library(raster)
