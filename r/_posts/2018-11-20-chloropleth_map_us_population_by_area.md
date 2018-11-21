@@ -6,7 +6,7 @@ categories: [ GIS, R ]
 ---
 
 {::nomarkdown}
-<img src="{{"/r/assets/maps/chloropleth_county_population.jpeg" | relative_url }}"></div>
+<img src="{{"/r/assets/maps/chloropleth_county_population.jpeg" | relative_url }}">
 {:/nomarkdown}
 
 Load the libraries.
