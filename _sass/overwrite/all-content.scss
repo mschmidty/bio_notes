@@ -193,3 +193,13 @@ sub{
     color:$primary-color;
   }
 }
+
+.large-image-article{
+  .post-title, .post-meta, .dt-published, p, ol, ul, h1, h2, h3, h4, pre, .highlight {
+    max-width:$writing-width;
+    margin:0 auto 1.3rem auto;
+  }
+  ul {
+    padding-left:2em;
+  }
+}
