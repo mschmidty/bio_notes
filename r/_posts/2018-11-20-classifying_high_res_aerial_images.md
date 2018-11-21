@@ -145,7 +145,7 @@ names(test_fit_comb)<-c("b1", "b2", "b3", "b4", "ndvi") ##rename ndvi header to 
 
 ```
 
-## Run the prediction on the data subest and the whole dataset.
+### Run the prediction on the data subest and the whole dataset.
 ```r
 predicted_plot<-raster::predict(test_fit_comb, fit, OOB=T) ## Predict subset
 ##predicted_whole<-raster::predict(cov, fit, OOB=T) ## predict whole dataset - This takes over an hour with a 32GB machine.
@@ -153,8 +153,9 @@ predicted_plot<-raster::predict(test_fit_comb, fit, OOB=T) ## Predict subset
 ```
 
 
-## Save everything
+### Save everything
 When you write the rasters with `writeRaster` the rasters still need to be projected once they are pulled into ArcMap.  I'm srue there is a way to save them with a projection, but I haven't figured it out yet.
+
 ```r
 saveRDS(predicted_plot, "data/forests/predicted_raster.rds")
 saveRDS(predicted_whole, "data/forests/predicted_whole_raster.rds")
