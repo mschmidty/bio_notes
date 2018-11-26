@@ -8,7 +8,7 @@ categories: [ Machine Learning ]
 ## Machine Learning
 * [MIT Student Compiled Machine Learning Resources](https://sgfin.github.io/learning-resources/)
 
-##Statistics
+## Statistics
 * [EdX Statistics and R](https://www.edx.org/course/statistics-and-r)
 
 ## The Kitchen Sink
