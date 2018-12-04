@@ -28,7 +28,7 @@ Avalanches can occur in all mountain ranges in Colorado, on all aspects, at all 
 Be safe out there.
 
 ## The Scripts
-
+For the most up to date scripts check out the repo: [avalanche_analysis](https://github.com/mschmidty/r_projects2/tree/master/avalanche_caic)
 ```r
 library(tidyverse)
 data<-read_csv("https://raw.githubusercontent.com/mschmidty/r_projects2/master/avalanche_caic/CAIC_avalanches_1981-11-01_2018-12-02.csv")
