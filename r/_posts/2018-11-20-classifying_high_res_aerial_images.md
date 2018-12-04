@@ -7,6 +7,18 @@ categories: [ GIS, R, Remote Sensing ]
 
 The following note documents a proof of concept for classifying vegetation with 4 band 0.1m aerial imagery. We used sagebrush, bare ground, grass, and PJ for classes.  approximately 300 training polygons were used as a training data.  
 
+## Notes
+[ ] - Need to validate 50 points per predicted class to statistically validate the process.
+
+## Classes
+* Rabitbrush
+* Greasewood
+* Black sagebrush
+* Big sagebrush
+* Bare ground/Rock
+
+
+
 ## What I Learned
 ### Success
 Random forests was quite successful in classification. The largest error occurred in sagebrush, with an out of bag error of about 3%.  However, because this was a first attempt, I did not use a train and validation set.  Future iterations of this process should definitely use a more rigorous validation methodology to inform model decisions.
@@ -55,7 +67,7 @@ library(rgdal)
 ```r
 raster<-brick("data/raster/Basin0301.tif") ## Tile to be classified.
 ## supervisor<-raster("data/raster/supervisor12N") ## didn't end up using this layer because rasters on a 0.1m scale in ArcMap can't be merged in r because of the decimal error. This applies to test raster as well.
-testshape<-readOGR("data/shape", layer="test") ## A subset of Basin0301.tif so that we didn't have to run the prediciton on the whole raster.
+testshape<-readOGR("data/shape", layer="test") ## A subset of Basin0301.tif so that we didn't have to run the prediction on the whole raster.
 shape<-readOGR(dsn="data/shape", layer="supervised12N") ## Read in the classification polygons
 ##test_raster<-raster("data/raster/test_fit") ## I don't remember why I loaded this????
 ```

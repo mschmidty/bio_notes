@@ -7,6 +7,7 @@ categories: GIS
 
 The purpose of this note is to document my process for creating a model that predicts where archaeological sites are more likely to occur on our field office. You can find my R scripts [here]({{site.baseurl}}{% link r/_posts/2018-08-01-30m_sripts_For_cultural_prediction_model.md %}).
 
+
 The short version:
 * Our base dataset was known arch site locations.
 * These known locations were compared with all areas that had been surveyed for arch sites.
