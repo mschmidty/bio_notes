@@ -3,6 +3,7 @@ layout: post
 title:  "White Paper: Random Forest Cultural Model"
 date:   2018-07-31 10:07:03 -0600
 categories: GIS
+published: false
 ---
 ### Table of contents
 1. Introduction
@@ -43,4 +44,4 @@ The Tres Rios Field Office is located in southwest Colorado.  It overlaps portio
 
 Archaeological modeling is becoming a popular tool to decrease archaeological survey burdens across the US and to identify areas with high archaeological sites prior to project initiation.  In the last five years open source computer software and efforts to digitize spatial data sets have improved access to powerful predictive tools.
 
-We used Random Forests ([randomForest package in R](https://cran.r-project.org/web/packages/randomForest/index.html)) and several local datasets to train model to predict where archaelogical sites occur on the Tres Rios Field Office.
+We used Random Forests ([randomForest package in R](https://cran.r-project.org/web/packages/randomForest/index.html)) and several local datasets to train model to predict where archaeological sites occur on the Tres Rios Field Office.
