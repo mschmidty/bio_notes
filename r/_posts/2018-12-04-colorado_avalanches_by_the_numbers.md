@@ -31,7 +31,7 @@ Be safe out there.
 
 ```r
 library(tidyverse)
-data<-read_csv("C:\\Users\\mschmidt\\code\\r_projects2\\avalanche_caic\\CAIC_avalanches_1981-11-01_2018-12-02.csv")
+data<-read_csv("https://raw.githubusercontent.com/mschmidty/r_projects2/master/avalanche_caic/CAIC_avalanches_1981-11-01_2018-12-02.csv")
 ```
 
 ## Aspect Graph
