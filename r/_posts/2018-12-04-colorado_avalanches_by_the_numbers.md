@@ -26,3 +26,92 @@ The Northern San Juan are twice as dangerous as any other mountain range in Colo
 Avalanches can occur in all mountain ranges in Colorado, on all aspects, at all elevations.  
 
 Be safe out there.
+
+## The Scripts
+
+```r
+library(tidyverse)
+data<-read_csv("C:\\Users\\mschmidt\\code\\r_projects2\\avalanche_caic\\CAIC_avalanches_1981-11-01_2018-12-02.csv")
+```
+
+## Aspect Graph
+
+```r
+data%>%
+  filter(Asp!="All", Asp!= "Unknown", Asp!="U")%>%
+  group_by(Asp)%>%
+  summarize(perc=n())%>%
+  arrange(desc(perc))%>%
+  ggplot(aes(x=reorder(Asp,perc), y=perc))+
+    geom_bar(stat="identity", fill="#5089E8", width=0.8,position = position_dodge(width=0.2) )+
+    coord_flip()+
+    theme_classic()+
+    xlab("")+
+    ylab("")+
+    labs(title="Colorado Avalanches by Aspect",
+         subtitle = "Reported Avalanches in Colorado From 1981 through the winter of 2017",
+         caption = "Data From Colorado Avalanche Information Center")+
+    theme(axis.line.y=element_blank(),
+          axis.ticks.y=element_blank(),
+          text=element_text( family="Source Sans Pro", size=16),
+          plot.title=element_text(face="bold"),
+          plot.subtitle=element_text(size=12, color="#555555", family="Source Sans Pro Light"),
+          plot.caption=element_text(size=12, color="#555555"),
+          plot.background = element_rect(fill = "#f9f9f9"),
+          panel.background = element_rect(fill="#f9f9f9"))
+```
+### Elevation Chart
+```r
+positions <- c("Above Treeline", "Near Treeline", "Below Treeline")
+data%>%
+  filter( Elev!="All", Elev!="U")%>%
+  mutate(Elev_long = ifelse(Elev==">TL", "Above Treeline", ifelse(Elev=="<TL", "Below Treeline", "Near Treeline")))%>%
+  group_by(Elev_long)%>%
+  summarize(perc=n())%>%
+  arrange(desc(perc))%>%
+  ggplot(aes(x=Elev_long, y=perc))+
+    geom_bar(stat="identity", fill="#5089E8", width=0.8,position = position_dodge(width=0.2) )+
+    coord_flip()+
+    scale_x_discrete(limits = positions)+
+    theme_classic()+
+    xlab("")+
+    ylab("")+
+    labs(title="Colorado Avalanches By Elevation Range",
+         subtitle = "Reported Avalanches in Colorado From 1981 through the winter of 2017",
+         caption = "Data From Colorado Avalanche Information Center")+
+    theme(axis.line.y=element_blank(),
+          axis.ticks.y=element_blank(),
+          text=element_text( family="Source Sans Pro", size=16),
+          plot.title=element_text(face="bold"),
+          plot.subtitle=element_text(size=12, color="#555555", family="Source Sans Pro Light"),
+          plot.caption=element_text(size=12, color="#555555"),
+          plot.background = element_rect(fill = "#f9f9f9"),
+          panel.background = element_rect(fill="#f9f9f9"))
+```
+
+### Range Chart
+```r
+data%>%
+  rename(Zone=6)%>%
+  filter(Zone!=is.na(Zone))%>%
+  group_by(Zone)%>%
+  summarize(perc=n())%>%
+  arrange(desc(perc))%>%
+  ggplot(aes(x=reorder(Zone, perc), y=perc))+
+    geom_bar(stat="identity", fill="#5089E8", width=0.8,position = position_dodge(width=0.2) )+
+    coord_flip()+
+    theme_classic()+
+    xlab("")+
+    ylab("")+
+    labs(title="Colorado Avalanches by Range",
+         subtitle = "Reported Avalanches in Colorado From 1981 through the winter of 2017",
+         caption = "Data From Colorado Avalanche Information Center")+
+    theme(axis.line.y=element_blank(),
+          axis.ticks.y=element_blank(),
+          text=element_text( family="Source Sans Pro", size=16),
+          plot.title=element_text(face="bold"),
+          plot.subtitle=element_text(size=14, color="#555555", family="Source Sans Pro Light"),
+          plot.caption=element_text(size=12, color="#555555"),
+          plot.background = element_rect(fill = "#f9f9f9"),
+          panel.background = element_rect(fill="#f9f9f9"))
+```
