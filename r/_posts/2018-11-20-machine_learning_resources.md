@@ -17,7 +17,9 @@ categories: [ Machine Learning ]
 * [Distill: Writing from some of the Best in ML](https://distill.pub/)
 
 ## Statistics
-* [EdX Statistics and R](https://www.edx.org/course/statistics-and-r) - Which is part of [Data Analysis for Life Sciences Course](https://www.edx.org/xseries/data-analysis-life-sciences)
+* [EdX Statistics and R](https://www.edx.org/course/statistics-and-r)
+* [Model Selection 101, using R](https://medium.com/@peter.nistrup/model-selection-101-using-r-c8437b5f9f99)
+* [Interpreting Models](https://medium.com/@peter.nistrup/visualizing-models-101-using-r-c7c937fc5f04)
 
 ## The Kitchen Sink
 * [Data Science Glossary](https://www.kaggle.com/shivamb/data-science-glossary-on-kaggle-updated)
