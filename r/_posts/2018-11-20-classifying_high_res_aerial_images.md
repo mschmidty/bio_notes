@@ -1,23 +1,11 @@
 ---
 layout: post
-title:  "Classifying High Resolution Aerial Imagery"
+title:  "Classifying High Resolution Aerial Imagery - Part 1"
 date:   2018-11-20 10:07:03 -0600
 categories: [ GIS, R, Remote Sensing ]
 ---
 
 The following note documents a proof of concept for classifying vegetation with 4 band 0.1m aerial imagery. We used sagebrush, bare ground, grass, and PJ for classes.  approximately 300 training polygons were used as a training data.  
-
-## Notes
-[ ] - Need to validate 50 points per predicted class to statistically validate the process.
-
-## Classes
-* Rabitbrush
-* Greasewood
-* Black sagebrush
-* Big sagebrush
-* Bare ground/Rock
-
-
 
 ## What I Learned
 ### Success
@@ -52,6 +40,9 @@ The same extent as the classification raster above.
 
 An example of my training polygons.
 {: .caption}
+
+## Notes
+If we wanted to publish we would need to validate 50 points per predicted class to statistically validate the process.
 
 
 ## R Scripts
