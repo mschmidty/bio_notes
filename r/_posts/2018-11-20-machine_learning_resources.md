@@ -11,10 +11,11 @@ categories: [ Machine Learning ]
 * [MIT Student Compiled Machine Learning Resources](https://sgfin.github.io/learning-resources/)
 * [Andrew Ng's ML Course on Corsera](https://www.coursera.org/learn/machine-learning)
 * [Fast.ai](https://www.fast.ai/) - Cutting Edge of Machine learning.
-* [Amazon ML Course] - (https://aws.amazon.com/training/learning-paths/machine-learning/exam-preparation/)
+* [Amazon ML Course](https://aws.amazon.com/training/learning-paths/machine-learning/exam-preparation/)
 * [Microsoft ML](https://academy.microsoft.com/en-us/professional-program/tracks/artificial-intelligence/)
 * [Google ML Course](https://developers.google.com/machine-learning/crash-course/)
 * [Distill: Writing from some of the Best in ML](https://distill.pub/)
+* [Landscape Classification with Deep Neural Networks](https://www.mdpi.com/2076-3263/8/7/244)
 
 ## Statistics
 * [EdX Statistics and R](https://www.edx.org/course/statistics-and-r) - Which is part of [Data Analysis for Life Sciences Course](https://www.edx.org/xseries/data-analysis-life-sciences)
