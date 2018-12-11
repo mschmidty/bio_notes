@@ -5,22 +5,22 @@ date:   2018-11-20 10:07:03 -0600
 categories: R
 ---
 
-A few plots I made looking at avalanches in Colorado.  Please not I'm not an avalanche expert, so please take these interpretations with skepticism.
+A look at avalanches in Colorado.  Please not I'm not an avalanche expert, so please take these interpretations with a healthy dose of skepticism.
 
 ### Avalanche Observations by Aspect
 ![Observed Avalanches by Aspect]({{"/r/assets/avalanches/colorado_avalanches_by_aspect_2.jpeg" | relative_url }})
 
-North to southeast facing slopes appear to be the most dangerous aspects.  This confirms what we know:  snow layers that are not exposed to the sun tend to develop persistent week layers.  However it is important to note that every aspect is susceptible to slide.
+North to southeast facing are the most likely to have avalanches.  This confirms what we know:  snow layers that are not exposed to the sun tend to develop persistent week layers.  However it is important to note that avalanches occur on all aspects.
 
 ### Avalanche Observations by Elevation
 ![Observed Avalanches by Elevation]({{"/r/assets/avalanches/colorado_avalanches_by_elevation.jpeg" | relative_url }})
 
-The vast majority of avalanches occur above tree line.  Elevations at or below tree line have a similar number of avalanches. Avalanches happen at all elevations.  It would be interesting to know if there were better bins for elevations.  I wonder if areas well below tree line have fewer avalanches?
+The vast majority of avalanches occur above tree line.  Elevations at or below tree line have a similar number of avalanches.  It would be interesting to know if there is a better way to break down avalanches by elevation.  It looks to me that you could interpret this data to show that avalanches are just as likely to occur in the trees as they are above tree line.   I wonder if areas well below tree line have fewer avalanches? Regardless, avalanches occur at all elevations.
 
 ### Avalanche Observations by Mountain Range
 ![Observed Avalanches by Mountain Range]({{"/r/assets/avalanches/colorado_avalanches_by_range_2.jpeg" | relative_url }})
 
-The Northern San Juan are twice as dangerous as any other mountain range in Colorado.  It would be better if we could look at this in context of area.  The North San Juan is also probably the biggest range as Colorado Avalanche Information Center describes it.  The Front Range and Vial and Summit County also experience many Avalanches. The Front Range is similar in size to the North San Juan so you could infer that the San Northern Juans are more susceptible to avalanches than the Front Range.  Vail and Summit county, on the other hand, is less than half the size of Northern San Juan.  You could infer that Vail may be as susceptible to avalanches as the Northern San Juan.  And all of this info should probably be ignored because of reporting bias in the sample.  Far more people live in the Vail and Summit County areas than there live in the Northern San Juans. Also, area visibility could be a factor we cannot control for.  So don't read too much into this analysis.
+The Northern San Juans have twice avalanches as any other mountain range in Colorado.  However, it would be better if we could look at this in context of area.  The North San Juan is one of, if not the, biggest range according to how the Colorado Avalanche Information Center divides up the mountain ranges in Colorado.  Vial and Summit County also experience many Avalanches. But Vail and Summit county range is less than half the size of Northern San Juan.  You could infer that Vail may be as susceptible to avalanches as the Northern San Juan.  And all of this info should probably be ignored because of reporting bias in the sample.  Far more people live in the Vail and Summit County areas than there live in the Northern San Juans. Also, area visibility could be a factor we cannot control for.  So don't read too much into this analysis.
 
 ### The Takeaway
 Avalanches can occur in all mountain ranges in Colorado, on all aspects, at all elevations.  
