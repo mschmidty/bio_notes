@@ -37,4 +37,9 @@ python manage.py startapp polls
 python manage.py shell
 ```
 
-ended here [https://docs.djangoproject.com/en/2.1/intro/tutorial02/#introducing-the-django-admin]
+### Working with URLs
+* [Tutorial Basics on Views and URLs](https://docs.djangoproject.com/en/2.1/intro/tutorial03/#writing-more-views)
+* [Resources](https://docs.djangoproject.com/en/2.1/topics/http/urls/)
+
+
+ended here: [https://docs.djangoproject.com/en/2.1/intro/tutorial04/]
