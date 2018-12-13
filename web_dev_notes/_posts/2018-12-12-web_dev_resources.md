@@ -12,3 +12,6 @@ A collection of resources that I couldn't work without
 ## Web Programming
 [CSS-Tricks](https://css-tricks.com) - CSS-Tricks taught me to program.  I am forever indebted to Chris Coyier and his contributers.
 [CSS patterns for good design](https://github.com/AllThingsSmitty/css-protips)
+
+## Python
+[Googles Python Course](https://developers.google.com/edu/python/introduction)
