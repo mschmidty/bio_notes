@@ -18,7 +18,7 @@ The training polygon shapefile consists of 8 classes (it should be 7  but I acci
 
 ### The Results
 
-The out of bag (OOB) estimate of error rate was 1.85% which is pretty good.  However, the training dataset has a very imbalanced classes.  
+The out of bag (OOB) estimate of error rate was 1.85% which is pretty good.  However, the training dataset has very imbalanced classes.  
 
 | Class | Percent Cover |
 |-------------|---------------|
@@ -31,7 +31,8 @@ The out of bag (OOB) estimate of error rate was 1.85% which is pretty good.  How
 | PJ | 24.2 |
 | Sage | 2.9 |
 
-Classes were very imbalanced in the training dataset.  Both "BG_Soil" and "BG_Rock" should be combined making soild account for over 50% of the area but only 14% of the classes. {: .caption}
+Classes were very imbalanced in the training dataset.  Both "BG_Soil" and "BG_Rock" should be combined making soil account for over 50% of the area.
+{: .caption}
 
 You can see the class imbalance in the confusion matrix as well.
 
@@ -46,13 +47,13 @@ You can see the class imbalance in the confusion matrix as well.
 | PJ | 0 | 78 | 203 | 8 | 24 | 688 | 139218 | 708 | 0.012126845813790088 |
 | Sage | 0 | 247 | 1091 | 108 | 9 | 4 | 318 | 15315 | 0.10396676807863325 |
 
-The most difficult divisions for the random forests was between Black sage and sage.  Which makes a lot of sense.  About 6.3% of the time Sage was classified as black_sage, out of a total error of 10%, and about 8.7% of the time black_sage was classified as Sage, out of a total error of 16%.    
+The most difficult divisions for the random forests was between "Black_Sage" and "Sage".  Which makes a lot of sense.  About 6.3% of the time Sage was classified as Black_Sage, out of a total error of 10%, and about 8.7% of the time "Black_Sage" was classified as Sage, out of a total error of 16%.    
 
-### Making Improvements
+### Making Improvements (Iterate or Die)
 
-**Class Size:** Obviously, I need to improve the class balance.  I think the best way to do this is to both draw more training polygons in those classes with less (black_sage, sage and other_shrub) coverage.
+**Class Size:** Obviously, I need to improve the class balance.  I think the best way to do this is to both draw more training polygons in those classes with less (black_sage, sage and other_shrub) coverage and two add a balancing step in the script. Which brings me to `sampsize()`.
 
-**Sample Size** I also need to take advantage of randomForest's ability to manage sample size with `sampsize()`.  I have had a hard time automating the sample size to be used in the function so that I don't have to find the smallest class and then manually put in that number as many times as there are classes. For instance if I had five classes and the minimum class size was 500 pixels I would need to set sampsize to be `sampsize(500,500,500,500,500)`.  I need to figure this out.
+**Sample Size** I also need to take advantage of randomForest's ability to manage sample size with `sampsize()`.  I have had a hard time automating the sample size to be used in the function so that I don't have to find the smallest class and then manually put in that number as many times as there are classes. For instance if I had five classes and the minimum class size was 500 pixels I would need to set sampsize to be `sampsize(500,500,500,500,500)`.  Or I could sample the combined training set by randomly sampling pixels before I run random forests.
 
 **Segmentation** - I still think segmentation has a role to play in this classification process, but my first attempt at segmentation was a complete failure.  I need to find a tutorial on classification before I can make any improvement.  
 
@@ -60,6 +61,8 @@ The most difficult divisions for the random forests was between Black sage and s
 * Soils data
 * Elevation type data (slope, flow direction, terrain roughness, etc. )
 * Landfire data, which is essentially landsat data that has been classified.
+
+But if this process is going to scale to the rest of the state, the datasources that I use need to be available to everyone.
 
 ## Scripts
 
@@ -103,7 +106,7 @@ require(randomForest)
 # -- convert values to data.frame, the above step may be redundant.
 # -- filter na's, because when you clip a raster to a geometry, the pixels outside of the geometry are still there but they have values of NA.  This step is the most memory intensive step in the whole process.
 # -- save the RDS to be modeled in random forests. There is definitely a better way to do this.....
-# -- rm data_to_be_modeled otherwize each iteration will fail on the remove NA step. 
+# -- rm data_to_be_modeled otherwize each iteration will fail on the remove NA step.
 
 
 subset_training_data_from_tile<- function( tile_name, folder_of_tiles, file_path_to_shape){

@@ -147,6 +147,9 @@ sub{
 }
 .species-post.post {
   padding-top:0;
+  .page-header{
+    height:50vh;
+  }
   .sc-name{
     color:$yellow;
     font-size:1.5rem;
