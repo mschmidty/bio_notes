@@ -15,6 +15,7 @@ Random forests was quite successful in classification. The largest error occurre
 Shadows presented the biggest challenge to classification.  There  are two ways to handle this:
 * **Segmentation** - We could try to segment out the shadows prior to classification, and use the shadows as a separate class.  We would need to thing about if this would through off any cover estimates.  At first thought I would say no, because it would be standardized across a tile.
 * **Adding in predictors** - I think if we used our vegetation polygons as a predictive layer random forests may be able to split the shadows.  This would also require us however to draw the shadows as part of a plant so that random forests associates the shadow with the plant/tree.[Segementation Resource](https://fickse.wordpress.com/2015/06/18/quick-and-dirty-object-based-segmentation-in-r/)
+
 ## Compute power
 Compute power was a huge limitation.  One tile of imagery is about 12 GB in memory. That's about 1/3 of my 32 GB of memory.  I've heard that tensorflow, which uses the GPU, can perform random forests, but I haven't figured out a way to do that in r.  
 
