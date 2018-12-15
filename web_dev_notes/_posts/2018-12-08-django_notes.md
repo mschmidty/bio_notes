@@ -31,6 +31,11 @@ django-admin startproject name_of_project
 python manage.py startapp polls
 ```
 
+### Run a server
+```bash
+python manage.py runserver
+```
+
 ### Start a shell for DB actions
 
 ```bash
@@ -42,4 +47,4 @@ python manage.py shell
 * [Resources](https://docs.djangoproject.com/en/2.1/topics/http/urls/)
 
 
-ended here: [https://docs.djangoproject.com/en/2.1/intro/tutorial04/]
+ended here: [https://docs.djangoproject.com/en/2.1/intro/tutorial04/#use-generic-views-less-code-is-better] Might be bugs up to the top.
