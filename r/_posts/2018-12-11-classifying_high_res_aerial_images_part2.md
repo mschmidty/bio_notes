@@ -6,7 +6,7 @@ categories: [ GIS, R, Remote Sensing ]
 ---
 
 
-I have been attempting to use random forests to classify high resolution aerial imagery. [Part one]({% post_url 2018-11-20-classifying_high_res_aerial_images %}) of this post series was my first attempt. The aerial imagery dataset that I am working on is made up of many ortho tiles that I need to classify into vegetation categories.  The first attempt was to classify vegetation on one tile.  This note documents classifying vegetation across tiles.
+I have been attempting to use random forests to classify high resolution aerial imagery. [Part one]({% post_url r/2018-11-20-classifying_high_res_aerial_images %}) of this post series was my first attempt. The aerial imagery dataset that I am working on is made up of many ortho tiles that I need to classify into vegetation categories.  The first attempt was to classify vegetation on one tile.  This note documents classifying vegetation across tiles.
 
 See the r script below.
 
