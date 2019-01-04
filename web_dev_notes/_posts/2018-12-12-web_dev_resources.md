@@ -18,3 +18,6 @@ A collection of resources that I couldn't work without
 
 ## Python
 [Googles Python Course](https://developers.google.com/edu/python/introduction)
+
+## Kitchen Sink
+[A Big Picture, Thesaurus, and Taxonomy of Modern JavaScript Web Development](https://github.com/dexteryy/spellbook-of-modern-webdev)
