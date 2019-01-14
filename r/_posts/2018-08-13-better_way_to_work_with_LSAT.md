@@ -8,7 +8,7 @@ categories: [R, Landsat, GIS]
 My last post was about working with the r `getlandsat` package to work with landsat data from NASA and the USGS.  This post will be a brief refinement on that process.
 
 ## Finding out what dataset you want?
-With this method, your first step is figuring out what tyle you want from the Landsat dataset. The convention relies on the (World Reference System 2)[https://landsat.usgs.gov/what-worldwide-reference-system-wrs], for which a grid kml can be found (here)[https://landsat.usgs.gov/pathrow-shapefiles] that you can view in Google Earth.
+With this method, your first step is figuring out what tyle you want from the Landsat dataset. The convention relies on the [World Reference System 2](https://landsat.usgs.gov/what-worldwide-reference-system-wrs), for which a grid kml can be found [here](https://landsat.usgs.gov/pathrow-shapefiles) that you can view in Google Earth.
 
 In my case I needed tile path = 036 and row = 033.
 
@@ -79,3 +79,6 @@ par(mfrow = c(1,2))
 plotRGB(landsat, r=3, g=2, b=1, axes=TRUE,  stretch="hist", main="Landsat True Color Composite")
 plotRGB(landsat, r=5, g=4, b=3, axes=TRUE,  stretch="lin", main="Lansat False Color Composite")
 ```
+
+## Resources
+* [University of Colorado Tutorial on working with landsat](https://www.earthdatascience.org/courses/earth-analytics/multispectral-remote-sensing-data/landsat-data-in-r-geotiff/)

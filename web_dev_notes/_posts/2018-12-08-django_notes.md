@@ -73,6 +73,7 @@ python manage.py shell
 python manage.py startapp polls
 ```
 2. Make a view. The very basics:
+
 ```python
 from django.http import HttpResponse
 
@@ -102,3 +103,5 @@ urlpatterns = [
 ```
 
 ended here: [https://docs.djangoproject.com/en/2.1/intro/tutorial04/#use-generic-views-less-code-is-better] Might be bugs up to the top.
+
+#### MAKE A CHANGE 
