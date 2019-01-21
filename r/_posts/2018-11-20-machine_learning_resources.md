@@ -37,3 +37,4 @@ categories: [ Machine Learning ]
 
 ## Python
 [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/01.01-help-and-documentation.html)
+[Problem solving with Algorithms and Data Structures using Python](https://interactivepython.org/runestone/static/pythonds/index.html)

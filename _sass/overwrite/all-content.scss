@@ -211,9 +211,14 @@ sub{
 }
 
 .large-image-article{
-  .post-title, .post-meta, .dt-published, p, ol, ul, h1, h2, h3, h4, pre, .highlight {
+  .post-title, .post-meta, .dt-published, p, ol, ul, h1, h2, h3, h4 {
     max-width:$writing-width;
+    width: 95%;
     margin:0 auto 1.3rem auto;
+  }
+  .highlight, pre {
+    max-width: $writing-width;
+    margin: 0 auto 1.3rem auto;
   }
   ul {
     padding-left:2em;

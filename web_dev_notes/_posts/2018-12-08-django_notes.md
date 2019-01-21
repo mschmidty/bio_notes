@@ -103,5 +103,3 @@ urlpatterns = [
 ```
 
 ended here: [https://docs.djangoproject.com/en/2.1/intro/tutorial04/#use-generic-views-less-code-is-better] Might be bugs up to the top.
-
-#### MAKE A CHANGE 
