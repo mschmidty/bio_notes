@@ -6,30 +6,18 @@
 <body>
 
   {%- include header.html -%}
-  <div class="home-banner" style="background:url({{"/assets/images/sleeping_ute_banner.jpg"| relative_url }}) no-repeat center center scroll; background-size:cover;">
-    <div>
-      <h1>Mike's Hub</h1>
-      <p>Notes, projects and such...On everything!</p>
-    </div>
-  </div>
 
   <main class="home page-content" aria-label="Content">
-    <div class="entry-content">
 
-      <section class="primary-section primary-section-first wrapper">
-        <h1>Recent</h1>
-        <p>My latest notes from every subject.</p>
+      <section class="primary-section primary-section-first">
         <ul class="article-list">
           {% assign count = 0 %}
           {% for post in site.posts %}
           {% assign count = count | plus:1 %}
           <li>
-
-            <sub>{{ post.date | date: '%B %d, %Y' }}</sub>
-            <h3><a href="{{ post.url | relative_url}}">{{ post.title }}</a></h3>
-
+            <h1 class="post-link-title"><a href="{{ post.url | relative_url}}">{{ post.title }}</a></h1>
+            <sub class="post-date">{{ post.date | date: '%B %d, %Y' }}</sub>
             {{ post.excerpt }}
-
           </li>
           {% if count == 6 %}{% break %}
           {% endif %}
@@ -38,25 +26,9 @@
           {% endfor %}
         </ul>
       </section>
+      <section class="home-info">
 
-      <section class="primary-section">
-        <h1>Weather</h1>
-        <script type='text/javascript' src='https://darksky.net/widget/default/37.4738818,-108.5045356/us12/en.js?width=100%&height=175&title=Dolores, Co&textColor=333333&bgColor=transparent&transparency=true&skyColor=333333&fontFamily=Default&customFont=&units=us&htColor=ff9781&ltColor=C7C7C7&displaySum=yes&displayHeader=yes'></script>
-        <script type='text/javascript' src='https://darksky.net/widget/default/35.33,-94.39999999999999/us12/en.js?width=100%&height=175&title=Basin, CO&textColor=333333&bgColor=transparent&transparency=true&skyColor=333333&fontFamily=Sans-Serif&customFont=&units=us&htColor=ff9781&ltColor=C7C7C7&displaySum=yes&displayHeader=yes'></script>
-
-        <h3>Other Weather Resources</h3>
-        <ul>
-          <li> <a href="https://forecast.weather.gov/MapClick.php?CityName=Dolores&state=CO&site=GJT&textField1=37.4745&textField2=-108.498&e=0#.W2ISHdJKiUk">NOAA Dolores</a></li>
-          <li> <a href="https://forecast.weather.gov/MapClick.php?lon=-108.53736877441405&lat=38.0686358867043#.W2ISZ9JKiUk">NOAA Basin</a> </li>
-          <li> <a href="http://avalanche.state.co.us/index.php">Caic Southern San Juan</a></li>
-        </ul>
       </section>
-
-
-
-
-
-    </div>
   </main>
 
   {%- include footer.html -%}

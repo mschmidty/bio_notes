@@ -1,18 +1,14 @@
 ---
 layout: default
 ---
-<header class="page-header" style="background:url({{ page.image | prepend: site.baseurl }}) no-repeat center center scroll; background-size:cover;">
-  <div>
-    <h1 class="post-title" style="color:#{{ page.color | escape }};">{{ page.title | escape }} </h1>
-    <p>{{ page.tagline | escape}}</p>
-  </div>
-</header>
-<div class="wrapper ">
-  <article class="post">
+<main class="page-content">
+  <header class="page-header" >
+      <h1 class="page-title" >{{ page.title | escape }} </h1>
+      <p class="tagline">{{ page.tagline | escape}}</p>
+  </header>
+  <section>
+    {{ content }}
+  </section>
 
-    <div class="post-content">
-      {{ content }}
-    </div>
 
-  </article>
-</div>
+</main>
