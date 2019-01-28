@@ -6,6 +6,7 @@ published: true
 categories: [WebDev]
 ---
 A collection of resources that I couldn't work without
+
 ## Design
 * [Compendium of Design Resources](https://github.com/gztchan/awesome-design)
 
@@ -18,4 +19,7 @@ A collection of resources that I couldn't work without
 * [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
 
 ## Python
-* [Googles Python Course](https://developers.google.com/edu/python/introduction)
+[Googles Python Course](https://developers.google.com/edu/python/introduction)
+
+## Kitchen Sink
+[A Big Picture, Thesaurus, and Taxonomy of Modern JavaScript Web Development](https://github.com/dexteryy/spellbook-of-modern-webdev)

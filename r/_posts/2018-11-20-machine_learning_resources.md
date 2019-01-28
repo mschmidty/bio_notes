@@ -4,6 +4,8 @@ title:  "Data Resources"
 date:   2018-11-20 10:07:03 -0600
 categories: [ Machine Learning ]
 ---
+A collection of resources on data science and machine learning.
+
 
 ## Machine Learning
 * [R Studio Keras Tutorial](https://keras.rstudio.com/)
@@ -37,3 +39,4 @@ categories: [ Machine Learning ]
 
 ## Python
 [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/01.01-help-and-documentation.html)
+[Problem solving with Algorithms and Data Structures using Python](https://interactivepython.org/runestone/static/pythonds/index.html)

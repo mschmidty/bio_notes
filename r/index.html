@@ -1,19 +1,7 @@
 ---
-layout: page
+layout: article-list
 title: R Scripts
-tagline: My attempt at organizing numbers to make sense of the world. 
+tagline: My attempt at organizing numbers to make sense of the world.
 permalink: /r/
-color: f2ff68
-image: /assets/images/banners/r_scripts_banner.jpg
+category: r
 ---
-
-<ul class="article-list">
-{% for post in site.categories.r %}
-  <li>
-    <sub>{{ post.date | date: '%B %d, %Y' }}</sub>
-    <h3><a href="{{ post.url | relative_url}}">{{ post.title }}</a></h3>
-    {{ post.excerpt }}
-  </li>
-
-{% endfor %}
-</ul>

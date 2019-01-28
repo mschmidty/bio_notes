@@ -1,8 +1,8 @@
 ---
 layout: large_image_post
 title:  "Raster Distance Calculations"
-date:   2018-12-1 10:07:03 -0600
-categories: [ GIS, R, Remote Sensing ]
+date:   2018-12-18 10:07:03 -0600
+categories: [ GIS, R ]
 ---
 
 {::nomarkdown}

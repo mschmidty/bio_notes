@@ -1,18 +1,7 @@
 ---
-layout: page
+layout: article-list
 title: Notes
 tagline: Notes on projects I'm working on at work and on the side.
 permalink: /notes/
-image: /assets/images/banners/notes_banner.jpg
-color: ff6d8a
+category: notes
 ---
-
-<ul class="article-list">
-  {% for post in site.categories.notes %}
-  <li>
-    <sub>{{ post.date | date: '%B %d, %Y' }}</sub>
-    <h3><a href="{{ post.url | relative_url}}">{{ post.title }}</a></h3>
-    {{ post.excerpt }}
-  </li>
-  {% endfor %}
-</ul>

@@ -1,14 +1,15 @@
-@import url('https://fonts.googleapis.com/css?family=PT+Serif:400,700');
-
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700');
-$h-font:"PT Serif", serif;
-$h2-font:"Source Sans Pro", sans-serif;
-$b-font: "PT serif", serif;
-$font-size:1.1rem;
+@import url('https://fonts.googleapis.com/css?family=Sarabun:300,500');
+$h-font:"Sarabun", sans-serif;
+$h2-font:"Sarabun", sans-serif;
+$b-font: "Sarabun", serif;
+$font-size:1.15rem;
+$body-font-weight:300;
+$header-font-weight:500;
+$header-font-weight-bold:700;
 body{
   font-family:$h-font;
   font-size:18px;
-  font-weight:400;
+  font-weight:$header-font-weight;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
      -moz-font-feature-settings: "kern" 1;
@@ -19,21 +20,22 @@ body{
 
 }
 .site-header, .home-banner h1, .post-title{
-  font-family:"Source Sans Pro", sans-serif;
+  font-family:$h-font;
 }
 h1, .post-content h1 {
   font-size:2.5rem;
-  font-weight:700;
+  font-weight:$header-font-weight;
   font-family:$h-font;
 }
+
 h2, .post-content h2{
   font-size:2.5rem;
-  font-weight:700;
+  font-weight:$header-font-weight;
   margin:1.3rem auto 0.1rem auto;
   font-family:$h-font;
 }
 h3, .post-content h3 {
-  font-family:$b-font;
+  font-family:$h-font;
   font-size:1.3rem;
   margin:1rem auto 0.1rem auto;
   line-height:1.2;
@@ -41,11 +43,15 @@ h3, .post-content h3 {
   font-weight:bold;
   color:$black;
 }
-p {
+p, ul, ol {
   font-size:$font-size;
   font-family:$b-font;
   margin-bottom:1.3rem;
   line-height:1.8rem;
+  font-weight:$body-font-weight;
+}
+a, ul, ol, sub, {
+  font-family: $b-font;
 }
 pre{
   background:#fdfdfd;
@@ -59,6 +65,7 @@ pre{
 }
 ul {
   font-size:$font-size;
+  font-weight:$body-font-weight;
 }
 
 blockquote {
