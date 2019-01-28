@@ -47,6 +47,16 @@ As technology increases, Archaeological modeling is becoming a popular tool to d
 We used Random Forests ([randomForest package in R](https://cran.r-project.org/web/packages/randomForest/index.html)) and several state and local datasets to train a model to predict where archaeological sites occur on the Tres Rios Field Office. The model predicted archaeology sites with **####GiveFinalPrediction###** accuracy, but predicted areas without arch sites with **######Give final Accuracy######** accuracy.  This imbalance was intentional. We weighted the model by altering sample class sample sizes to over predict arch sites because for practical and legal purposes it was important to capture as many archaeological sites as possible.  **Give the out of Bag error as well somewhere**.
 
 ## Methods
-We used the used [ESRI ArcMap](http://desktop.arcgis.com/en/arcmap/) geographic information system (GIS) software and the statistical computing software [R](https://www.r-project.org/) to create our model dataset.  
+We used a variety of boilogical, geological and hydrological data sources for our prediction. We used [ESRI ArcMap](http://desktop.arcgis.com/en/arcmap/) geographic information system (GIS) software and the statistical computing software [R](https://www.r-project.org/) to create our model datasets on the maintained by the Colorado BLM State Office's corporate database.
+
+To determine which datasets would best predict where sites occur we relied on the literature, local archaeologist expertise, and local biologists.  Largely our choices about what data to use for the model were limited to what datasets were available to us. Ultimately our datasets are of varying quality, which many times is the case when using large spatial datasets.
+
 
 ![Data Sources for Model]({{ "/notes/assets/arch_predict/data_sources.jpg" | relative_url }})
+
+### Hydrology
+
+I used the NHD Flowline data and separated the data into two categories.
+
+1. **Perennial Data** - Selected segments with FCode of Artificial Flow path (#: 55800) and  StreamRiver: Hydrographic Category - Perennial. I selected artificial flow path because all damned rivers are considered artificial flow paths.  However, many small random segments are also considered artificial flow paths in the dataset. To remove these segments which are most often associated with private property water sources we removed all segments without a name.  This is an imperfect process but it allowed us to consider the large rivers as perennial and did not include many small random segments.
+2. **Intermittent Streams** - Intermittent streams were just a subset of all data that has an FCode of StremRiver: Hydrographic Category - Intermittent.

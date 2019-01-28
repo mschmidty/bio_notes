@@ -7,14 +7,15 @@ categories: [WebDev]
 ---
 A collection of resources that I couldn't work without
 ## Design
-[Compendium of Design Resources](https://github.com/gztchan/awesome-design)
+* [Compendium of Design Resources](https://github.com/gztchan/awesome-design)
 
 ## Web Programming
-[CSS-Tricks](https://css-tricks.com) - CSS-Tricks taught me to program.  I am forever indebted to Chris Coyier and his contributers.
-[CSS patterns for good design](https://github.com/AllThingsSmitty/css-protips)
+* [CSS-Tricks](https://css-tricks.com) - CSS-Tricks taught me to program.  I am forever indebted to Chris Coyier and his contributers.
+* [CSS patterns for good design](https://github.com/AllThingsSmitty/css-protips)
 
 ## Javascript
-[33 Concepts Every JavaScript Developer Should Know](https://github.com/leonardomso/33-js-concepts)
+* [33 Concepts Every JavaScript Developer Should Know](https://github.com/leonardomso/33-js-concepts)
+* [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
 
 ## Python
-[Googles Python Course](https://developers.google.com/edu/python/introduction)
+* [Googles Python Course](https://developers.google.com/edu/python/introduction)
