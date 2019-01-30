@@ -2,6 +2,7 @@
 ----Variables and Mixins
 -----------------------------------------------------*/
 $writing-width:700px;
+$content-max-width:1100px;
 
 .chart {
   max-width:100%;
@@ -17,11 +18,11 @@ $writing-width:700px;
   border-bottom:2px solid $dark-light-grey;
 }
 .site-title{
-  font-weight:700;
+  font-weight:$header-font-weight-bold;
 }
 .site-nav .page-link{
   color:$black;
-  font-weight:300;
+  font-weight:$body-font-weight;
 }
 .site-header-logo img{
   width:40px;
@@ -62,17 +63,34 @@ nav.site-nav{
 /*-----------------------------------------------------
 ----Page
 -----------------------------------------------------*/
+
+.page-content {
+  max-width:$content-max-width;
+  width:95%;
+  margin:0 auto;
+}
 .flex-layout{
   display:flex;
   flex-wrap: wrap;
+  justify-content:space-between;
 }
 .main-sidebar{
   padding-top:65px;
+  flex-basis:300px;
 }
 .sidebar-content {
-  border-top:3px solid $yellow;
-  background:$light-grey;
+  border:1px solid $dark-light-grey;
+  border-top:4px solid $yellow;
   padding:1.5rem;
+
+}
+.link-icons{
+  padding: 1.5rem;
+  ul{
+    list-style-type:none;
+    margin-left:0;
+    padding-left:0;
+  }
 }
 ul.article-list {
   list-style-type: none;
@@ -123,12 +141,7 @@ sub{
   color:$grey;
   font-weight:300;
 }
-/*Home Page*/
-.page-content {
-  max-width:1000px;
-  width:95%;
-  margin:0 auto;
-}
+
 
 
 /*-----------------------------------------------------
