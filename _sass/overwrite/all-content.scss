@@ -62,28 +62,17 @@ nav.site-nav{
 /*-----------------------------------------------------
 ----Page
 -----------------------------------------------------*/
-section.primary-section{
-  width:100%;
-  padding:50px 0;
-  &:nth-of-type(2n){
-    background:$light-grey;
-  }
-  >h1 {
-    font-size:6rem;
-    line-height:6rem;
-    font-family:$h2-font;
-    text-align:center;
-  }
-  >p{
-    color:$grey;
-    text-align:center;
-  }
+.flex-layout{
+  display:flex;
+  flex-wrap: wrap;
 }
-.primary-section-first{
-
-  background:$background-color;
-  //box-shadow:4px 4px 25px rgba(0,0,0,0.5);
-  margin-bottom:50px;
+.main-sidebar{
+  padding-top:65px;
+}
+.sidebar-content {
+  border-top:3px solid $yellow;
+  background:$light-grey;
+  padding:1.5rem;
 }
 ul.article-list {
   list-style-type: none;
@@ -104,12 +93,12 @@ ul.article-list {
       color: $black;
     }
   }
-  .post-date{
-    font-size: 1.1rem;
-    font-weight:300;
-    display:block;
-    margin-bottom:10px;
-  }
+}
+.post-date{
+  font-size: 1.1rem;
+  font-weight:300;
+  display:block;
+  margin-bottom:10px;
 }
 .page-header {
   max-width:100%;
@@ -149,17 +138,10 @@ sub{
 .post {
   padding-top:3.5rem;
 }
-.post-meta{
-  text-align:center;
-  font-family:$h2-font;
+.post-title{
+  font-size:$post-title-size;
 }
-.dt-published {
-  color:$background-color;
-  font-size:1rem;
-  background:$primary-color;
-  padding:.35rem;
-  border-radius:3px;
-}
+
 .post-content p.caption {
   font-size:0.9rem;
   margin-top:-16px;

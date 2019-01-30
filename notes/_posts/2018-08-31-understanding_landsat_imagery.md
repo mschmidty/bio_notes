@@ -33,7 +33,7 @@ From Wikipedia:
 The last two bands are at 100m resolution and both in infrared.
 
 ## How to get the data.
-There are many ways to download landsat data.  The most useful method that I have found I wrote about [here]({{ site.baseurl }}{% post_url /notes/2018-08-13-better_way_to_work_with_LSAT %}).  It uses the command line tool `wget` and imagery stored on the Amazon AWS.
+There are many ways to download landsat data.  The most useful method that I have found I wrote about [here]({{ "/notes/2018-08-13-better_way_to_work_with_LSAT" | relative_url }}).  It uses the command line tool `wget` and imagery stored on the Amazon AWS.
 
 You can also use the [USGS Earth Explorer](https://earthexplorer.usgs.gov/), but when I tried it the tool was complicated and confusing.  But just in case, here is a [youtube tutorial on how to use Earth Explorer](https://www.youtube.com/watch?v=w4ZzqX5_W0o) just in case that seems like an route.
 
