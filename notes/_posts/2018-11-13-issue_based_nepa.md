@@ -9,11 +9,17 @@ published: true
 NEPA, the good parts!
 
 ## Issues
+
+Issues drive the NEPA process.  At the beginning of any NEPA analysis, a thorough discussion of and a clear identification of issues can greatly improve the quality of the final NEPA document. Your issues should drive alternatives.
+
+### What is an issue
+
 > "...an issue is a point of disagreement, debate, or dispute with a proposed action based on some anticipate environmental effect...An issue: 1) has a cause and effect relationship with the proposed action or alternatives. 2) is within the scope of the analysis 3) has not been decided by law, regulation, or previous decision. 4) is amenable to scientific analysis rather than conjecture." **(BLM NEPA Handbook - Pg 40)**
 
 Not everything brought up during scoping is an issue. Issues should be limited to:
->"Issue[s]...necessary to make a reasoned choice. [If it] is significant, or analysis is necessary to determine significance."
-* "is there a disagreement about the best way to use a resource or resolve an unwanted resource condition."
+>"Issue[s]...necessary to make a reasoned choice. [If it] is significant, or analysis is necessary to determine significance... is there a disagreement about the best way to use a resource or resolve an unwanted resource condition."
+
+### Examples
 
 **Example 1:** "What would be the effect of the alternatives on sage-grouse nesting?"
 **Example 2:** "How will critical deer winter range be affected by the Proposed Action and Alternatives?"
@@ -29,9 +35,9 @@ Schema for identifying true issues:
 4. Preliminary issues = remaining unaddressed potentially significant impacts.
 
 ### Issue Identification and Analysis Method
-For each issue with a potential impact positive or negative, complete a worksheet. If the issue/resource is not present or present but would not be impacted, a worksheet does not need to be completed.
+For each issue with a potential impact, positive or negative, complete a worksheet. If the issue/resource is not present or present but would not be impacted, a worksheet does not need to be completed.
 
-For this worksheet, start at the beginning of the page and work your way down in order. Once the worksheet is completed, create an outline for your impact analysis and conduct the analysis based on the methodology you just outlined.
+For a worksheet, start at the beginning of the list below and work your way down in order. Once the worksheet is completed, create an outline for your impact analysis and conduct the analysis based on the methodology and rational layout out in the process.
 
 1. Proposed Action
 2. Impact-Causing Element (ICE)
@@ -67,6 +73,22 @@ Might be good to make a spreadsheet with all issues including categories for eac
 
 Making a spreadsheet with all of these steps can be helpful for more complex projects.
 
+## Alternatives
+The only alternative that is required is the No Action, in addition to the proposed action.
+
+### The No Action
+The no action alternative is the only alternative the does not have to respond to the proposed action.  Instead the no action should act as a baseline.  There is some argument about how to handle the no action for continuing actions (actions that are already occurring on the ground, and are being altered). You can find more on continueing actions below or [here](https://www.researchgate.net/publication/223511970_Defining_the_no-action_alternative_for_National_Environmental_Policy_Act_analyses_of_continuing_actions).
+
+The BLM recommends handling the no action as follows:
+* **For Land Use Planning Action** - continue to implement the management direction in the land use plan.
+* **For internally generated implementation actions** - no action is to not take the action.
+* **For externally generated proposals or applications** - no action is to reject the proposal or deny the application.
+
+### Action alternatives
+Alternatives should be driven by issues.  Meaning that, alternatives should be developed to solve issues identified in internal and external scoping.  For example: if Big Game winter range disturbance is an issue, but putting a timing limitation on recreation is unpopular for the public, one alternative could not include the timing limitation and another alternative could have a timing limitation.  Both alternatives solve an issue (issue 1: big game winter range disturbance, issue 2: public wants access year round).  Remember though that the goal of developing alternatives, however, is that the decision maker, through the development and analysis of reasonable alternatives, has the information to make an informed decision and the public is informed of potential effects to the human environment. 
+
+The key to alternatives, though, is not to solve every problem or issue, but instead to consider a reasonable number of alternatives.  For more complex projects it may be necessary to develop more alternatives, while for simpler projects it may be reasonable to only develop and analyze fewer alternatives.
+
 ## Tiering and Incorporate by Reference
 
 **Tiering:** is using the coverage of general matters in a broader NEPA documents in subsequent narrower NEPA documents.
@@ -80,6 +102,15 @@ Both processes take two steps:
 1. Group and lump issues.
 2. Look at impact causing elements (ICE) that are relevant to each group.
 3. Impact characteristic.
+
+## NEPA Court Cases
+* [NEPA court cases (2005)](https://ceq.doe.gov/docs/laws-regulations/NEPA_Cases_2005_NAEP_paper.pdf)
+* [NEPA in the courts - are federal agencies complying with NEP](http://www.lawseminars.com/materials/08SEPAAZ/sepaaz%20m%20Comer%202-11.pdf)
+* [Defining the No-Action Alternative for National Environmental Policy Act Analysis of Continueing Actions](https://www.researchgate.net/publication/223511970_Defining_the_no-action_alternative_for_National_Environmental_Policy_Act_analyses_of_continuing_actions)
+  - "Confusion often occurs in conducting...(NEPA) analyses of continuing actions, because it is not clear whether the appropriate deﬁnition of the no-action alternative is to discontinue the activity or continue the activity without change."
+  - "CEQ introduced the speciﬁc requirement for assessing the no-action alternative in 40 CFR 1502.14(d)and 1508.25(b), but the regulations neither deﬁne “no-action” alternative nor explain its purpose"
+  - Government agencies handle the no action for continuing actions in three ways: 1) they do not include a no action, 2) they include a no action that that just continues the current action, and 3) they define the no-action as either continuing or discontinuing the current action.
+  - The BLM NEPA handbook (as of the writing of this article in 1997) recommended that the no action be defined as what is happening on the ground currently.
 
 ## Resources
 ### Good Examples
