@@ -44,7 +44,7 @@ Good to do this at the very beginning of the site.
 python manage.py migrate
 ```
 
-If you have a new model you should runthis first:
+If you have a new model you should run this first:
 ```bash
 python manage.py makemigrations
 ```
@@ -67,12 +67,12 @@ python manage.py shell
 * [Tutorial Basics on Views and URLs](https://docs.djangoproject.com/en/2.1/intro/tutorial03/#writing-more-views)
 * [Resources](https://docs.djangoproject.com/en/2.1/topics/http/urls/)
 
-## Steps
-1. Create an app:
+## Steps for starting an app
+### Create an app:
 ```bash
 python manage.py startapp polls
 ```
-2. Make a view. The very basics:
+### Make a view. The very basics:
 
 ```python
 from django.http import HttpResponse
@@ -81,7 +81,7 @@ def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")
 ```
 
-3. Create a url for the view: app/views.py (may need to create the file)
+### Create a url for the view: app/views.py (may need to create the file)
 ```python
 from django.urls import path
 
@@ -91,7 +91,8 @@ urlpatterns = [
     path('', views.index, name='index'),
 ]
 ```
-Then poin the root `urls.py` file to the app `urls.py`.  the root/urls.py file should look like this:
+
+Then point the root `urls.py` file to the app `urls.py`.  the root/urls.py file should look like this:
 ```python
 from django.contrib import admin
 from django.urls import include, path
@@ -101,5 +102,3 @@ urlpatterns = [
     path('herds/', include('herds.urls')),
 ]
 ```
-
-ended here: [https://docs.djangoproject.com/en/2.1/intro/tutorial04/#use-generic-views-less-code-is-better] Might be bugs up to the top.

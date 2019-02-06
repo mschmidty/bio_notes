@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Data Resources"
+title:  "Data Science and Programming Resources"
 date:   2018-11-20 10:07:03 -0600
 categories: [ Machine Learning ]
 ---

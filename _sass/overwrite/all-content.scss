@@ -39,9 +39,9 @@ body {
 }
 .entry-content {
   p, h1, h2, h3, h4, sub, ul {
-    width:$writing-width;
+    width:95%;
     display:block;
-    max-width:95%;
+    max-width:$writing-width;
     margin:0 auto;
   }
   ul{
@@ -73,6 +73,7 @@ nav.site-nav{
   display:flex;
   flex-wrap: wrap;
   justify-content:space-between;
+  width:100%;
 }
 .main-sidebar{
   padding-top:65px;
@@ -95,13 +96,20 @@ nav.site-nav{
 ul.article-list {
   list-style-type: none;
   padding-left:0;
+  width:95%;
   max-width:700px;
   margin-left:0;
   >li{
     padding:1.75rem 0;
     border-bottom:2px solid $dark-light-grey;
+    max-width:100%;
     &:last-of-type{
       border-bottom:none;
+    }
+    h1, sub, p {
+      position:relative;
+      max-width:100%;
+      display:block;
     }
   }
   .post-link-title{
@@ -112,6 +120,11 @@ ul.article-list {
     }
   }
 }
+.left-column-main{
+  position: relative;
+  max-width: $writing-width;
+  width:95%;
+}
 .post-date{
   font-size: 1.1rem;
   font-weight:300;
@@ -119,9 +132,9 @@ ul.article-list {
   margin-bottom:10px;
 }
 .page-header {
-  max-width:100%;
   margin-bottom:2rem;
   width:$writing-width;
+  max-width:95%;
 }
 .page-title {
   font-size:4rem;
