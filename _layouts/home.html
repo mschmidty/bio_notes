@@ -8,27 +8,42 @@
   {%- include header.html -%}
 
   <main class="home page-content" aria-label="Content">
+    <div class="flex-layout">
+      <div class="left-column-main">
+        <section>
+          <ul class="article-list">
+            {% assign count = 0 %}
+            {% for post in site.posts %}
+            {% assign count = count | plus:1 %}
+            <li>
+              <h1 class="post-link-title"><a href="{{ post.url | relative_url}}">{{ post.title }}</a></h1>
+              <sub class="post-date">{{ post.date | date: '%B %d, %Y' }}</sub>
+              {{ post.excerpt }}
+            </li>
+            {% if count == 6 %}{% break %}
+            {% endif %}
 
-      <section class="primary-section primary-section-first">
-        <ul class="article-list">
-          {% assign count = 0 %}
-          {% for post in site.posts %}
-          {% assign count = count | plus:1 %}
-          <li>
-            <h1 class="post-link-title"><a href="{{ post.url | relative_url}}">{{ post.title }}</a></h1>
-            <sub class="post-date">{{ post.date | date: '%B %d, %Y' }}</sub>
-            {{ post.excerpt }}
-          </li>
-          {% if count == 6 %}{% break %}
-          {% endif %}
 
+            {% endfor %}
+          </ul>
+        </section>
+      </div>
+      <aside class="main-sidebar">
+        <div class="sidebar-content">
+          <p>Notes by and for Mike Schmidt, a wildlife biologist for the BLM who works on side projects on <a href="http://schmidtyworks.com">Web Development</a>, <a href="https://beta.observablehq.com/@mschmidty">Data Visualisation</a>, and r stats.</p>
+        </div>
+        <div class="link-icons">
+          <ul>
+            <li>Twitter: <a href="https://twitter.com/mikejschmidty">@mikejschmidty</a></li>
+            <li>Codepen: <a href="https://codepen.io/mschmidty/">@mschmidty</a></li>
+            <li>Observable: <a href="https://beta.observablehq.com/@mschmidty">@mschmidty</a></li>
+            <li>Github: <a href="https://github.com/mschmidty">@mschmidty</a></li>
+          </ul>
+        </div>
+      </aside>
 
-          {% endfor %}
-        </ul>
-      </section>
-      <section class="home-info">
+    </div>
 
-      </section>
   </main>
 
   {%- include footer.html -%}
