@@ -21,6 +21,8 @@ A collection of resources on data science and machine learning.
 
 ## GIS
 * [Geocomputing with R](https://geocompr.robinlovelace.net/index.html)
+* [JAKUB NOWOSAD'S WEBSITE](https://nowosad.github.io) - Mapping and geoecology with R.
+* [MARCO SCIAINI](https://marcosci.rbind.io/) - More mapping and geoecology.
 
 ## Statistics
 * [EdX Statistics and R](https://www.edx.org/course/statistics-and-r) - Which is part of [Data Analysis for Life Sciences Course](https://www.edx.org/xseries/data-analysis-life-sciences)
@@ -30,6 +32,7 @@ A collection of resources on data science and machine learning.
 
 ## The Kitchen Sink
 * [Data Science Glossary](https://www.kaggle.com/shivamb/data-science-glossary-on-kaggle-updated)
+* [Shirin's playgRound - amazing blog about all things R](https://shirinsplayground.netlify.com/)
 
 ## Datasets
 * [TidyTuesday Rep](https://github.com/rfordatascience/tidytuesday)
@@ -40,3 +43,6 @@ A collection of resources on data science and machine learning.
 ## Python
 [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/01.01-help-and-documentation.html)
 [Problem solving with Algorithms and Data Structures using Python](https://interactivepython.org/runestone/static/pythonds/index.html)
+
+## Ecology
+* [r-spatial ecology - set of tools for ecologists](https://github.com/r-spatialecology/shar)

@@ -10,6 +10,7 @@ A collection of resources that I couldn't work without
 ## Design
 * [Compendium of Design Resources](https://github.com/gztchan/awesome-design)
 * [Laws of UX by @jonyablonski](https://lawsofux.com/)
+* [7 Rules for Creating Gorgeous UI - Part 1](https://medium.com/@erikdkennedy/7-rules-for-creating-gorgeous-ui-part-1-559d4e805cda) - [7 Rules for Creating Gorgeous UI - Part 2](https://medium.com/@erikdkennedy/7-rules-for-creating-gorgeous-ui-part-2-430de537ba96)
 
 ## Web Programming
 * [CSS-Tricks](https://css-tricks.com) - CSS-Tricks taught me to program.  I am forever indebted to Chris Coyier and his contributers.
