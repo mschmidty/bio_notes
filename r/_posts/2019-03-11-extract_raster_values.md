@@ -6,9 +6,9 @@ categories: [ raster, R ]
 published: true
 ---
 
-Below is a method to use the [raster package](https://www.rdocumentation.org/packages/raster/versions/2.8-19) `extract()` function to get a subet of rasterBrick values. I need to extract all raster values that are within a polygon. In the past I have used `crop()`, `mask()` and then `getValues()` functions from the [`raster`](https://www.rdocumentation.org/packages/raster/versions/2.8-19) package -- a process commonly seen on stackOverflow -- to subset the data. But that method returns a raster with a ton of NA values (anything outside of the crop area in the raster is an NA). This is fine for unless the rasters are so large that removing the NAs is takes too much compute power.  Working with extremely large rasters (2Gb) the most compute intensive process is removing the NA values after the `crop()`, `mask()`, and `getValues()` because there are far more NAs (millions) than there are values for the training sets.
+Below is a method to use the [raster package](https://www.rdocumentation.org/packages/raster/versions/2.8-19) `extract()` function to get a subet of rasterBrick values. To be specific, I need to extract all raster values that are within a polygon boundary. In the past I have used `crop()`, `mask()` and then the `getValues()` functions from the [`raster`](https://www.rdocumentation.org/packages/raster/versions/2.8-19) package to subset data values within a polygon. But that method returns a data frame with a ton of NA values (anything outside of the crop area in the raster is an NA). This is fine most of the time but the current project that I am working on requires almost all of the memory on my computer. I'm working with extremely large rasters (2Gb).  Removing the NA values after the `crop()`, `mask()`, and `getValues()` process crashes my computer. So I need a more effecient process.
 
-Unlike `mask()` and `crop()`, `extract()` just extracts the values inside the polygon.   
+Unlike `mask()`, `crop()` and `getValues()`, `extract()` just extracts the values inside the polygon. There is no need to remove NAs.
 
 All processes below will rely on the raster package. So load that first.
 
@@ -17,24 +17,20 @@ library(raster)
 ```
 
 ### Extract from an extent.
-Lets create a raster that we can extract from.
+Lets create a raster that we can use to extract raster values from.
 
 ```r
 r <- raster(ncol=36, nrow=18, vals=1:(18*36))
 r
-```
 
-Returns
-
-```r
-class       : RasterLayer
-dimensions  : 18, 36, 648  (nrow, ncol, ncell)
-resolution  : 10, 10  (x, y)
-extent      : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
-coord. ref. : +proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0
-data source : in memory
-names       : layer
-values      : 1, 648  (min, max)
+# class       : RasterLayer
+# dimensions  : 18, 36, 648  (nrow, ncol, ncell)
+# resolution  : 10, 10  (x, y)
+# extent      : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+# coord. ref. : +proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0
+# data source : in memory
+# names       : layer
+# values      : 1, 648  (min, max)
 ```
 
 Create clip extent that we can exract from.
@@ -48,16 +44,14 @@ plot(r)
 plot(ext,add=T)
 ```
 
-Should output.
-
 ![Extent Displayed over a raster]({{"/r/assets/raster/extract_raster_example.jpeg" | relative_url }})
 
-Extract
+Then we use `extract()` to get all of the values within the extent.
 ```r
 extracted<-extract(r,ext)
 ```
 
-View the extracted vector.
+Extract returns a vector in this case.
 ```r
 extracted
 ```
@@ -70,42 +64,42 @@ returns
 
 ### Extract from a stack.
 
-That worked pretty well.  Now let's try to do a stack extract. First, add layers to the raster.
+That worked pretty well.  But I rarely need to extract a raster with a single layer.  I typically need to extract a raster with upwards of 10 to 20 layers.  Let's try to do a stack extract.
+
+First, add layers to the raster.
 
 ```r
 st<-stack(r, sqrt(r), r/r, r*r*r)
 names(st)<-c("base", "base_sq_rt", "r_divided", "r_cubed")
-plot(st)
 ```
 
 Then extract the stack.
 ```r
 extracted_st<-extract(st, ext)
 extracted_st
-```
 
-returns
-```r
-      base base_sq_rt r_divided   r_cubed
-[1,]  352   18.76166         1  43614208
-[2,]  353   18.78829         1  43986977
-[3,]  354   18.81489         1  44361864
-[4,]  355   18.84144         1  44738875
-[5,]  356   18.86796         1  45118016
-[6,]  357   18.89444         1  45499293
-[7,]  358   18.92089         1  45882712
-[8,]  359   18.94730         1  46268279
-[9,]  388   19.69772         1  58411072
-[10,]  389   19.72308         1  58863869
-[11,]  390   19.74842         1  59319000
-[12,]  391   19.77372         1  59776471
-... many more rows
+#      base base_sq_rt r_divided   r_cubed
+#[1,]  352   18.76166         1  43614208
+#[2,]  353   18.78829         1  43986977
+#[3,]  354   18.81489         1  44361864
+#[4,]  355   18.84144         1  44738875
+#[5,]  356   18.86796         1  45118016
+#[6,]  357   18.89444         1  45499293
+#[7,]  358   18.92089         1  45882712
+#[8,]  359   18.94730         1  46268279
+#[9,]  388   19.69772         1  58411072
+#[10,]  389   19.72308         1  58863869
+#[11,]  390   19.74842         1  59319000
+#[12,]  391   19.77372         1  59776471
+#... many more rows
 
 ```
 
 ### Extract from polygon
 
-Now lets try to extract based on a polygon.   First, create the polygon
+In reality though, I will rarely need to extract from a exten, rather, I will need to extract from a polygon or multiPolygon. First, let's try to extract based on a polygon.   
+
+First, create the polygon
 ```{r}
 x_coord<-c(70, 20, -50, -20)
 y_coord<-c(50, 60, 20, -30)
@@ -134,7 +128,7 @@ extracted_poly
 
 Returns:
 ```r
-base base_sq_rt r_divided  r_cubed
+    base base_sq_rt r_divided  r_cubed
 [1,]  128   11.31371         1  2097152
 [2,]  129   11.35782         1  2146689
 [3,]  130   11.40175         1  2197000
@@ -149,60 +143,19 @@ base base_sq_rt r_divided  r_cubed
 [12,]  197   14.03567         1  7645373
 ... Many more rows
 ```
+Again, it works really well.
 
-### Join with rasterized poly
-
-The last thing I need to do is join the data with a rasterized polygon.
-```{r}
-rasterized_poly<-rasterize(spsdf, st, field="name")
-plot(rasterized_poly)
-names(rasterized_poly)<-"test"
-```
-
-```{r}
-extracted_rasterized<-extract(rasterized_poly, spsdf)
-extracted_rasterized
-```
-
-Returns
-```r
-[[1]]
- [1] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-```
-
-Combine with stack
-
-```{r}
-cbind(as.data.frame(extracted_poly), as.data.frame(extracted_rasterized[[1]]))
-```
-
-returns:
-```r
-base base_sq_rt r_divided  r_cubed extracted_rasterized[[1]]
-1   128   11.31371         1  2097152                         1
-2   129   11.35782         1  2146689                         1
-3   130   11.40175         1  2197000                         1
-4   131   11.44552         1  2248091                         1
-5   162   12.72792         1  4251528                         1
-6   163   12.76715         1  4330747                         1
-7   164   12.80625         1  4410944                         1
-8   165   12.84523         1  4492125                         1
-9   166   12.88410         1  4574296                         1
-10  167   12.92285         1  4657463                         1
-11  168   12.96148         1  4741632                         1
-12  197   14.03567         1  7645373                         1
-13  198   14.07125         1  7762392                         1
-... More rows ...
-```
 
 ### Real world example
 
-The prototypes above worked great.  But when I tried to extract on a real world example, I ran into a problem.  If your shapefile that is the extent of the extract is made up of many many polygons like mine is, it will return a list of vectors where each vector represents the values within each polygon.  But I want all of the values to be returned in the same vector.  To do this, I first had to dissolve the polygons using the [`maptools()` package](https://www.rdocumentation.org/packages/maptools/versions/0.9-5).  Then I ran extract.  
+The prototypes above worked great.  But when I tried to extract on a real world example, I ran into a problem.  If your shapefile that is the extent of the extract is made up of many many polygons (a multipolygon)  like mine is, it will return a list of vectors where each vector represents the values within each polygon.  In my case I want all of the values to be returned in the same vector.  
+
+To do this, I first had to dissolve the polygons using the [`maptools()` package](https://www.rdocumentation.org/packages/maptools/versions/0.9-5).  Then I ran extract.  
 
 Example:
 
 ```r
-# Function paramaters (params may be autogenerated by the build_model function):
+# Function paramaters:
 ## * tile name = the name of the tile to subset training dataset from
 ## * folder_of_tiles = the file path to the folder that contains the tiles
 ## * file_path_to_shape = the file path to the shapefile.
