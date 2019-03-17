@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Sarabun:300,500');
-$h-font:"Sarabun", sans-serif;
-$h2-font:"Sarabun", sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,400,800');
+$h-font:"Poppins", sans-serif;
+$h2-font:"Poppins", sans-serif;
 $b-font: "Sarabun", serif;
 $font-size:1.15rem;
 $post-title-size:4rem;
 $body-font-weight:300;
-$header-font-weight:500;
-$header-font-weight-bold:700;
+$header-font-weight:800;
+$header-font-weight-bold:800;
 body{
   font-family:$h-font;
   font-size:18px;
@@ -18,7 +19,7 @@ body{
           font-feature-settings: "kern" 1;
   font-kerning: normal;
   text-rendering: optimizeLegibility;
-
+  color:$black;
 }
 .site-header, .home-banner h1, .post-title{
   font-family:$h-font;
@@ -46,14 +47,14 @@ h3, .post-content h3 {
 }
 p, ul, ol {
   font-size:$font-size;
-  font-family:$b-font;
   margin-bottom:1.3rem;
   line-height:1.8rem;
   font-weight:$body-font-weight;
 }
-a, ul, ol, sub, {
-  font-family: $b-font;
+p, li{
+  font-family:$b-font;
 }
+
 pre{
   background:#fdfdfd;
   border-radius:0;

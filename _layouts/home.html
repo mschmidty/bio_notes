@@ -6,10 +6,16 @@
 <body>
 
   {%- include header.html -%}
+  <section class="home-banner">
+    <h2>Welcome to <br> Schmidty Notes</h2>
+    <p>Notes by and for Mike Schmidt.  Some edited…some not.  On this site you will find notes, snippets and links about R stats, Web Development, Data Visualization, and anything else I find interesting.  Want to work on a project? Shoot me an email at: <span class="is-blue">mike@schmidtyworks.com</span> </p>
 
+  </section>
   <main class="home page-content" aria-label="Content">
+    <div class="highlight"></div>
     <div class="flex-layout">
       <div class="left-column-main">
+        <h1 class="post-title">Latest Notes</h1>
         <section>
           <ul class="article-list">
             {% assign count = 0 %}
@@ -26,6 +32,7 @@
 
             {% endfor %}
           </ul>
+          <a href="/blog-roll/">All Posts →</a>
         </section>
       </div>
       <aside class="main-sidebar">
