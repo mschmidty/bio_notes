@@ -34,8 +34,8 @@ header_pages:
 - notes/index.html
 - r/index.html
 - web_dev_notes/index.html
-- files/index.html
-- species/index.html
+# - files/index.html
+# - species/index.html
 
 
 
