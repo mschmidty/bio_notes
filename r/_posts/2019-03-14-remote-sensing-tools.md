@@ -10,8 +10,14 @@ A collection of tools and documentation on remote sensing.
 
 ### R Packages
 
-* [RStoolbox - Tools for Remote sensing data analysis](https://www.rdocumentation.org/packages/RStoolbox/versions/0.2.4):  Brief overview of the package can be found [here](http://bleutner.github.io/RStoolbox/rstbx-docu/RStoolbox.html).  Contains algorythms for calculating **NDVI**, **MSAVI2**, **MNDWI**, and many, many others.  Function I'm most interested in is the [spectral indices function](http://bleutner.github.io/RStoolbox/rstbx-docu/spectralIndices.html).
-* [Walkthrough for package landscapetools](https://ropensci.github.io/landscapetools/articles/overview.html)
+* [RStoolbox  Package - Tools for Remote sensing data analysis](https://www.rdocumentation.org/packages/RStoolbox/versions/0.2.4):  Brief overview of the package can be found [here](http://bleutner.github.io/RStoolbox/rstbx-docu/RStoolbox.html).  Contains algorythms for calculating **NDVI**, **MSAVI2**, **MNDWI**, and many, many others.  Function I'm most interested in is the [spectral indices function](http://bleutner.github.io/RStoolbox/rstbx-docu/spectralIndices.html).
+* [lidR package](https://github.com/Jean-Romain/lidR). Read .las files, calculate DEMs and [canopy height models](https://github.com/Jean-Romain/lidR/wiki/Rasterizing-perfect-canopy-height-models), convert to raster. [Wiki](https://github.com/Jean-Romain/lidR/wiki).
+* [Raster package](https://www.rdocumentation.org/packages/raster/versions/2.8-19) everything raster in r.
+* [SP package](https://www.rdocumentation.org/packages/sp) classes for working with spatial data.
+* [SF package](https://www.rdocumentation.org/packages/sf) an attempt to standardize spatial data with other software, succeeding the sp package.
+
+### Datasets
+* [List of Datasets to play with](https://github.com/chrieke/awesome-satellite-imagery-datasets).
 
 ### Books
-* [Geocomputing in R](https://geocompr.robinlovelace.net/) - Text book on GIS in R.  Covers pretty much everything. 
+* [Geocomputing in R](https://geocompr.robinlovelace.net/) - Text book on GIS in R.  Covers pretty much everything.
