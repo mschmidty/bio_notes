@@ -68,3 +68,6 @@ Calculate: Take a value in the sample, subtract it from the sample mean, and squ
 **YouTube**
 * [Brandon Foltz Tutorials](https://www.youtube.com/user/BCFoltz)
 * [Three Blue One Brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw)
+
+**Other**
+* [Glossary of Statistical Terms](http://hbiostat.org/doc/glossary.pdf)
