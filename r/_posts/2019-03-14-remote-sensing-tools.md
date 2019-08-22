@@ -15,6 +15,7 @@ A collection of tools and documentation on remote sensing.
 * [Raster package](https://www.rdocumentation.org/packages/raster/versions/2.8-19) everything raster in r.
 * [SP package](https://www.rdocumentation.org/packages/sp) classes for working with spatial data.
 * [SF package](https://www.rdocumentation.org/packages/sf) an attempt to standardize spatial data with other software, succeeding the sp package.
+* [Sentinel-2 API Package](https://github.com/IVFL-BOKU/sentinel2)
 
 ### Datasets
 * [List of Datasets to play with](https://github.com/chrieke/awesome-satellite-imagery-datasets).
