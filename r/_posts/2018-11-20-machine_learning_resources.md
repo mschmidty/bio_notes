@@ -39,6 +39,7 @@ A collection of resources on data science and machine learning.
 
 ## Inspiration
 * [Observable Visualizations](https://beta.observablehq.com/collection/@observablehq/visualization)
+* [Tidy Tuesday Data Visualization Submissions](https://nsgrantham.shinyapps.io/tidytuesdayrocks/)
 
 ## Python
 [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/01.01-help-and-documentation.html)

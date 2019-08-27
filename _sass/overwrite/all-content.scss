@@ -89,6 +89,10 @@ body {
 }
 .highlighter-rouge .highlight {
   background:$off-white;
+  font-weight: 300;
+}
+.token.important{
+  font-weight: 400;
 }
 nav.site-nav{
   z-index:1;
