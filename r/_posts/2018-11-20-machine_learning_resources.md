@@ -1,11 +1,14 @@
 ---
 layout: post
-title:  "Data Science and Programming Resources"
+title:  "Data Science Resources"
 date:   2018-11-20 10:07:03 -0600
 categories: [ Machine Learning ]
 ---
-A collection of resources on data science and machine learning.
+A collection of resources on data science and machine learning primarily in R.
 
+## R Resources
+* [R for Data Science](https://r4ds.had.co.nz/) - an introduction to R and the [tidyverse packages](https://www.tidyverse.org/) by [Hadley Wickham](https://twitter.com/hadleywickham?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor). If you are just getting into R, start here.  
+* [Advanced R - Second Addition](https://adv-r.hadley.nz) - another resource from Hadley Wickham.
 
 ## Machine Learning
 * [R Studio Keras Tutorial](https://keras.rstudio.com/)
@@ -19,7 +22,12 @@ A collection of resources on data science and machine learning.
 * [Distill: Writing from some of the Best in ML](https://distill.pub/)
 * [Landscape Classification with Deep Neural Networks](https://www.mdpi.com/2076-3263/8/7/244)
 
-## GIS
+## Data Visualization
+* [R Graph Gallery with examples](http://r-graph-gallery.com/ggplot2-package.html)
+* [Tidy Tuesday Data Visualization Submissions](https://nsgrantham.shinyapps.io/tidytuesdayrocks/)
+* [Data to Vis](https://www.data-to-viz.com/) - a compendium of data visualization resources in R by [Yan Holtz](https://twitter.com/R_Graph_Gallery). This resource includes D3.js resources as well. 
+
+## GIS with R
 * [Geocomputing with R](https://geocompr.robinlovelace.net/index.html)
 * [JAKUB NOWOSAD'S WEBSITE](https://nowosad.github.io) - Mapping and geoecology with R.
 * [MARCO SCIAINI](https://marcosci.rbind.io/) - More mapping and geoecology.
@@ -39,7 +47,7 @@ A collection of resources on data science and machine learning.
 
 ## Inspiration
 * [Observable Visualizations](https://beta.observablehq.com/collection/@observablehq/visualization)
-* [Tidy Tuesday Data Visualization Submissions](https://nsgrantham.shinyapps.io/tidytuesdayrocks/)
+
 
 ## Python
 [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/01.01-help-and-documentation.html)
