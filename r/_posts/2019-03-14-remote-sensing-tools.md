@@ -17,6 +17,9 @@ A collection of tools and documentation on remote sensing.
 * [SF package](https://www.rdocumentation.org/packages/sf) an attempt to standardize spatial data with other software, succeeding the sp package.
 * [Sentinel-2 API Package](https://github.com/IVFL-BOKU/sentinel2)
 
+### Conference Talks
+* [Spatial Cross Validation Talk](https://github.com/HannaMeyer/OpenGeoHub_2019/blob/master/slides/Practice_Hanna.pdf) by [Hanna Meyer](https://twitter.com/hanna123987).  A paper under review can be found [here](https://arxiv.org/abs/1908.07805)
+
 ### Datasets
 * [List of Datasets to play with](https://github.com/chrieke/awesome-satellite-imagery-datasets).
 

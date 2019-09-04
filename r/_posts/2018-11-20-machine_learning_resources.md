@@ -25,12 +25,14 @@ A collection of resources on data science and machine learning primarily in R.
 ## Data Visualization
 * [R Graph Gallery with examples](http://r-graph-gallery.com/ggplot2-package.html)
 * [Tidy Tuesday Data Visualization Submissions](https://nsgrantham.shinyapps.io/tidytuesdayrocks/)
-* [Data to Vis](https://www.data-to-viz.com/) - a compendium of data visualization resources in R by [Yan Holtz](https://twitter.com/R_Graph_Gallery). This resource includes D3.js resources as well. 
+* [Data to Vis](https://www.data-to-viz.com/) - a compendium of data visualization resources in R by [Yan Holtz](https://twitter.com/R_Graph_Gallery). This resource includes D3.js resources as well.
+* [Raster Heatmap NYT Style](https://www.katiejolly.io/blog/2019-08-28/nyt-urban-heat) by [Katie Jolly](https://twitter.com/katiejolly6).
 
 ## GIS with R
 * [Geocomputing with R](https://geocompr.robinlovelace.net/index.html)
 * [JAKUB NOWOSAD'S WEBSITE](https://nowosad.github.io) - Mapping and geoecology with R.
 * [MARCO SCIAINI](https://marcosci.rbind.io/) - More mapping and geoecology.
+* [Katie Jolly's Website](https://www.katiejolly.io/portfolio/) - Really well designed mapping visualizations.
 
 ## Statistics
 * [EdX Statistics and R](https://www.edx.org/course/statistics-and-r) - Which is part of [Data Analysis for Life Sciences Course](https://www.edx.org/xseries/data-analysis-life-sciences)
@@ -52,6 +54,7 @@ A collection of resources on data science and machine learning primarily in R.
 ## Python
 [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/01.01-help-and-documentation.html)
 [Problem solving with Algorithms and Data Structures using Python](https://interactivepython.org/runestone/static/pythonds/index.html)
+[Python Mapping](https://geographicdata.science/book/intro)
 
 ## Ecology
 * [r-spatial ecology - set of tools for ecologists](https://github.com/r-spatialecology/shar)
