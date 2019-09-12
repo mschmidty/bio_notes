@@ -8,7 +8,7 @@ layout: page
 {% for post in site.categories[page.category] %}
   <li>
     <h1 class="post-link-title"><a href="{{ post.url | relative_url}}">{{ post.title }}</a></h1>
-    <sub class="post-date">{{ post.date | date: '%B %d, %Y' }}</sub>
+    <sub class="list-date">{{ post.date | date: '%B %d, %Y' }}</sub>
     {{ post.excerpt }}
     <!--  excerpt to add in category lists {% assign categories = post.categories %}
 

@@ -14,7 +14,7 @@
   <main class="home page-content" aria-label="Content">
     <div class="flex-layout">
       <div class="left-column-main">
-        <h1 class="post-title">Latest Notes</h1>
+        <h1 class="page-title">Latest Notes</h1>
         <section>
           <ul class="article-list">
             {% assign count = 0 %}
@@ -22,7 +22,7 @@
             {% assign count = count | plus:1 %}
             <li>
               <h1 class="post-link-title"><a href="{{ post.url | relative_url}}">{{ post.title }}</a></h1>
-              <sub class="post-date">{{ post.date | date: '%B %d, %Y' }}</sub>
+              <sub class="list-date">{{ post.date | date: '%B %d, %Y' }}</sub>
               {{ post.excerpt }}
             </li>
             {% if count == 6 %}{% break %}

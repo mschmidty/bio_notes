@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Sarabun:300,500');
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,400,800');
-$h-font:"Poppins", sans-serif;
-$h2-font:"Poppins", sans-serif;
-$b-font: "Sarabun", serif;
+@import url('https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap');
+
+$h-font:"PT Serif", sans-serif;
+$h2-font:"PT Serif", sans-serif;
+$b-font: "PT Serif", sans-serif;
 $font-size:1.15rem;
-$post-title-size:4rem;
+$post-title-size:5rem;
 $body-font-weight:300;
 $header-font-weight:800;
 $header-font-weight-bold:800;

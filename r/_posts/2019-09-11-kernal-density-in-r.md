@@ -6,7 +6,7 @@ categories: [ raster, R , sf ]
 published: true
 ---
 
-For a recent project I needed to run a kernel density estimation in R, turning a GPS points into a raster of point densities.  Below is how I accomplished that.
+For a recent project I needed to run a kernel density estimation in R, turning  GPS points into a raster of point densities.  Below is how I accomplished that.
 
 ## Load the needed libraries
 
@@ -20,7 +20,7 @@ If you don't have these packages you need to run `install.packages(c("sf", "rast
 
 ## Create XY Points
 
-For the purposes of this excercise we will not be loading a shapefile but instead making one out of randomly generated X and Y courdinates. We will create UTM coordinates in Zone 13. You could also create Latitude and Longitude coordinates if you wanted. Here are the bounds of the coordinates:
+For the purposes of this exercise, and because the original dataset I worked with is not available to the public, we will not be loading a shapefile but instead making one out of randomly generated X and Y coordinates. We will create UTM coordinates in Zone 13. You could also create Latitude and Longitude coordinates if you wanted. Here are the bounds of the coordinates:
 
 **Northing max:** 4232607 <br>
 **Northing min:** 4220932
@@ -28,12 +28,12 @@ For the purposes of this excercise we will not be loading a shapefile but instea
 **Easting max:** 187973 <br>
 **Easting min:** 173118
 
-We'll use `rnorm` to generate 20000 coordinate pairs randomly.  You could also use `runif` but `rnorm` creates areas with higher densities.
+We'll use `rnorm` to generate 20000 coordinate pairs randomly.  You could also use `runif` but `rnorm` creates areas with higher densities so our plot is not uniform.
 
 ```r
 coord<-tibble(
-  northing = runif(20000, 4220932, 4232607),
-  easting = runif(20000, 173118, 187973)
+  northing = rnorm(10000, 4220105, 3589.521),
+  easting = rnorm(10000, 185310.8, 12709.06)
 )
 ```
 
@@ -47,7 +47,7 @@ coord%>%
 ```
 ![Plot X and Y coordinates with ggplot]({{"/r/assets/plots/xy_plot.jpg" | relative_url }})
 
-Everything looks good.  Now we need to convert the xy coordinates to a shapefile.
+Everything looks good. Now we need to convert the xy coordinates to a shapefile.
 
 ## Converting xy coordinates to a shapefile
 
@@ -89,24 +89,21 @@ Let's take a look at our new shapefile.
 ```r
 ggplot()+
   geom_sf(data = sf_obj, color = "steelblue", size = 3, alpha = 0.3)+
-  theme_minimal()+
-  ggsave("saved_plots/sf_xy.jpg", width = 5, height = 3)
+  theme_minimal()
 ```
-
-The plot looks very similar to the xy plot (duh they are the exact same).
+The plot looks very similar to the xy plot (they should be the same), but now the points are projected.  If you look at the lines behind the points you see that they are slightly askew.
 
 ![Plot sf object with ggplot]({{"/r/assets/plots/sf_xy.jpg" | relative_url }})
 
 ## Make a empty raster
 
-Now we will create an empty raster that we will use to calculate the kernel density from.  The resolution we set will be the resolution of the kernal density. We will use the `raster()` function from the raster package to make the raster.
-
+Now we will create an empty raster that we will use to calculate the kernel density from.  The resolution we set will be the resolution of the kernel density. We will use the `raster()` function from the raster package to make the raster.
 
 ```r
 empty_kernel_grid<-raster(ext = extent(sf_obj), resolution = 200, crs = st_crs(sf_obj))
 ```
 
-Next we will take our points that we created and use the `fun = 'count'` parameter in the `rasterize` function from the raster package to count all the points that fall within a given raster cell.  We will also tell rasterize to use the empty_kernel_grid() raster for the bounds of the raster.
+Next we will take our points that we created and use the `fun = 'count'` parameter in the `rasterize` function from the to count all the points that fall within a given raster cell.  We will also tell rasterize to use the `empty_kernel_grid` raster for the bounds of the raster.
 
 ```r
 kernel_density<-rasterize(coordinates(as_Spatial(sf_obj)), empty_kernel_grid, fun='count', background = 0)
@@ -121,8 +118,7 @@ point_raster<-as_tibble(rasterToPoints(kernel_density))
 ggplot(point_raster, aes(x = x, y=y))+
   geom_raster(aes(fill = layer))+
   theme_minimal()+
-  scale_fill_distiller(palette = "Spectral")+
-  ggsave("saved_plots/kernal_plot.jpg", height = 5, width = 3)
+  scale_fill_distiller(palette = "Spectral")
 ```
 Even though we had a mass to start, now we see that certain 200m areas are mor dense than other.
 
