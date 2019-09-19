@@ -29,7 +29,7 @@ Typically, regression is used to understand the relationship between a dependent
 
 
 ## Analysis of Variance: ANOVA
-ANOVA is a collection of statistical models that help you understand if two means are similar or different.  For example both a sample of (2, 2, 2, 2, 2) and (1, 1, 1, 2, 0, 7) are different obviously.  But if we get the mean of those two datasets we will get 2 for both sets.  ANOVA helps us determine if these two datasets are significantly different in their variance or if they are similar and we just happened to just sample different numbers in each set.
+ANOVA is a collection of statistical models that help you understand if two means are similar or different.  For example both a sample of (2, 2, 2, 2, 2) and (1, 1, 1, 2, 0, 7) are different (obviously).  But if we get the mean of those two datasets we will get 2 for both sets.  ANOVA helps us determine if these two datasets are significantly different in their variance or if they are similar and we just happened to just sample different numbers in each set.
 
 Understanding this can be important for other tests, such as t-tests, because some comparative analysis only work when the compared groups have the same variance.
 
