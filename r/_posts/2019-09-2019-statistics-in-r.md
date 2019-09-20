@@ -10,4 +10,5 @@ This is a collections of resources that have helped me learn and understand stat
 
 ## Linear Regression
 
-* [Fitting & Interpreting Linear Models in R](http://blog.yhat.com/posts/r-lm-summary.html) - includes a great table for interpreting the `summary()` outpug of `lm` models.
+* [Fitting & Interpreting Linear Models in R](http://blog.yhat.com/posts/r-lm-summary.html) - includes a great table for interpreting the `summary()` output of `lm` models.
+* [Linear, Ridge and Lasso Regression in Python and R](https://www.analyticsvidhya.com/blog/2017/06/a-comprehensive-guide-for-linear-ridge-and-lasso-regression/). 
