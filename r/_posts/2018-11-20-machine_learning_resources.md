@@ -27,6 +27,7 @@ A collection of resources on data science and machine learning primarily in R.
 * [Tidy Tuesday Data Visualization Submissions](https://nsgrantham.shinyapps.io/tidytuesdayrocks/)
 * [Data to Vis](https://www.data-to-viz.com/) - a compendium of data visualization resources in R by [Yan Holtz](https://twitter.com/R_Graph_Gallery). This resource includes D3.js resources as well.
 * [Raster Heatmap NYT Style](https://www.katiejolly.io/blog/2019-08-28/nyt-urban-heat) by [Katie Jolly](https://twitter.com/katiejolly6).
+* [Professional Graphs in R](https://github.com/clauswilke/practical_ggplot2) by [Clause Wilke](https://twitter.com/ClausWilke)
 
 ## GIS with R
 * [Geocomputing with R](https://geocompr.robinlovelace.net/index.html)
