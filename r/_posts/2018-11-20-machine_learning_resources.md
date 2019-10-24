@@ -21,6 +21,7 @@ A collection of resources on data science and machine learning primarily in R.
 * [Google ML Course](https://developers.google.com/machine-learning/crash-course/)
 * [Distill: Writing from some of the Best in ML](https://distill.pub/)
 * [Landscape Classification with Deep Neural Networks](https://www.mdpi.com/2076-3263/8/7/244)
+* [Tidy Forecasting in R with Fable](http://fable.tidyverts.org/), [Tutorial 1](https://blog.mitchelloharawild.com/blog/fable/) and [Tutorial 2](https://robjhyndman.com/hyndsight/fable/)
 
 ## Data Visualization
 * [R Graph Gallery with examples](http://r-graph-gallery.com/ggplot2-package.html)

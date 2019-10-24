@@ -1,0 +1,23 @@
+@media print {
+  .site-header, .site-footer{
+    display: none;
+  }
+  .post-header{
+    margin-top:0;
+  }
+  pre{
+    border-left:4px solid $primary-color;
+  }
+  .highlighter-rouge .highlight {
+    background:$dark-light-grey;
+    font-weight: 300;
+  }
+  @page {
+    margin-top: 75pt;
+    margin-bottom: 75pt;
+  }
+  @page :first {
+    margin-top: 20pt;
+  }
+
+}
