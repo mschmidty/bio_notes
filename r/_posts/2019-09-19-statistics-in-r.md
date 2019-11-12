@@ -8,7 +8,7 @@ published: true
 
 This is a collections of resources that have helped me learn and understand statistics in R.  
 
-## Books and General Resource
+## Books and General Resources
 
 * [Learning Statistics with R](https://learningstatisticswithr.com/book/)
 
