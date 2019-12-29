@@ -6,7 +6,7 @@ published: true
 categories: [js, D3, WebDev]
 ---
 
-This is a basic line chart built with D3.  I've written a few more tutorials on how to make charts starting out very basic and moving to a little more complex.  I'm no expert, so these are how a beginner (at both javascript and D3) would explain everything.  Some might find that methodology helpful. My previous tutorials: [My first charts]({{ site.baseurl }}{% post_url web_dev_notes/2018-10-08-d3js_first_charts %}), [SVG Plots]({{ site.baseurl }}{% post_url web_dev_notes/2018-10-08-d3js_svg_charts %}), [Scatterplot]({{ site.baseurl}}{% post_url web_dev_notes/2018-10-27-d3js_scatterplot_basic %}).
+This is a basic line chart built with D3.  I've written a few more tutorials on how to make charts starting out very basic and moving to a little more complex.  I'm no expert, so these are how a beginner (at both javascript and D3) would explain everything.  Some might find that methodology helpful. My previous tutorials: [My first charts]({{ site.baseurl }}{% post_url web_dev_notes/2018-10-08-d3js_first_charts %}), [SVG Plots]({{ site.baseurl }}{% post_url web_dev_notes/2018-10-08-d3js_svg_charts %}), [Scatterplot]({{ site.baseurl}}{% post_url web_dev_notes/2018-10-28-basic_lineChart %}).
 
 {% include d3/linechart/basic_linechart.html %}
 

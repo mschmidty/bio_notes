@@ -2,7 +2,7 @@
 layout: post
 title: "Colorado: Hex Plots, APIs, and D3js"
 date: "2019-11-30 7:30:44 -0700"
-categories: [ R, GIS, ggplot ]
+categories: [js, D3, WebDev]
 published: true
 ---
 
@@ -56,5 +56,3 @@ async function hexChart(){
 ```
 
 It still needs a scale bar but we're pretty close.
-
-
