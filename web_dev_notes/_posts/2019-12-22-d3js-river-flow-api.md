@@ -6,7 +6,7 @@ published: true
 categories: [js, D3, WebDev]
 ---
 
-I'm working on a website for a client in the rafting non-profit.  I thought it would be cool if they could display the flow data for local rivers.  I also thought this would be good time for me to learn more about D3js and the  [USGS instantaneous flow data API](https://waterservices.usgs.gov/rest/IV-Service.html).  
+I'm working on a website for a rafting non-profit.  I thought it would be cool if they could display the flow data for local rivers.  I also thought this would be good time for me to learn more about D3js and the  [USGS instantaneous flow data API](https://waterservices.usgs.gov/rest/IV-Service.html).  
 
 {% include d3/linechart/river_flow.html %}
 
