@@ -22,6 +22,16 @@ body{
   text-rendering: optimizeLegibility;
   color:$black;
 }
+.post-content a{
+  colo: $link-color;
+  &:hover{
+    text-decoration:none;
+    color:$primary-color;
+    background-color: $off-white;
+    text-decoration:underline;
+  }
+}
+
 .site-header, .home-banner h1, .post-title{
   font-family:$h-font;
 }
@@ -49,7 +59,7 @@ h3, .post-content h3 {
 p, ul, ol {
   font-size:$font-size;
   margin-bottom:1.3rem;
-  line-height:1.8rem;
+  line-height:2.2rem;
   font-weight:$body-font-weight;
 }
 p, li{

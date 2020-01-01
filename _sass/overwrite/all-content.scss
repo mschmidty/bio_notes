@@ -99,8 +99,15 @@ body {
 }
 .highlighter-rouge .highlight {
   background:$off-white;
+  border-radius: 5px;
   font-weight: 300;
 }
+div.highlight{
+  padding: 20px 15px;
+  border-top: 20px solid $light-grey;
+}
+
+
 .token.important{
   font-weight: 400;
 }
@@ -108,7 +115,7 @@ nav.site-nav{
   z-index:1;
 }
 pre{
-  border-left:10px solid $primary-color;
+  border-left: none;
 }
 
 @media all and (max-width:$on-palm){
@@ -290,14 +297,6 @@ sub{
 }
 .post-content h2 {
   margin-top:3rem;
-}
-.post-content a{
-  border-bottom:2px solid $black;
-  &:hover{
-    text-decoration:none;
-    background:$light-grey;
-    color:$primary-color;
-  }
 }
 
 .large-image-article{
