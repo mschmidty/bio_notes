@@ -1,0 +1,58 @@
+---
+layout: post
+title:  "Django View that returns JSON with a relationship"
+date:   2020-01-03 2:07:03 -0600
+published: true
+categories: [js, WebDev, json, django]
+---
+
+I am starting to really like Django development.  I'm not a python developer and I am by no means a "full stack" develeper.  But I keep finding ways to solve problems in Django with little effort.  One sticky point that I recently came accross is returning json data and including related fields.   I'm working on a project that I can use a work (really a leveling up side project).  It is a plant database that my field crews can use.  We have a problem that we have new vegetation crew members each year.  Most of them have plant identification skills, but they aren't familiar with plants in the area.   It will be really helpful if new staff could sort a plants database by various characteristics.  I figured that instead of making a bunch of views that return data in a bunch of different ways, it would be easier to return json that I could then sort on the fly in whatever way that the user wanted to (e.g. taxanomic family, color, number of sepals, carpels, or petals, etc.).  
+
+Here we will look at a simplified model that will return all species in the database with a Family relashionship.   
+
+In the `appname/models.py`
+
+```python
+from django.db import models
+
+class Family(models.Model):
+    family = models.CharField(max_length = 100)
+    family_description = models.TextField(null = True)
+    
+class plant_basics(models.Model):
+    genus = models.CharField(max_length = 500)
+    species = models.CharField(max_length = 500)
+    symbol = models.CharField(max_length = 6, null = True)
+    common_name = models.CharField(max_length = 100, null = True)
+    description = models.TextField(null = True)
+    family = models.ForeignKey(Family, on_delete = models.PROTECT, null = True)
+```
+
+Here we have two tables with various fields.  There is a one to many relationship between the `Family` model that the `plant_basics` model.   
+
+To return json data to a url that you can use on any page on your site, put the followoing in your `appname/view.py` file: 
+
+```python
+from django.http import JsonResponse
+from .models import plant_basics, Family
+
+def familyJsonIndex(request):
+    species = plant_basics.objects.values('genus', 'species','common_name', 'id', 'family__family')
+    return JsonResponse({'species': list(species)})
+```
+
+Here we query the database returning `plant_basics.objects`.  We then subset the model by using `.values()`, which allows us to only return the columns of the table that we want.  Within `values()` we can return any column by just naming it.  If we want to return a relationship we need to use the syntax `(model__columnName)`.  For us we want to return the family of each plant so the whole string all together is `species = plant_basics.objects.values('genus', 'species','common_name', 'id', 'family__family')`.  Now all we need to do is return that data as json with `return JsonResponse({'species': list(species)})`.
+
+The last thing we need to do is add a url for our json to return to.  In your `appname/urls.py` file: 
+
+```python
+urlpatterns = [
+	## ..more paths..#
+	path('species_api/', views.familyJsonIndex, name = "species_apii"),
+]
+```
+
+Now you can navigate to `http://example.com/appname/species_api` and walla json.
+
+
+
