@@ -11,17 +11,11 @@ A collection of resources on data science and machine learning primarily in R.
 * [Advanced R - Second Addition](https://adv-r.hadley.nz) - another resource from Hadley Wickham.
 
 ## Machine Learning
-* [R Studio Keras Tutorial](https://keras.rstudio.com/)
-* [Keras Tutorial in R](https://keras.rstudio.com/articles/tutorial_basic_classification.html)
-* [MIT Student Compiled Machine Learning Resources](https://sgfin.github.io/learning-resources/)
 * [Andrew Ng's ML Course on Corsera](https://www.coursera.org/learn/machine-learning)
-* [Fast.ai](https://www.fast.ai/) - Cutting Edge of Machine learning.
-* [Amazon ML Course](https://aws.amazon.com/training/learning-paths/machine-learning/exam-preparation/)
-* [Microsoft ML](https://academy.microsoft.com/en-us/professional-program/tracks/artificial-intelligence/)
-* [Google ML Course](https://developers.google.com/machine-learning/crash-course/)
 * [Distill: Writing from some of the Best in ML](https://distill.pub/)
 * [Landscape Classification with Deep Neural Networks](https://www.mdpi.com/2076-3263/8/7/244)
 * [Tidy Forecasting in R with Fable](http://fable.tidyverts.org/), [Tutorial 1](https://blog.mitchelloharawild.com/blog/fable/) and [Tutorial 2](https://robjhyndman.com/hyndsight/fable/)
+* [Hands-On Machine Learning with R](https://bradleyboehmke.github.io/HOML/index.html) - Probably the best overall resource I've found to date.
 
 ## Data Visualization
 * [R Graph Gallery with examples](http://r-graph-gallery.com/ggplot2-package.html)
