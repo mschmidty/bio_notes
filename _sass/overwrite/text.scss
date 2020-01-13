@@ -1,17 +1,16 @@
-@import url('https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 $h-font:"Playfair Display", sans-serif;
 $h2-font:"Playfair Display", sans-serif;
-$b-font: "PT Serif", sans-serif;
-$font-size:1.15rem;
+$b-font: "Roboto", sans-serif;
+$font-size:1.05rem;
 $post-title-size:5rem;
 $body-font-weight:300;
 $header-font-weight:700;
 $header-font-weight-bold:700;
 body{
   font-family:$h-font;
-  font-size:18px;
+  font-size:13px;
   font-weight:$header-font-weight;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
@@ -59,7 +58,7 @@ h3, .post-content h3 {
 p, ul, ol {
   font-size:$font-size;
   margin-bottom:1.3rem;
-  line-height:2.2rem;
+  line-height:2rem;
   font-weight:$body-font-weight;
 }
 p, li{
