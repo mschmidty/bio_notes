@@ -7,6 +7,7 @@ $post-title-size:5rem;
 $body-font-weight:300;
 $header-font-weight:700;
 $header-font-weight-bold:700;
+$body-line-height:1.6;
 body{
   font-family:$h-font;
   font-size:$font-size;
@@ -57,7 +58,7 @@ h3, .post-content h3 {
 p, ul, ol {
   font-size:$font-size;
   margin-bottom:1.3rem;
-  line-height:2rem;
+  line-height:$body-line-height;
   font-weight:$body-font-weight;
   color: $black;
 }
