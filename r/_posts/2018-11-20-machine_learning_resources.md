@@ -29,6 +29,7 @@ A collection of resources on data science and machine learning primarily in R.
 * [JAKUB NOWOSAD'S WEBSITE](https://nowosad.github.io) - Mapping and geoecology with R.
 * [MARCO SCIAINI](https://marcosci.rbind.io/) - More mapping and geoecology.
 * [Katie Jolly's Website](https://www.katiejolly.io/portfolio/) - Really well designed mapping visualizations.
+* [Zevross Slides on Modern GIS in R](http://files.zevross.com/workshops/spatial/slides/html/0-deck-list.html).  Covers mapping with R from the bottom up using {dplyr}, {sf}, {tmap}, and {raster}.  Has a section on interactive maps. 
 
 ## Statistics
 * [EdX Statistics and R](https://www.edx.org/course/statistics-and-r) - Which is part of [Data Analysis for Life Sciences Course](https://www.edx.org/xseries/data-analysis-life-sciences)
