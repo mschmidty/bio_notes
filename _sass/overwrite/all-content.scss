@@ -97,15 +97,6 @@ body {
     padding-left:60px;
   }
 }
-.highlighter-rouge .highlight {
-  background:$off-white;
-  border-radius: 5px;
-  font-weight: 300;
-}
-div.highlight{
-  padding: 20px 15px;
-  border-top: 20px solid $light-grey;
-}
 
 
 .token.important{
@@ -277,6 +268,9 @@ sub{
 
 .post {
   padding-top:3.5rem;
+  img{
+    margin:1rem 0;
+  }
 }
 .post-title{
   font-size:$post-title-size;
@@ -305,9 +299,9 @@ sub{
     width: 95%;
     margin:0 auto 1.3rem auto;
   }
-  .highlight, pre {
+  .highlight {
     max-width: $writing-width;
-    margin: 0 auto 1.3rem auto;
+    margin: 0 auto 0 auto;
   }
   ul {
     padding-left:2em;
