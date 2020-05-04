@@ -25,7 +25,7 @@ I'll break everythin down below.  If you are just here for the JS scripts, here 
 <script>
 flowChart();
 async function flowChart(){
-  let waterUrl = "https://nwis.waterservices.usgs.gov/nwis/iv/?format=json&sites=09166500&startDT=2019-07-09&endDT=2019-07-16&parameterCd=00060&siteStatus=all"
+  let waterUrl = "https://nwis.waterservices.usgs.gov/nwis/iv/?format=json&sites=09166500&startDT=2020-04-27&endDT=2020-05-03&parameterCd=00060&siteStatus=all"
 
   let timeFormat = d3.timeFormat("%m-%d-%Y %H");
   //Call the api
@@ -96,13 +96,13 @@ The first steps in plotting any chart is getting data.  In this case we will be 
 https://nwis.waterservices.usgs.gov/nwis/iv/?format=json&sites=09166500&startDT=2019-07-09&endDT=2019-07-16&parameterCd=00060&siteStatus=all
 ```
 
-There are two ways to use [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API):  I prefer calling fetch inside of an asynchronous function. I don't know why, but this method seems to make more sense to me. 
+There are two ways to use [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API):  I prefer calling fetch inside of an asynchronous function. I don't know why, but this method seems to make more sense to me.
 
 ```js
 <script>
 flowChart();
 async function flowChart(){
-  let waterUrl = "https://nwis.waterservices.usgs.gov/nwis/iv/?format=json&sites=09166500&startDT=2019-07-09&endDT=2019-07-16&parameterCd=00060&siteStatus=all"
+  let waterUrl = "https://nwis.waterservices.usgs.gov/nwis/iv/?format=json&sites=09166500&startDT=2020-04-27&endDT=2020-05-03&parameterCd=00060&siteStatus=all"
 
   //Call the api
   const response = await fetch(waterUrl);
@@ -177,7 +177,7 @@ async function flowChart(){
 
 Now we have our usable data we need to use D3 to chart the data.
 
-## Making a Responsive Chart 
+## Making a Responsive Chart
 ```js
 let svg = d3.select("#my_dataviz")
   .append("svg")
@@ -201,11 +201,11 @@ svg.append("path")
        )
 ```
 
-To plot an area chart you replace `.attr('d', d3.line())` with `.attr('d', d3.area())` and provide two y values, one for the upper bound of the area chart and one for the bottom (usually 0), instead of one.   The x value stays the same as it would for any line chart. 
+To plot an area chart you replace `.attr('d', d3.line())` with `.attr('d', d3.area())` and provide two y values, one for the upper bound of the area chart and one for the bottom (usually 0), instead of one.   The x value stays the same as it would for any line chart.
 
 ## Plotting the tick marks inside the chart.
 
-This one was tricky for me.  For whatever reason I couldn't figure out how to make the axis have less of a width than the chart.  But really that is all you need to do is make the length or width of the axis smaller than the chart.  You have to be a little careful though because you want the ticks to line up appropriately with the data. 
+This one was tricky for me.  For whatever reason I couldn't figure out how to make the axis have less of a width than the chart.  But really that is all you need to do is make the length or width of the axis smaller than the chart.  You have to be a little careful though because you want the ticks to line up appropriately with the data.
 
 To understand this let's first look at the base chart.
 
@@ -222,7 +222,7 @@ let svg = d3.select("#my_dataviz")
     .attr("viewBox", "0 0 " +width + " " + height);
 ```
 
-As we looked at above we have a svg that is appended to a `<div>` with a id of `#my_dataviz` that we set a `viewBox` attribute on of `"0 0" + width + " "+ height + "`.  Typically, we would set the width and the height to some value minus margins. The margins allow for axis marks outside of the chart. But in this case we want the axis marks to be inside of the chart. So the widths do not subtract the margins. 
+As we looked at above we have a svg that is appended to a `<div>` with a id of `#my_dataviz` that we set a `viewBox` attribute on of `"0 0" + width + " "+ height + "`.  Typically, we would set the width and the height to some value minus margins. The margins allow for axis marks outside of the chart. But in this case we want the axis marks to be inside of the chart. So the widths do not subtract the margins.
 
 Next we create the x-axis and append that to the `svg`.
 
@@ -248,7 +248,7 @@ svg.append("g")
        .ticks(d3.timeDay.every(1)));
 ```
 
-We give the x-axis a domain of the `flowData`, `date` and a range of the entire width of the chart. We append the axis an `<g>` element within the `svg`. We then want to transform the with a `.attr` to put the axis in place.  The difference here from your standard chart is that we need to translate along the y-axis by the `height-margin.bottom` instead of just the `height` like you would in a standard plot with the axis below the chart. Subtracting the margin pulls the axis from below the chart (not visible because it is outside of the svg) to within the chart. 
+We give the x-axis a domain of the `flowData`, `date` and a range of the entire width of the chart. We append the axis an `<g>` element within the `svg`. We then want to transform the with a `.attr` to put the axis in place.  The difference here from your standard chart is that we need to translate along the y-axis by the `height-margin.bottom` instead of just the `height` like you would in a standard plot with the axis below the chart. Subtracting the margin pulls the axis from below the chart (not visible because it is outside of the svg) to within the chart.
 
 The last step is to plot the y-axis.
 
@@ -290,7 +290,7 @@ svg.append("g")
 This time we will use `d3.scaleLinear` because the actual flow volumes are continuous. Domain and Range are similar to above, but I multiply the max of the values by 1.2 because I want some space within the plot for a title.  After we append the element we translate by `margin.right`, to move the axis within the chart.   
 
 ## The HTML and CSS:
-The rest of the chart is completed by css and some html.  Some imortant things happen here.  We hide some of the axis marks because having them inside the chart creates overlap between the x and y-axis.  We also style the associated info.  Ideally the html for the info would be automatically generated by the chart, but that is a bit much form one tutorial. 
+The rest of the chart is completed by css and some html.  Some imortant things happen here.  We hide some of the axis marks because having them inside the chart creates overlap between the x and y-axis.  We also style the associated info.  Ideally the html for the info would be automatically generated by the chart, but that is a bit much form one tutorial.
 
 The non JS stuff looks like so:
 
