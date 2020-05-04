@@ -89,7 +89,12 @@ bedrock_flow
 ## # … with 12,088 more rows
 ```
 
-I want to predict the raftable days released below McPhee Dam. To do this I need flow data from a gauge below McPhee. There are a few to choose from, but the oldest is at Bedrock, CO. To get the data I used the USGS Water Services REST API. There’s an R package that you can used to get the data, but since I’d used the API a few times before and I knew that the data could be returned in tab-separated format, I just used the `readr::read_tsv()` function. \* The first step is to build the URL for the API. I used the USGS Rest API builder tool to get the right data. I concatenated in todays data using `Sys.Date()` function. \* Then used the `read_tsv()` function to pull data from the API skpping the first 35 lines of comments. \* I then renamed the columns to something I could understand. \* And then convert the site\_ids to Characters instead of numbers. I pulled data from above and below the dams because at the time I thought I might use the data from above the Dam later for another predictive variable. \* Then I drop all the missing values and subset the data to just below the dam.
+I want to predict the raftable days released below McPhee Dam. To do this I need flow data from a gauge below McPhee. There are a few to choose from, but the oldest is at Bedrock, CO. To get the data I used the USGS Water Services REST API. There’s an R package that you can used to get the data, but since I’d used the API a few times before and I knew that the data could be returned in tab-separated format, I just used the `readr::read_tsv()` function.
+* The first step is to build the URL for the API. I used the USGS Rest API builder tool to get the right data. I concatenated in todays data using `Sys.Date()` function.
+* Then used the `read_tsv()` function to pull data from the API skpping the first 35 lines of comments.
+* I then renamed the columns to something I could understand.
+* And then convert the site_ids to Characters instead of numbers. I pulled data from above and below the dams because at the time I thought I might use the data from above the Dam later for another predictive variable.
+* Then I drop all the missing values and subset the data to just below the dam.
 
 ### Visualizing the flow
 
@@ -516,7 +521,7 @@ pred_sn_pk<-fit%>%
 pred_sn_pk
 ```
 
-``` r 
+``` r
 ## # A tibble: 3 x 3
 ##   estimated_eq   avg_snow_water_e  year
 ##   <chr>                     <dbl> <dbl>
