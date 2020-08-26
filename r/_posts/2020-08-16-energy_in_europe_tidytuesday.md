@@ -8,7 +8,7 @@ published: true
 
 I haven't had a ton of time lately.  On a recent road trip, I tried out a [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday) submission on European evergy usage. Because I didn't have enough time, I wanted to make something simple and work on making it really easy to read. I think I did that.  I would have liked to do a bit more with the theme. Maybe next time. 
 
-I was inspired by (@MaiaPelletier)[https://twitter.com/MaiaPelletier] and [her circular version using the same data](https://github.com/MaiaPelletier/tidytuesday/blob/master/images/2020_Week32_EUEnergy.png) - which is amazing.
+I was inspired by [@MaiaPelletier](https://twitter.com/MaiaPelletier) and [her circular version using the same data](https://github.com/MaiaPelletier/tidytuesday/blob/master/images/2020_Week32_EUEnergy.png) - which is amazing.
 
 The final product: 
 ![Percent of Renewable Energy By country]({{"/r/assets/tidy_tuesday/europe_energy_v1.png" | relative_url}})
