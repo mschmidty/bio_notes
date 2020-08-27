@@ -9,6 +9,7 @@ $body-font-weight:300;
 $header-font-weight:700;
 $header-font-weight-bold:900;
 $body-line-height:1.6;
+$writing-width:700px;
 body{
   font-family:$h-font;
   font-size:$font-size;
@@ -96,8 +97,9 @@ blockquote {
 }
 
 div.highlighter-rouge{
-  margin-bottom: 2rem;
+  margin: 2rem auto 0 auto;
   position:relative;
+  max-width: $writing-width;
   &:before{
     content: " ";
     height: 12px;
@@ -135,6 +137,7 @@ div.highlighter-rouge{
 .highlighter-rouge pre.highlight, pre.language-r-output {
   padding:3rem 0 3rem 2rem;
   font-size: 0.9rem !important;
+  line-height:1.2 !important;
 }
 .highlighter-rouge .highlight{
   border-radius: 5px;
@@ -147,6 +150,7 @@ code.highlighter-rouge, code.language-plaintext{
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
   font-size: 1rem !important;
   padding:0 !important;
+  
 }
 
 

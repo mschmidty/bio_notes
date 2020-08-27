@@ -294,14 +294,21 @@ sub{
 }
 
 .large-image-article{
+  .large-header-image{
+    margin-bottom: 20px;
+  }
    .post-meta, .dt-published, p, ol, ul, h1, h2, h3, h4 {
     max-width:$writing-width;
     width: 95%;
     margin:0 auto 1.3rem auto;
+    text-align:center;
   }
   .highlight {
     max-width: $writing-width;
     margin: 0 auto 0 auto;
+  }
+  div.highlighter-rouge{
+    position: relative;
   }
   ul {
     padding-left:2em;
