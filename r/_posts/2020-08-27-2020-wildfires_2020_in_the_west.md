@@ -60,3 +60,7 @@ ggplot()+
   )+
   ggsave("Wildfires_in_the_west.png", h=11, w=11, type="cairo")
   ```
+
+  I also was curious to see how much fire activity has increased in the united states. 
+
+  ![Column Chart showing increasing wildland fire activity over the last century.]({{"/r/assets/plots/wildland_fire_total_number_of_acres.png" | relative_url }}){:.wide-image}

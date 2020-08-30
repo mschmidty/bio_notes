@@ -137,7 +137,12 @@ div.highlighter-rouge{
 .highlighter-rouge pre.highlight, pre.language-r-output {
   padding:3rem 0 3rem 2rem;
   font-size: 0.9rem !important;
-  line-height:1.2 !important;
+  line-height:1.4 !important;
+  margin-bottom: 40px;
+  code{
+    line-height:1.8;
+    font-weight:200;
+  }
 }
 .highlighter-rouge .highlight{
   border-radius: 5px;
