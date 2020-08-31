@@ -13,7 +13,9 @@ The second largest fire in Colorado's History is currently burning.  California 
 
 I wanted to see what that looks like on the landscape so I plotted all of the wildfires currently burning in the west. Surprisingly many fires are visible when plotted on a westwide scale. 
 
-## R Scripts
+It's pretty impressive to see how much of the west is currently burning or has burned this year.  Even at a west wide scale the perimiters are still impressive. 
+
+### R Scripts
 ```r
 library(tidyverse)
 library(geojsonio)
@@ -61,15 +63,17 @@ ggplot()+
   ggsave("Wildfires_in_the_west.png", h=11, w=11, type="cairo")
   ```
 
+## Fire Season totals
+
 I also was curious to see how much fire activity has increased in the United States over time.  I was particularly interested at looking at the year of the "Big Burn" in context to todays fire seasons. 
 
 {::nomarkdown}
 <img class="large-header-image" src="{{"/r/assets/plots/wildland_fire_total_number_of_acres.png" | relative_url }}">
 {:/nomarkdown}
 
-I'm a bit scepticle of these numbers.  I suspect that there is a bit of reporting bias in these numbers. Today there is a pipeline to report all fires.  In the early 1900 I would guess that there were many fires that were not reported and that some of those that were reported were lost in the folders of history. Nonetheless it is still interesting to see how many more acres burn per year.  
+I'm a bit scepticle of these numbers.  I suspect that there is a bit of reporting bias in the data. Today there is a pipeline to report all fires.  In the early 1900 I would guess that there were many fires that were not reported and that some of those that were reported were lost in the folders of history. Nonetheless it is still interesting to see how many more acres burn per year today than 50 and 100 years ago.  
 
-## R Scripts
+### R Scripts
 
 ```r
 hist<-st_read(here("Dropbox", "r", "tidy_tuesday", "data", "InteragencyFirePerimeterHistory.shp"))
@@ -112,13 +116,15 @@ hist%>%
     axis.text.y = element_text(margin = margin(0,0,0,0))
   )
 ```
+
+## The Larges Fires in History
 The last thing that I wanted to look at is the largest fires in US history.  I used the package [reactable](https://glin.github.io/reactable/) for the first time to make a table of the 15 largest fires ever recorded. 
 
 {% include tables/test.html %}
 
-As with many things in R, getting the reactable from R and into HTML took quite a bit of hacking. I ended up exporting the table as HTML and adding it as an include in markdown. I think it turned out pretty well. 
+As with many things in R, getting the reactable from R and into HTML took quite a bit of hacking. I ended up exporting the table as HTML and adding it as an include in markdown. 
 
-## R Scripts
+### R Scripts
 
 ```r
 library(reactable)
