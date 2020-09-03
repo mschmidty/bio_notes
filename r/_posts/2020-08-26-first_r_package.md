@@ -72,7 +72,20 @@ theme_schmidt <- function () {
 The file has one function `theme_schmidt()`.  
 
 ## Adding the theme to library()
-To add any package to your library save all open work and press `cmd`+`shift`+`B`.  Rstudio will compile your package and add it to your library.  Now whenever you want to use your new theme you just have to call `library(packageName)` and then `theme_set(theme_schmidt())` will be ready to use. 
+To add any package to your library make sure everything in your package is saved and press `cmd`+`shift`+`B` (`ctrl`+`shift`+`B` on windows).  Rstudio will compile your package and add it to your library.  Now whenever you want to use your new theme you just have to call `library(packageName)` and then `theme_set(theme_schmidt())` will be ready to use. 
+
+## Hosting your package on GitHub 
+If you want you can put your package on github.  All you need to do is push your entire package structure to github.  Then when you want to access it, like fore example if you update your version of R, you can download it using the [devtools](https://www.rdocumentation.org/packages/devtools/versions/1.13.6) package.
+
+```r
+devtools::install_github("username/repository_name") 
+devtools::install_github("mschmidty/schmidttheme") ##downloads the above package. 
+```
+
+The above code should download your package into R your library.  Of course, it is a good idea to document your package prior to pushing it out to the public. 
+
+## Final thoughts
+Developing my first package was way easier than I expected.  I've been working on a large multi-year project that I use `source()` to load functions from an `R/` directory. Most of the time this works OK, but handling dependencies and documenting my functions is a pain.  I will likely be relying on packages in the future to tidy things up. 
 
 ## Resource
 * [R Packages by Hadley Wickham](https://r-pkgs.org/)
