@@ -6,16 +6,13 @@ categories: [ R, Machine Learning, ggplot ]
 published: true
 ---
 
-I live next to the Dolores River. It’s an often overlooked gem of the southwest. It runs from just outside Rico, Colorado at its headwaters to the Colorado River near Moab, Utah. It’s an experience.
+I live next to the Dolores River. It’s an often overlooked gem of the southwest. It runs from just outside Rico, Colorado at its headwaters to the Colorado River near Moab, Utah. Rafting it is an experience.
 
 As of late the river has become something of a destination for the rafting community. Most sections of the river are mellow and scenic. But two sections have class 4 rapids that keep things interesting: Snaggletooth Rapid and State Line Rapid (also known as the Chicken Raper Rapid).
 
-In 1985 the McPhee Dam was completed, forever changing the flow of the lower Dolores River. Today, farmers and ranchers rely on water from the McPhee Dam to to grow crops and raise livestock. As a result, the primary goal of reservoir managers is to keep as much water in the reservoir as possible. Raftable releases are secondary.
+In 1985 the McPhee Dam was completed, forever changing the flow of the lower Dolores River. Today, farmers, ranchers adn local ranchers rely on water from the McPhee Dam to to grow crops and raise livestock. As a result, the primary goal of reservoir managers is to keep as much water in the reservoir as possible. Raftable and ecological releases are secondary.This has resulted in several years where the reservoir has not filled and there have been no raftable releases. Other years reservoir managers say that the there will be no release and we get a release.
 
-This has resulted in several years where the reservoir has not filled and there have been no raftable releases. Other years reservoir managers say that the ther will be no release and we get a release.
-
-Because the Dolores is so loved in our community, there are a few people who try and predict when the Dolores. I thought it would be fun to do myself. Here’s how I built my model to predict the number of days the Dolores would run.
-
+Because the Dolores is so loved in our community, there are a few people who try and predict when the Dolores will have a raftable release. Given my love of R, I thought it would be fun to do myself. The following are notes on how I built my model. I do my best to go over each step and detail why and how I included each covariate. 
 ## Load Packages
 
 Here I load packages and set a custom theme. You can skip this part and just add in `set_theme(theme_light)` if you want to skip this part.
@@ -89,8 +86,10 @@ bedrock_flow
 ## # … with 12,088 more rows
 ```
 
-I want to predict the raftable days released below McPhee Dam. To do this I need flow data from a gauge below McPhee. There are a few to choose from, but the oldest is at Bedrock, CO. To get the data I used the USGS Water Services REST API. There’s an R package that you can used to get the data, but since I’d used the API a few times before and I knew that the data could be returned in tab-separated format, I just used the `readr::read_tsv()` function.
-* The first step is to build the URL for the API. I used the USGS Rest API builder tool to get the right data. I concatenated in todays data using `Sys.Date()` function.
+I want to predict the raftable days released below McPhee Dam. To do this I need flow data from a gauge below McPhee. Flow gauge data will tell me which days had enough flow to raft and which days did not. There are a few gauges to to choose from within the extensive USGS flow gauge system, but the oldest is at Bedrock, CO. To get the data I used the USGS Water Services REST API. There’s an R package that you can used to get the data, but since I’d used the API a few times before and I knew that the data could be returned in tab-separated format, I just used the `readr::read_tsv()` function.
+
+*Walk Through Notes:*
+* The first step is to build the URL for the API. I used the USGS Rest API builder tool to get the right data.
 * Then used the `read_tsv()` function to pull data from the API skpping the first 35 lines of comments.
 * I then renamed the columns to something I could understand.
 * And then convert the site_ids to Characters instead of numbers. I pulled data from above and below the dams because at the time I thought I might use the data from above the Dam later for another predictive variable.
@@ -112,10 +111,10 @@ bedrock_flow%>%
 
 ![Dolores Flows from 2008 to Present]({{"/r/assets/dolores_predict/figure-gfm/unnamed-chunk-3-1.jpeg" | relative_url}})<!-- -->
 
-I know from living here that the Dolores has flash flood events in the monsoon season around the end of August giving the river raftable flows that are not produced by a Dam release. I want to remove these events from the prediction because they could alter our predictive variable.
+
 
 ### Subsetting the release
-
+Next I needed to subset days where there is a raftable release.  Releases happen during spring runoff so I wanted to subset those days in the spring that had greater than 800 cfs (cubic feet per second) of flow.  I wanted to make sure to exclude non 
 ``` r
 predicted_variable<-bedrock_flow%>%
   filter(flow>800 & month(date) %in% c(3:7))%>%
@@ -142,20 +141,23 @@ predicted_variable
 ## # … with 11 more rows
 ```
 
-To get the number of raftable release we subset the flow rates to flows above 800 (cfs - cubic feet per second).
 
-  - First we filter the data for flows above 1000 cfs and dated from March to July (most of the monsoons occur from august to October).
-  - Then we simply count the number of dates that are left by year.
+*Walk Through Notes:*
+* First we filter the data for flows above 1000 cfs and dated from March to July (most of the monsoons occur from august to October).
+* Then we simply count the number of dates that are left by year.
 
-We now have the variable we want to predict. Now we need predicters.
+We now have the variable we want to predict. Now we need predictors.
 
 # Getting the predictive variables.
 
-There are are many variables that affect reservoir volume. Current Reservoir volume and snowpack are probably two of the more important variables that are reliably measured. Snowpack tells us how much water will eventually be coming into the reservoir in the spring and reservoir volume tells us how much water we will need to cause a spill. Spring rain would be another variable that would be great to include, but I don’t want to rely on weather forecasts that far out. So we will stick with snowpack and current reservoir volume.
+There are many variables that affect reservoir volume. Current Reservoir volume and snowpack are probably two of the more important variables that are reliably measured. Snowpack tells us how much water will eventually be coming into the reservoir in the spring and reservoir volume tells us how much water is currently in the reservoir and also how much water we will need to cause a spill. Spring rain would be another variable that would be great to include, but I don’t want to rely on weather forecasts that far out. So we will stick with snowpack and current reservoir volume.
 
 ## Snow Depth
 
-The [SNOTEL (Snow Telemetry)](https://en.wikipedia.org/wiki/SNOTEL) network provides snow data for 730 sites accross the country. There are several in the Dolores watershed that can give us a bunch of data on snowpack. For this we will use the handy dandy package `library(RNRCS)` (the NRCS is the government agency in the Department of Agriculture that manages the SNOTEL network) \#\#\# Finding All Snotel Sites in the Dolores Watershed First we need to find which SNOTEL sites are within the Dolores River watershed to inform how much water could end up in McPhee reservoir.
+The [SNOTEL (Snow Telemetry)](https://en.wikipedia.org/wiki/SNOTEL) network provides snow data for 730 sites across the country. There are several in the Dolores watershed that can give us a bunch of data on snowpack. For this we will use the handy dandy package `library(RNRCS)` (the NRCS is the government agency in the Department of Agriculture that manages the SNOTEL network) 
+
+### Finding All Snotel Sites in the Dolores Watershed 
+First we need to find which SNOTEL sites are within the Dolores River watershed to inform how much water could end up in McPhee reservoir.
 
 ``` r
 library(RNRCS)
@@ -209,7 +211,7 @@ dolores_sites
 ## #   site_id <chr>, site_id_num <dbl>
 ```
 
-**dolores\_sites** - We then filter all sites in Colorado (“CO”) and detect all of the huc values with 140300. To pull data from the sites we will need a site ID number. The Meta data has the site IDs in a string that contains characters and numbers.
+**dolores_sites** - We then filter all sites in Colorado (“CO”) and detect all of the huc values with 140300. To pull data from the sites we will need a site ID number. The Meta data has the site IDs in a string that contains characters and numbers.
 
 ``` r
 dolores_site_ids<-dolores_sites%>%
@@ -224,7 +226,7 @@ dolores_site_ids
 ## [1] 1185 1060  465  739  586  589
 ```
 
-**dolores\_site\_ids** - The last step is to convert the `site_id_num` variable into a vector so that we can pull data from each site in the next step.
+**dolores_site_ids** - The last step is to convert the `site_id_num` variable into a vector so that we can pull data from each site in the next step.
 
 ## Pulling the data from the snotel sites
 
@@ -245,7 +247,11 @@ get_snotl_data<-function(site_id){
 }
 ```
 
-To get data from each site we need to use `grabNRCS.data()` function. `grabNRCS.data` takes: \* `network` - the network we want to pull from. \* the `site_id` which we produced a list of in the last step. \* `DayBgn` - The first day you want to pull data from. \* `DayEnd` - the Last date you want data from. Here we use the system data (Today).
+To get data from each site we need to use `grabNRCS.data()` function. `grabNRCS.data` takes: 
+* `network` - the network we want to pull from. 
+* the `site_id` which we produced a list of in the last step. 
+* `DayBgn` - The first day you want to pull data from. 
+* `DayEnd` - the Last date you want data from. Here we use the system data (Today).
 
 We then convert the data to a tibble for better output in Rstudio and add a column with `mutate` with the site\_id number for working with the data later.
 
@@ -292,7 +298,9 @@ all_sntl_data
 ## #   Wind.Speed.Maximum..mph. <dbl>
 ```
 
-`lapply` takes: \* `dolores_site_ids` a vector of values to loop over. \* `get_snotl_data` a function to inject each of the vector values into one at a time.
+`lapply` takes: 
+* `dolores_site_ids` a vector of values to loop over. 
+* `get_snotl_data` a function to inject each of the vector values into one at a time.
 
 `lapply` returns a list so the final step is to `bind_rows` which merges all of the columns.
 
@@ -530,7 +538,7 @@ pred_sn_pk
 ## 3 pred_upper                15.5   2020
 ```
 
-  - User our model to `forecast()` six months out.
+  - Use our model to `forecast()` six months out.
   - `filter` out the `max` value for the average (this isn’t perfect but it will work for our purposes).
   - Add a column with higher and lower values based on a 90% confidence interval using the `hilo` function.
   - convert to a tibble.
@@ -573,7 +581,10 @@ bor_data
 ## # … with 12,816 more rows
 ```
 
-We use the `{RNRCS}` package again to get Bureau of Reclemation (BOR - the agency that managed the McPhee dam)data. \* The `{RNRCS}` package has a function to grab Bureau of Reclemation data `grabBOR.data()`. It works much the same way as the `grapNRCS.data()` function that we wrapped our own function around above. However this time, we only needed one site so I just looked it up and put it in instead of using a meta function to get sites like we did with the snotel data. \* We convert the data to a tibble (df) convert the date to date format and convert the volume into numeric. \* We then subset the columns to just date and reservoir volume.
+We use the `{RNRCS}` package again to get Bureau of Reclemation (BOR - the agency that managed the McPhee dam)data. 
+* The `{RNRCS}` package has a function to grab Bureau of Reclemation data `grabBOR.data()`. It works much the same way as the `grapNRCS.data()` function that we wrapped our own function around above. However this time, we only needed one site so I just looked it up and put it in instead of using a meta function to get sites like we did with the snotel data. 
+* We convert the data to a tibble (df) convert the date to date format and convert the volume into numeric. 
+* We then subset the columns to just date and reservoir volume.
 
 ### Summarize data to yearly
 
@@ -606,7 +617,10 @@ res_vol
 ## # … with 24 more rows
 ```
 
-Here we subset the data to just the winter months and then summarize by year by getting the minimum value for all three months (I originally averaged the months, but getting the min gives a better prediction). \* First we filter January and February to get that years lowest reservoir values prior to runoff. \* We then `group_by()` year and then get the minimul volume from each of the two months. \* then we rename the first column to year instead of `year(date)` and filter out all years before 1987.
+Here we subset the data to just the winter months and then summarize by year by getting the minimum value for all three months (I originally averaged the months, but getting the min gives a better prediction). 
+* First we filter January and February to get that years lowest reservoir values prior to runoff. 
+* We then `group_by()` year and then get the minimul volume from each of the two months. 
+* then we rename the first column to year instead of `year(date)` and filter out all years before 1987.
 
 # Building the Model
 
@@ -691,7 +705,11 @@ rf_model
 ## Tuning parameter 'mtry' was held constant at a value of 2
 ```
 
-Here we build a cross validated random forest regression model to go predict number of raftable days. \* `meothod = "repeatedcv"` is repeated cross validation where we do 10 cross validations 3 times with a random search. \* We use the `train()` functio from caret to fit the model using both predictive variables `avg_snow_water_e` and `min_vol`. \* We use Random Forest algorythm `"rf"` with 2000 trees. \* we try 3 mtry depths (thgere are only two because we have only two variables, but tuneLength of two was not tuning at all for some reason).
+Here we build a cross validated random forest regression model to go predict number of raftable days. 
+* `meothod = "repeatedcv"` is repeated cross validation where we do 10 cross validations 3 times with a random search. 
+* We use the `train()` functio from caret to fit the model using both predictive variables `avg_snow_water_e` and `min_vol`. 
+* We use Random Forest algorythm `"rf"` with 2000 trees. 
+* we try 3 mtry depths (thgere are only two because we have only two variables, but tuneLength of two was not tuning at all for some reason).
 
 ### Evaluating the model
 
