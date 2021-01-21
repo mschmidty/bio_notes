@@ -1,0 +1,19 @@
+---
+layout: post
+title:  "2020 is finally over."
+date:   2021-01-03 10:07:03 -0600
+categories: Reflection
+published: false
+---
+On January 6th, 2021, thousands of Trump supporters stormed congress to stop the certification of the election of Joe Biden.  It was an insane day. American Citizens attempted to overturn a democratic election using force. They came close to succeeding.  The House and Senate Chambers were rushed out before the insurrectionists made it in. Five people died.
+
+I've had a lot of thoughts since it happened.  But now that a few days have passed the thought that keeps coming back to me is: I hope this is a wake up call to Republicans in congress and in the public sphere.  I hope that having the insane mob, that so many of us have to live with in our communities, come to their door and threaten them will change how they use their power.  Because for a long time now, so many of us have been living with this mob in our communities.  They are our county commissioners, city council members, and sherifs.  They are fellow parents at school, they are teachers and on the school board.  They raise children.  
+
+And they are being radicalized to the point of disfunction.  Sure a lot of what is radicalizing them they find on the internet, in conspiracy theory echo chambers.  But there is nothing fighting back against that in real life.  Their political leaders at best avoid inconvenient topics (in my home state I'm thinking of Corey Gardner and Tipton).  At worst, and as the mob grows, political leaders are openly agreeing with them.  Ted Cruz, Lindsay Graham, Lauren Boebert and Josh Hawley are there to say, you are right the Democrats did steal an election even though there is zero truth to that. The confirm to the worst in our communities that crazy stuff you've been reading is actually right.  Those lose you believe make you the patriot. Where are the Republicans who stood up for truth.  For decency.  Where are the politicians that are willing to say no, you are wrong like John McCain did when a lady called Obama a Muslim. 
+
+Because even though our elected officials are walled off from the mob that finally breached their bubble, America is not.  Our friends who are gay get death threats.  People who stand up and say something at a city council meetings are getting death threats and doxxed on line.  Our family members have people sick with Corona, who think it is just the flu, and infecting them. At my local market the cashier started to bring a knife to work to protect him from people who refused to wear a mask.  What the fuck. This is real life. 
+
+Fox News. Talk Radio. Right wing internet echo chambers.  They are all pushing in a dangerous direction.  Our leaders need to take a stand before it is too late. Before these are the only voices.   
+
+I was listening to Left, Right and Center yesterday, which is a podcast that tries to be a platform for a those with opposing political views to discuss current events. On it, the commentator for the right, Lanhee Chen, a completely reasonable non-crazy conservative, was arguing that we should not impeach Donald Trump because it will take too much time and we need to focus on the transition to the next administration.  And while on some level that makes sense, we have got to stop giving the mob a pass. People in the country need to know that trying to overthrow a lawfully elected president has consequences.  That it is not OK.  Because more people are on the edge, closer to the mob than reality then I think people in DC realize.  And while thousands marched on the Capitol this week, Millions live in our communities.  On the local level they are open to attacking decent if it doesn't align with their conspiracy fueled world view.  And while only a few politicians are openly supporting their world view (Lauren Boebert you crazy wack job I'm looking at you), many more are using it to keep power by ignoring it.
+
