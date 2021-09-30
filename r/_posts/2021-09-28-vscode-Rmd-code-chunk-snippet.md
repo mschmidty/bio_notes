@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "VS Code: Add a Rmarkdown Code Chunk Snippet to a Key Binding"
+title: "VS Code: Add a Rmarkdown Code Chunk Snippet Key Binding"
 date: "2021-09-28 7:30:44 -0700"
 categories: [ R, Rmd, "VS Code" ]
 published: true
