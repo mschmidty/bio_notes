@@ -12,10 +12,9 @@ One thing that the the VS code R package does not have is a shortcut for adding 
 
 ## Adding the Snippet
 
-Go to `Code>Preferences>Keyboard Shortcuts` and then in the upper right hand corner is a small icon that looks like a piece of paper with a arrow coming around it.  If you hover on it, it says "Open Keyboard Shortcuts (JSON)". Click on the icon.  You can also press `cmd+shift+p` and type in "Keyboard Shortcuts" and select "Preferences: Open Keyboard Shortcuts (JSON)".  Edit the .json file with the following json.
+Go to `Code>Preferences>Keyboard Shortcuts` and then in the upper right hand corner there should be a small icon that looks like a piece of paper with a arrow coming around it.  If you hover on it, it says "Open Keyboard Shortcuts (JSON)". Click on it to open the "Keyboard Shortcuts.json" file.  You can also press `cmd+shift+p` and type in "Keyboard Shortcuts" and select "Preferences: Open Keyboard Shortcuts (JSON)".  Edit the .json file with the following json.
 
 ```r
-// Place your key bindings in this file to override the defaults
 [
   {
     "key": "cmd+alt+i",
