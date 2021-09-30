@@ -6,9 +6,9 @@ categories: [ R, Rmd, "VS Code" ]
 published: true
 ---
 
-I recently started using VS code for [R](https://www.r-project.org/) development. There is an awesome new [R extension for VS Code](https://marketplace.visualstudio.com/items?itemName=Ikuyadeu.r).  It takes a little setup, it works best radian a python package, but it works really well and there are solid instructions on the extension page. I love [Rstudio](https://www.rstudio.com/) for the most part, but I got frusterated by the lack of customization in the editor (mostly line height). So here we are.  
+I recently started using VS code for [R](https://www.r-project.org/) development. There is an awesome newish [R extension for VS Code](https://marketplace.visualstudio.com/items?itemName=Ikuyadeu.r).  It takes a little setup, it works best with the addition of radian, a python package, but it works really well. There are solid instructions on the extension page. I love [Rstudio](https://www.rstudio.com/) for the most part, but I got frusterated by the lack of editor customization (mostly line height). So here we are.  
 
-One thing that the the VS code R package does not have is a shortcut for adding Rmarkdown code chunks. So I thought I'd write a short how to in case other would like something similar. 
+One thing that the the VS code R package does not have is a shortcut for adding Rmarkdown code chunks similar to what you can do in Rstudio. I couldn't find an easy solution after googleing so, after a bit of tinkering, I thought I'd write a short "how to" in case others needed something similar. 
 
 ## Adding the Snippet
 
