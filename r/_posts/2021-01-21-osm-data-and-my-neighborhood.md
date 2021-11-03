@@ -10,7 +10,7 @@ For the seventh day of the [#30daymapchallange](https://twitter.com/hashtag/30da
 
 ![My neighborhood]({{"r/assets/maps/07-green-my-neighborhood.png" | relative_url }})
 
-Here are my scripts.  I have two versions.  I have included two versions.  One is with a logo, trying to make it look pretty with just R.  The second is me giving up and using Adobe Illustrator to add the title.  
+Here are my scripts. I have included two versions.  One is with a logo, trying to make it look pretty with just R.  The second is me giving up and using Adobe Illustrator to add the title.  
 
 ```r
 # Set Up and Load Libraries

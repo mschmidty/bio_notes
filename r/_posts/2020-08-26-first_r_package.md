@@ -75,7 +75,7 @@ The file has one function `theme_schmidt()`.
 To add any package to your library make sure everything in your package is saved and press `cmd`+`shift`+`B` (`ctrl`+`shift`+`B` on windows).  Rstudio will compile your package and add it to your library.  Now whenever you want to use your new theme you just have to call `library(packageName)` and then `theme_set(theme_schmidt())` will be ready to use. 
 
 ## Hosting your package on GitHub 
-If you want you can put your package on github.  All you need to do is push your entire package structure to github.  Then when you want to access it, like fore example if you update your version of R, you can download it using the [devtools](https://www.rdocumentation.org/packages/devtools/versions/1.13.6) package.
+If you want you can put your package on github.  All you need to do is push your entire package structure to github.  Then when you want to access it, like for example if you update your version of R, you can download it using the [devtools](https://www.rdocumentation.org/packages/devtools/versions/1.13.6) package.
 
 ```r
 devtools::install_github("username/repository_name") 

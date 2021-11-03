@@ -117,12 +117,12 @@ hist%>%
   )
 ```
 
-## The Larges Fires in History
+## The Largest Fires in History
 The last thing that I wanted to look at is the largest fires in US history.  I used the package [reactable](https://glin.github.io/reactable/) for the first time to make a table of the 15 largest fires ever recorded. 
 
 {% include tables/test.html %}
 
-As with many things in R, getting the reactable from R and into HTML took quite a bit of hacking. I ended up exporting the table as HTML and adding it as an include in markdown. 
+As with many things in R, getting the reactable from R into HTML took quite a bit of hacking. I ended up exporting the table as HTML and adding it as an include in markdown. 
 
 ### R Scripts
 
