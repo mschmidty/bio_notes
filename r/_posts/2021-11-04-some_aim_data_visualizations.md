@@ -10,6 +10,41 @@ I don't really put a lot of what I do at work here.  I try to keep work at work 
 
 ## Species Richness
 
-As part of the AIM protocol we try to identify every plant that occurs at each plot.  The first visualization is a column plot of the percentage of vegetation sites that a species of each plant is identidfied at, separated by strata.
+As part of the AIM protocol we try to identify every plant that occurs at each site.  The first visualization is a column plot of the percentage of vegetation sites that a species of each plant is identidfied at, visualized by strata.
 
 ![Species Richness]({{"r/assets/most_abundant_plants_by_strata_large_white_small.png" | relative_url }})
+
+## And the Scripts
+
+```r
+sci_name_count%>%
+  filter(prop_total>=.10 & !is.na(scientific_name))%>%
+  arrange(Strata, desc(total))%>%
+    ggplot()+
+    geom_col(aes(scientific_name, prop_n, fill=Strata))+
+    coord_flip()+
+    geom_text(aes(scientific_name, prop_total, label=prop_total_text), 
+              color="#8C8C8C", 
+              size=5.25,
+              hjust = -0.25
+              )+
+    scale_fill_manual(values = pal2)+
+    scale_y_continuous(labels = scales::percent)+
+    theme(
+      plot.background = element_rect(fill="#FFFFFF"),
+      panel.background = element_rect(fill="#FFFFFF"),
+      text = element_text(size=16),
+      plot.title = element_text( size=35),
+      axis.text = element_text(size=16),
+      legend.position="top",
+      plot.title.position = "plot", 
+      plot.caption.position =  "plot"
+    )+labs(
+      title="Most Common Plants Found on the Tres Rios Field Office",
+      subtitle = "2018 to 2020, % of plots where species were found, by Strata.  Only plants that occured on more than 10% of plots are included.",
+      caption = "Source: Tres Rios Field Office AIM Data | By Mike Schmidt",
+      x="",
+      y="",
+      fill="Strata"
+    )+ggsave("test/output/most_abundant_plants_by_strata_large_white.png", h=45, w=17.5, type="cairo", dpi=600)
+```
