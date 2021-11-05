@@ -6,7 +6,7 @@ categories: [ R, Rmd, AIM ]
 published: true
 ---
 
-I don't really put a lot of what I do at work here.  I try to keep work at work and a lot of what I post here is for fun.  But sometimes when I want to think through something at work or need to learn something at work and writing it down helps me remember or think about it I do post it here.  Lately though, I've been producing some visualizations from [Assessment Inventory and Monitoring (AIM)](https://aim.landscapetoolbox.org/) data that I think are worth sharing.  
+I don't really put a lot of what I do at work here.  I try to keep work at work and a lot of what I post here is for fun. Lately though, I've been producing some visualizations from [Assessment Inventory and Monitoring (AIM)](https://aim.landscapetoolbox.org/) data that I think are worth sharing.  
 
 ## Species Richness
 
@@ -47,4 +47,49 @@ sci_name_count%>%
       y="",
       fill="Strata"
     )+ggsave("test/output/most_abundant_plants_by_strata_large_white.png", h=45, w=17.5, type="cairo", dpi=600)
+```
+
+## Species Richness Another Way 
+
+Here is the same plot but faceted by strata.
+
+![Species Richness Faceted by Strata]({{"r/assets/most_abundant_plants_within_each_strata_large_white2_small.png" | relative_url }})
+
+## The Scripts
+
+```r
+sci_name_count%>%
+  filter(prop_strata>=.30 & !is.na(scientific_name))%>%
+  mutate(
+    scientific_name = as.factor(scientific_name),
+    scientific_name = reorder_within(scientific_name, prop_strata, Strata)
+  )%>%
+  arrange(Strata, desc(total))%>%
+    ggplot()+
+    geom_col(aes(scientific_name, prop_strata, fill=Strata))+
+    coord_flip()+
+    facet_wrap(~Strata, scales = "free", ncol=2)+
+    scale_fill_manual(values = pal2)+
+    scale_y_continuous(labels = scales::percent)+
+    scale_x_reordered()+
+    theme(
+      plot.background = element_rect(fill="#FFFFFF"),
+      panel.background = element_rect(fill="#FFFFFF"),
+      text = element_text(size=16),
+      plot.title = element_text( size=35),
+      axis.text = element_text(size=16),
+      legend.position="none",
+      plot.title.position = "plot", #NEW parameter. Apply for subtitle too.
+      plot.caption.position =  "plot",
+      strip.text.x = element_text(
+        size = 10, color = "#8C8C8C", face = "bold.italic"
+        )
+    )+labs(
+      title="Most Common Plants Found in Each Strata",
+      subtitle = "2018 to 2020 percent of plots where species was found, by Strata.  Only plants that occured on more than 25% plots within a strata are included.",
+      caption = "Source: Tres Rios Field Office AIM Data | By Mike Schmidt",
+      x="",
+      y="",
+      fill="Strata"
+    )
 ```
