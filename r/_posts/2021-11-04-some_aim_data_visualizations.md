@@ -6,11 +6,11 @@ categories: [ R, Rmd, AIM ]
 published: true
 ---
 
-I don't really put a lot of what I do at work here.  I try to keep work at work and a lot of what I post here is for fun. Lately though, I've been producing some visualizations from [Assessment Inventory and Monitoring (AIM)](https://aim.landscapetoolbox.org/) data that I think are worth sharing.  
+I don't put a lot of what I do at work here.  I try to keep work at work and a lot of what I post here is for fun. Lately though, I've been producing some visualizations from [Assessment Inventory and Monitoring (AIM)](https://aim.landscapetoolbox.org/) data that I think are worth sharing.  
 
 ## Species Richness
 
-As part of the AIM protocol we try to identify every plant that occurs at each site.  The first visualization is a column plot of the percentage of vegetation sites that a species of each plant is identidfied at, visualized by strata.
+As part of the AIM protocol we try to identify every plant that occurs at each site.  The first visualization is a column plot of the percentage of vegetation sites that a species of each plant was identified  at, visualized by strata.
 
 ![Species Richness]({{"r/assets/most_abundant_plants_by_strata_large_white_small_v2.png" | relative_url }})
 
