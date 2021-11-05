@@ -12,4 +12,4 @@ I don't really put a lot of what I do at work here.  I try to keep work at work 
 
 As part of the AIM protocol we try to identify every plant that occurs at each plot.  The first visualization is a column plot of the percentage of vegetation sites that a species of each plant is identidfied at, separated by strata.
 
-![Species Richness]({{"r/assets/most_abundant_plants_by_strata_white_small.png" | relative_url }})
+![Species Richness]({{"r/assets/most_abundant_plants_by_strata_large_white_small.png" | relative_url }})
