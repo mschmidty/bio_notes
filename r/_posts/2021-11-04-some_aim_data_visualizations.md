@@ -4,9 +4,12 @@ title: "Some AIM Data Visualizations from Work"
 date: "2021-11-04 7:30:44 -0700"
 categories: [ R, Rmd, AIM ]
 published: true
+excerpt_separator: <!--more-->
 ---
 
-I don't put a lot of what I do at work here.  I try to keep work at work and a lot of what I post here is for fun. Lately though, I've been producing some visualizations from [Assessment Inventory and Monitoring (AIM)](https://aim.landscapetoolbox.org/) data that I think are worth sharing.  
+I don't put a lot of what I do at work here.  I try to keep work at work and a lot of what I post here is for fun. Lately though, I've been producing some visualizations from [Assessment Inventory and Monitoring (AIM)](https://aim.landscapetoolbox.org/) data that I think are worth sharing. 
+
+<!--more--> 
 
 ## Species Richness
 
