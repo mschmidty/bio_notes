@@ -7,6 +7,8 @@ published: false
 excerpt_separator: <!--more-->
 ---
 
-Similar to my post last week, we are again looking at another AIM data analysis.  The last analysis was created from the raw AIM dataset kept in ESRI Collector. This time we are pulling the data from the SQL database that houses the QA/QC'd final dataset.  This is also an analysis that uses data outside of our field office.  
+Similar to my post last week, we are again looking at another AIM data visualization.  The last visualization was created from the raw AIM data, pulled from ArcGIS online. This visualization looks at cover over three populations of Gunnison sage-grouse in Colorado, the San Miguel population, the Gunnison population and the ....
 
 ![Gunnison sage-grouse habitat assessment graph.]({{"r/assets/cover_gusg_ch.png" | relative_url }})
+
+## And the Scripts
