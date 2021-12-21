@@ -149,7 +149,7 @@ Then whenever you have table you want to output in you Rmarkdown document you ca
 ```r
 table%>%
   kbl()%>%  ## turn the table into a kable
-  kable_classic(full_width=T, html_font="Merriweather")  ## add a table theme. 
+  kable_classic(full_width=T)  ## add a table theme. 
 ```
 
 And you should get a table that looks like this:
@@ -203,7 +203,7 @@ And you should get a table that looks like this:
 }
 </style>
 
-<table class="lightable-classic" style="font-family: 'Public Sans'; margin-left: auto; margin-right: auto;">
+<table class="lightable-classic" margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;">
