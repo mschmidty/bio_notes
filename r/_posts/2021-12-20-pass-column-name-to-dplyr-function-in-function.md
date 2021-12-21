@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How to pass a column name as a function parameter to a dplyr function."
+title: "How to pass a column name as a function parameter to a dplyr function in R."
 date: "2021-12-20 7:30:44 -0700"
 categories: [ R, dplyr ]
 published: true
