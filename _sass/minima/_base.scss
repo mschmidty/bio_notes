@@ -228,7 +228,7 @@ pre {
 /**
  * Tables
  */
-table {
+table:not(.lightable-classic){
   margin-bottom: $spacing-unit;
   width: 100%;
   text-align: $table-text-align;
