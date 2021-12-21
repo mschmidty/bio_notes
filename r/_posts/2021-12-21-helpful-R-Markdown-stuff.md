@@ -6,10 +6,10 @@ categories: [ R, Rmarkdown, pagedown ]
 published: true
 ---
 
-I've been using Rmarkdown to write reports at work. Whenever I start a project I end up having to look stuff up that I've looked up a million times before.  The setup ends up taking so much time and brain power that I figure I'd write it up so I don't have to google my face off to find it.
+I've been using Rmarkdown to write reports at work. Whenever I start a project I end up having to look stuff up that I've looked up a million times before.  The setup ends up taking so much time and brain power that I end up spending half a day on it.  So I figured I'd write it up so I don't have to google my face off to get up and running. 
 
 ## Front matter 
-There isn't much to the front matter until we introduce the [pagedown package](https://pagedown.rbind.io/). For now I usually want the date to be the date the document was knitted (`Sys.Date()`). I also want to be able to edit the CSS sytles without haveing to knit the document again.  By default Rmarkdown knits all of the css into the html document.  That isn't ideal for editing the document. You can accomplish these two things by adding the following to your front matter 
+There isn't much to the front matter until we introduce the [pagedown package](https://pagedown.rbind.io/) (see below). To start, I usually want the date to be the date the document was knitted (`Sys.Date()`). I also want to be able to edit the CSS sytles without having to knit the document again.  By default Rmarkdown knits all the CSS into the html document.  That isn't ideal for working on the styles. Every time you edit a CSS file you have to reknit the document to see the changes.  You can accomplish these two things by adding the following to your front matter:
 
 ```r
 ---
@@ -33,12 +33,12 @@ knitr::opts_chunk$set(
 
 The opening of this code chunk should look like this: ` ```{r setup, include=FALSE}`.  
 
-Sometimes this doesn't catch everything.  For example if you use `source()` anything it will be output.  For those instances you can use ````{r setup, include=FALSE}` to start the code chunk and that will prevent any outuput. 
+Sometimes this doesn't catch everything.  For example if you use `source()` to load another file, loading the functions will be included in the Rmarkdown file.  For those instances you can use ````{r setup, include=FALSE}` to start the code chunk and that will prevent any output. 
 
 ## Pagedown
-I like to you the pagedown package for my reports becuase it gives me the most power over how the final report will look.  To get up and running with pagedown you can see their docs [here](https://pagedown.rbind.io/). 
+I like to use the pagedown package for my reports. Instead of a pdf, word document or website it produces a paged html document. You can use CSS to style your final report literally however you want. In other words it gives you more power than than vanilla Rmarkdown.  To get up and running with pagedown you can see their docs [here](https://pagedown.rbind.io/). 
 
-At a basic level you just need to install the package and then in your front matter add:
+At a basic level you need to install the package and then in your front matter add:
 
 ```r
 ---
@@ -144,7 +144,7 @@ table%>%
   width: 100%;
   margin-bottom: 10px;
   margin: 10px 5px;
-  font-weight: normal !important;
+  font-weight: 400 !important;
 }
 
 .lightable-classic tfoot tr td {
