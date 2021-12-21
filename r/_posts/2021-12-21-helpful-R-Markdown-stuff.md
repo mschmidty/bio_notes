@@ -50,17 +50,26 @@ output:
 ```
 
 ### Customizing The Default CSS.
-Pagedown comes with it's own default CSS that is intended to make books so the pages are a weird size and there are lots of blank pages like you would find in a book. 
+Pagedown comes with it's own default CSS that is intended to make books. Out of the box the pages are a weird size and there are blank pages at the beginning and the end of the document. 
 
-To customize how your documents will look you can copy the default CSS styles into your project folder and edit them. To find the defualt styles pagedown provides a function: `pagedown:::list_css()` (careful to note the three `:::`).  This will list all of the CSS files for each of the templates provided by pagedown.  For our purposes we just need to copy three into the same folder that our Rmd file is in: 
+To customize how your documents will look you can copy the default CSS styles into your project folder and edit them. To find the default styles pagedown provides a function: `pagedown:::list_css()` (careful to note the three `:::`).  This will list all the CSS files for each of the templates provided by pagedown.  For our purposes we need to copy three of them into the same folder that our Rmd file is in.  Copy the following: 
 
 * default-fonts.css
 * default-page.css
 * derault.css
 
-I typically put these in a `css/` folder in the same folder my Rmarkdown file is in. 
+I typically put these in a `css/` folder in the same folder my Rmarkdown file is in.  Something like this: 
 
-To get your Rmarkdown to recognize them you need to updated your yaml front matter.
+```bash
+Rmd/
+├─ css/
+│  ├─ default-font.css
+│  ├─ default-page.css
+│  ├─ default.css
+├─ document.Rmd
+```
+
+To get your Rmarkdown to recognize them you need to updated your yaml front matter. At this point this should be your entire yaml front matter section.
 
 ```r
 ---
@@ -80,14 +89,20 @@ output:
 You can rename the `.css` files to whatever you want so long as they are references in your front matter. 
 
 ### CSS I like to edit
-To change the page size to 8.5in by 11in the first three lines of default-page.css should look like this: 
+The first CSS that I change alters the page size so that it is letter sized.  To change the page size to 8.5in by 11in the first three lines of `default-page.css` should look like this: 
 ```css
 /* page size */
 @page {
   size: 8.5in 11in; /* var(--pagedjs-width) doesn't work in browser when printing */
 }
+
+@page :blank {
+  display: none; 
+  /* You can also edit this section if you want to remove the blank second page!! */
+}
+
 ```
-And in default.css the top should look like this:
+And in `default.css` the top should look like this:
 
 ```css
 :root {
@@ -106,7 +121,7 @@ There is a bunch more that you can do, like adding custom fonts, but that should
 ## Tables with kable and kableExtra
 The last thing I always look up is styling tables.  At the most basic level, to get a nice HTML table output instead of the R text output you can use kable and kableExtra.
 
-If you are using page down remove or comment out lines 109 to 123 in the default.css file this will ensure that the kable styling gets applied and not the styling from pagedown: 
+If you are using page down remove or comment out lines 109 to 123 in the `default.css` file this will ensure that the kable styling gets applied and not the styling from pagedown: 
 
 ```css
 /* Comment out or remove the following starting at line 109 */
@@ -129,13 +144,15 @@ thead, tfoot, tr:nth-child(even) {
 
 Next install [kableExtra](https://haozhu233.github.io/kableExtra/awesome_table_in_html.html) with `install.packages("kableExtra)`.  
 
-Then whenever you have table you want to output in you Rmardown document you can use: 
+Then whenever you have table you want to output in you Rmarkdown document you can use: 
 
 ```r
 table%>%
   kbl()%>%  ## turn the table into a kable
   kable_classic(full_width=T, html_font="Merriweather")  ## add a table theme. 
 ```
+
+And you should get a table that looks like this:
 
 <style type="text/css" rel="stylesheet">
   .lightable-classic {
@@ -144,7 +161,7 @@ table%>%
   width: 100%;
   margin-bottom: 10px;
   margin: 10px 5px;
-  font-weight: 400 !important;
+  font-weight: 300 !important;
 }
 
 .lightable-classic tfoot tr td {
