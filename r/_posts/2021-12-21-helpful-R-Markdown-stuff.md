@@ -185,7 +185,7 @@ table%>%
 }
 </style>
 
-<table class=" lightable-classic" style="font-family: "Public Sans"; margin-left: auto; margin-right: auto;">
+<table class="lightable-classic" style="font-family: 'Public Sans'; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;">
