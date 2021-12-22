@@ -162,7 +162,7 @@ And you should get a table that looks like this:
   margin-bottom: 10px;
   margin: 10px 5px;
   font-weight: 300 !important;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .lightable-classic tfoot tr td {
