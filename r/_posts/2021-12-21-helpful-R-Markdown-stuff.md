@@ -203,7 +203,7 @@ And you should get a table that looks like this:
 }
 </style>
 
-<table class="lightable-classic" margin-left: auto; margin-right: auto;">
+<table class="lightable-classic" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;">
